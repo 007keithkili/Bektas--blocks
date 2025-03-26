@@ -19,14 +19,14 @@
     crossorigin="anonymous" referrerpolicy="no-referrer" />
   <style>
     h1 {
-      justify-content:center;
+      justify-content: center;
       color: #7d007b;
       font-size: 45px;
       font-weight: 700;
       text-transform: uppercase;
       letter-spacing: 1px;
       position: relative;
-      left:35%;
+      left: 35%;
     }
    
     /* Image Grid for Products */
@@ -48,7 +48,7 @@
       border-radius: 10px;
       box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
       transition: transform 0.3s ease;
-      object-fit: cover; /* Ensure the entire image is visible */
+      object-fit: cover;
     }
     .image-container .item img:hover {
       transform: scale(1.05);
@@ -65,96 +65,146 @@
       }
     }
     /* ===================== Responsive CSS Inserted ===================== */
-@media (max-width: 768px) {
-  /* Header adjustments */
-  .header-container {
-    flex-direction: column;
-    align-items: center;
-    padding: 10px;
-  }
-  .header-container img {
-    position: static !important;
-    margin: 10px 0;
-  }
-  .header-container h1 {
-    position: static;
-    text-align: center;
-    font-size: 2em;
-    margin: 10px 0;
-  }
-  /* Navigation adjustments */
-  .site-nav ul {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    padding: 0;
-  }
-  .site-nav ul li {
-    margin: 5px 0;
-  }
-  /* Stats Bar adjustments */
-  .stats-container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-  }
-  .stats-container .stat {
-    margin: 10px 0;
-  }
-  /* Professional Details: Stack cards vertically */
-  .professional-details .details-cards {
-    flex-direction: column;
-    align-items: center;
-  }
-  .professional-details .card {
-    margin: 10px 0;
-    width: 90%;
-  }
-  /* Vision & Mission: Stack columns */
-  .vision-mission .container {
-    flex-direction: column;
-    align-items: center;
-  }
-  .vision, .mission {
-    margin: 20px 0;
-    width: 100%;
-    text-align: center;
-  }
-  /* Latest News: Stack blog posts vertically */
-  section[style*="padding: 20px; background-color: #f9f9f9;"] > div[style*="display: flex"] {
-    flex-direction: column;
-    align-items: center;
-  }
-  /* Client Boxes: Adjust layout */
-  #client-boxes {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-  }
-  .client-box {
-    width: 90%;
-    margin-bottom: 20px;
-  }
-  /* Request a Quote: Stack form and info vertically */
-  .quote-container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-  }
-  .quote-form, .quote-info {
-    width: 100%;
-    text-align: center;
-    margin-bottom: 20px;
-  }
-  /* Footer: Center text */
-  .site-footer .container {
-    text-align: center;
-    padding: 20px;
-  }
-}
-/* ===================== End Responsive CSS ===================== */
-
+    @media (max-width: 768px) {
+      /* Header adjustments */
+      .header-container {
+        flex-direction: column;
+        align-items: center;
+        padding: 10px;
+      }
+      .header-container img {
+        position: static !important;
+        margin: 10px 0;
+      }
+      .header-container h1 {
+        position: static;
+        text-align: center;
+        font-size: 2em;
+        margin: 10px 0;
+      }
+      /* Navigation adjustments */
+      .site-nav ul {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding: 0;
+      }
+      .site-nav ul li {
+        margin: 5px 0;
+      }
+      /* Stats Bar adjustments */
+      .stats-container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
+      .stats-container .stat {
+        margin: 10px 0;
+      }
+      /* Professional Details: Stack cards vertically */
+      .professional-details .details-cards {
+        flex-direction: column;
+        align-items: center;
+      }
+      .professional-details .card {
+        margin: 10px 0;
+        width: 90%;
+      }
+      /* Vision & Mission: Stack columns */
+      .vision-mission .container {
+        flex-direction: column;
+        align-items: center;
+      }
+      .vision, .mission {
+        margin: 20px 0;
+        width: 100%;
+        text-align: center;
+      }
+      /* Latest News: Stack blog posts vertically */
+      section[style*="padding: 20px; background-color: #f9f9f9;"] > div[style*="display: flex"] {
+        flex-direction: column;
+        align-items: center;
+      }
+      /* Client Boxes: Adjust layout */
+      #client-boxes {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
+      .client-box {
+        width: 90%;
+        margin-bottom: 20px;
+      }
+      /* Request a Quote: Stack form and info vertically */
+      .quote-container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
+      .quote-form, .quote-info {
+        width: 100%;
+        text-align: center;
+        margin-bottom: 20px;
+      }
+      /* Footer: Center text */
+      .site-footer .container {
+        text-align: center;
+        padding: 20px;
+      }
+    }
+    /* ===================== End Responsive CSS ===================== */
     
+    /* Static Background Section */
+    .static-bg-section {
+      background-image: url("https://res-console.cloudinary.com/dl5cjekuk/thumbnails/v1/image/upload/v1742984818/Q29ybi1CYXNlZC1Db25jcmV0ZS1CdWlsZGluZy10aGUtRnV0dXJlLW9mLUxvdy1DYXJib24tQ29uc3RydWN0aW9uLU1hdGVyaWFsc19pY2NqaDU=/drilldown");
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      color: white;
+      text-align: center;
+      padding: 100px 20px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      position: relative;
+      z-index: 1;
+    }
+  
+    .static-bg-section::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0, 0, 0, 0.5);
+      z-index: -1;
+    }
+  
+    .static-bg-content {
+      max-width: 800px;
+      width: 100%;
+      padding: 20px;
+    }
+  
+    .static-bg-content h2 {
+      font-size: 2.5rem;
+      margin-bottom: 20px;
+    }
+  
+    .static-bg-content p {
+      font-size: 1.1rem;
+      line-height: 1.6;
+    }
+  
+    @media (max-width: 768px) {
+      .static-bg-content h2 {
+        font-size: 2rem;
+      }
+      .static-bg-content p {
+        font-size: 1rem;
+      }
+    }
   </style>
 </head>
 <body>
@@ -166,7 +216,9 @@
         <span class="email">bektasblocks@gmail.com</span>
       </div>
     </div>
-  </div> <!-- Header: Logo and Navigation -->
+  </div>
+  
+  <!-- Header: Logo and Navigation -->
   <header class="site-header">
     <div class="container header-container" style="display: flex; align-items: center; justify-content: space-between; padding: 0 50px;">
       <!-- Left: Turkey Flag -->
@@ -175,7 +227,7 @@
       <!-- Center: Logo and Title -->
       <div style="display: flex; align-items: center; gap: 70px; left:50px">
         <img src="https://res-console.cloudinary.com/dl5cjekuk/thumbnails/v1/image/upload/v1742984774/MWM1MGY0MzMtMzcyOS00NGVhLTg5ZDctZDYyOWQyODFmNGE3X2RkZWg5Zw==/drilldown" alt="Bektas Blocks Logo" style="width: 250px; height: 130px; position: relative; left: 35%; border-radius: 1px;">
-        <h1 style="font-size: 3em; margin: 0; position:relative; left:27%; color: #0965f0;">BEKTAS BLOCKS</h1>
+        <h1 style="font-size: 3em; margin: 0; position: relative; left:27%; color: #0965f0;">BEKTAS BLOCKS</h1>
       </div>
       
       <!-- Right: Kenyan Flag -->
@@ -183,126 +235,70 @@
     </div>
     <nav class="site-nav">
       <ul>
-          <li><a href="index.html" class="active">HOME</a></li>
-          <li><a href="products.html">PRODUCTS</a></li>
-          <li><a href="projects.html">PROJECTS</a></li>
-          <li><a href="contacts.html">CONTACT</a></li>
-          <li><a href="reviews.html">REVIEWS</a></li>
-          <li><a href="staff.html">ABOUT US</a></li>
-        </ul>
-      </div>
+        <li><a href="index.html" class="active">HOME</a></li>
+        <li><a href="products.html">PRODUCTS</a></li>
+        <li><a href="projects.html">PROJECTS</a></li>
+        <li><a href="contacts.html">CONTACT</a></li>
+        <li><a href="reviews.html">REVIEWS</a></li>
+        <li><a href="staff.html">ABOUT US</a></li>
+      </ul>
     </nav>
   </header>
+  
   <!-- Stats Bar -->
-<section class="stats-bar">
-  <div class="container stats-container">
-    <div class="stat">
-      <span class="number">587</span>
-      <span class="label">CLIENTS</span>
+  <section class="stats-bar">
+    <div class="container stats-container">
+      <div class="stat">
+        <span class="number">587</span>
+        <span class="label">CLIENTS</span>
+      </div>
+      <div class="stat">
+        <span class="number">30</span>
+        <span class="label">EMPLOYEES</span>
+      </div>
+      <div class="stat">
+        <span class="number">2</span>
+        <span class="label">AWARDS</span>
+      </div>
+      <div class="stat">
+        <span class="number">20</span>
+        <span class="label">PRODUCTS</span>
+      </div>
     </div>
-    <div class="stat">
-      <span class="number">30</span>
-      <span class="label">EMPLOYEES</span>
-    </div>
-    <div class="stat">
-      <span class="number">2</span>
-      <span class="label">AWARDS</span>
-    </div>
-    <div class="stat">
-      <span class="number">20</span>
-      <span class="label">PRODUCTS</span>
-    </div>
-  </div>
-</section>
+  </section>
 
-<!-- Inline JavaScript to animate numbers -->
-<script>
-  // Function to animate a number from start to end over 'duration' milliseconds
-  function animateValue(obj, start, end, duration) {
-    let startTimestamp = null;
-    const step = (timestamp) => {
-      if (!startTimestamp) startTimestamp = timestamp;
-      const progress = Math.min((timestamp - startTimestamp) / duration, 1);
-      obj.innerText = Math.floor(progress * (end - start) + start);
-      if (progress < 1) {
-        window.requestAnimationFrame(step);
-      }
-    };
-    window.requestAnimationFrame(step);
-  }
+  <!-- Inline JavaScript to animate numbers -->
+  <script>
+    // Function to animate a number from start to end over 'duration' milliseconds
+    function animateValue(obj, start, end, duration) {
+      let startTimestamp = null;
+      const step = (timestamp) => {
+        if (!startTimestamp) startTimestamp = timestamp;
+        const progress = Math.min((timestamp - startTimestamp) / duration, 1);
+        obj.innerText = Math.floor(progress * (end - start) + start);
+        if (progress < 1) {
+          window.requestAnimationFrame(step);
+        }
+      };
+      window.requestAnimationFrame(step);
+    }
 
-  // Once the window loads, animate each stat number from 0 to its final value
-  window.addEventListener('load', () => {
-    const numbers = document.querySelectorAll('.stat .number');
-    numbers.forEach((numElement) => {
-      const finalValue = parseInt(numElement.innerText, 10);
-      animateValue(numElement, 0, finalValue, 2000); // Animate over 2000ms
+    window.addEventListener('load', () => {
+      const numbers = document.querySelectorAll('.stat .number');
+      numbers.forEach((numElement) => {
+        const finalValue = parseInt(numElement.innerText, 10);
+        animateValue(numElement, 0, finalValue, 2000);
+      });
     });
-  });
-</script>
+  </script>
 
+  <!-- Static Background Section -->
   <section class="static-bg-section">
-    <style>
-      .static-bg-section {
-        background-image:"https://res-console.cloudinary.com/dl5cjekuk/thumbnails/v1/image/upload/v1742984818/Q29ybi1CYXNlZC1Db25jcmV0ZS1CdWlsZGluZy10aGUtRnV0dXJlLW9mLUxvdy1DYXJib24tQ29uc3RydWN0aW9uLU1hdGVyaWFsc19pY2NqaDU=/drilldown"; /* Replace with your image path */
-        background-size: cover;
-        background-position: center;
-        background-repeat: no-repeat;
-        color: white; /* Adjust text color as needed */
-        text-align: center;
-        padding: 100px 20px; /* Adjust padding as needed */
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        position: relative;
-        z-index: 1;
-      }
-  
-      .static-bg-section::before {
-        content: '';
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        background-color: rgba(0, 0, 0, 0.5); /* Adjust overlay color and opacity */
-        z-index: -1;
-      }
-  
-      .static-bg-content {
-        max-width: 800px; /* Adjust max-width as needed */
-        width: 100%;
-        padding: 20px;
-      }
-  
-      .static-bg-content h2 {
-        font-size: 2.5rem; /* Adjust font size as needed */
-        margin-bottom: 20px;
-      }
-  
-      .static-bg-content p {
-        font-size: 1.1rem; /* Adjust font size as needed */
-        line-height: 1.6;
-      }
-  
-      /* Responsive design */
-      @media (max-width: 768px) {
-        .static-bg-content h2 {
-          font-size: 2rem;
-        }
-        .static-bg-content p {
-          font-size: 1rem;
-        }
-      }
-    </style>
     <div class="static-bg-content">
       <h2>Welcome to Bektas products</h2>
       <p>Discover quality concrete and precast building materials for your projects.</p>
     </div>
   </section>
-
-  <!-- Stats Bar -->
-  <!-- Stats Bar -->
 
   <!-- PRODUCTS SECTION -->
   <section id="our-products" class="section products-categories">
@@ -323,7 +319,7 @@
           <a href="productgallery.html">
             <img src="https://res-console.cloudinary.com/dl5cjekuk/thumbnails/v1/image/upload/v1742984784/M2JwLXJlbW92ZWJnLXByZXZpZXdfam1ocWF2/drilldown" alt="Hollow Pot">
           </a>
-          <p> Interlocking solid concrete blocks</p>
+          <p>Interlocking solid concrete blocks</p>
         </div>
         <div class="item">
           <a href="productgallery.html">
@@ -335,7 +331,7 @@
           <a href="productgallery.html">
             <img src="https://res-console.cloudinary.com/dl5cjekuk/thumbnails/v1/image/upload/v1742984801/MmstcmVtb3ZlYmctcHJldmlld19nanRqdTM=/drilldown" alt="Concrete Blocks">
           </a>
-          <p>Hollow pot </p>
+          <p>Hollow pot</p>
         </div>
         <div class="item">
           <a href="productgallery.html">
@@ -421,7 +417,9 @@
         <p><strong>Phone:</strong> 0704030881</p>
         <p><strong>Alternate:</strong> 0713900030</p>
         <div class="social">
-          <a href="https://www.facebook.com/people/Bektas-Blocks-LTD/61558517308412/" target="_blank"><i class="fab fa-facebook"></i> FACEBOOK</a>
+          <a href="https://www.facebook.com/people/Bektas-Blocks-LTD/61558517308412/" target="_blank">
+            <i class="fab fa-facebook"></i> FACEBOOK
+          </a>
         </div>
       </div>
     </div>
@@ -442,9 +440,5 @@
 
   <!-- JavaScript -->
   <script src="script.js"></script>
-  <!-- Lightbox2 JavaScript -->
-  <script src="script.js"
-    integrity="sha512-BPz41T2ifN2ZQGl5uK13jwC5p+vLq8xkBTLI6L1o6lp8ZMyRzVvTCtMc79V6FDrTQ//6z5T+ArBqkAgBMoe+DQ=="
-    crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 </body>
 </html>
