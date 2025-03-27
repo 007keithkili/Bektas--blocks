@@ -23,17 +23,16 @@
       padding: 10px 50px;
       position: relative;
     }
-    /* Flags: For desktop, keep them in fixed positions at the far left/right */
+    /* Flags: For desktop, keep them at fixed positions */
     .header-container img.flag {
       width: 100px;
       height: auto;
     }
-    /* Center container: now removed the left offsets so logo & heading are closer */
+    /* Center: Logo & Heading container */
     .logo-heading {
       display: flex;
       flex-direction: column;
       align-items: center;
-      justify-content: center;
       gap: 10px;
     }
     .logo-heading img {
@@ -181,7 +180,7 @@
       text-align: right;
     }
 
-    /* ================= Quote Section ================= */
+    /* ================= Request a Quote Section ================= */
     .quote-container {
       display: flex;
       justify-content: space-between;
@@ -219,7 +218,7 @@
 
     /* ================= Responsive Adjustments ================= */
     @media (max-width: 768px) {
-      /* Header adjustments for mobile: reordering elements */
+      /* Header adjustments for mobile: reorder elements */
       .header-container {
         flex-direction: column;
         align-items: center;
@@ -240,7 +239,7 @@
         margin: 10px 0;
         left: 0 !important;
       }
-      /* Hide the regular nav menu and show mobile dropdown */
+      /* Hide regular nav menu, show mobile dropdown */
       .site-nav ul {
         display: none;
       }
@@ -305,19 +304,16 @@
   <header class="site-header">
     <div class="container header-container">
       <!-- Left: Turkey Flag -->
-      <img class="flag" src="https://i.pinimg.com/474x/f1/de/73/f1de7316c0d4c8110f19c32a317eef3b.jpg" 
-           alt="Turkey Flag">
+      <img class="flag" src="https://i.pinimg.com/474x/f1/de/73/f1de7316c0d4c8110f19c32a317eef3b.jpg" alt="Turkey Flag">
       
-      <!-- Center: Logo and Heading (positioned together without extra offsets) -->
+      <!-- Center: Logo and Heading -->
       <div class="logo-heading">
-        <img src="https://res-console.cloudinary.com/dl5cjekuk/thumbnails/v1/image/upload/v1742984774/MWM1MGY0MzMtMzcyOS00NGVhLTg5ZDctZDYyOWQyODFmNGE3X2RkZWg5Zw==/drilldown" 
-             alt="Bektas Blocks Logo">
+        <img src="https://scontent-mba2-1.xx.fbcdn.net/v/t39.30808-6/486706616_122137008848592990_9213781367601452384_n.jpg?_nc_cat=110&ccb=1-7&_nc_sid=127cfc&_nc_eui2=AeEq8m1dYa5AvWa7m0LQQtdraUoVvy_vXFBpShW_L-9cUErpYCa-RSgOFdsE-IVnbePbcfWkNkZ2lPRqt0i6DTG7&_nc_ohc=NO3A68hAWVYQ7kNvgE0fLkU&_nc_oc=AdnHVeeXxxP1QmegXA_mEKZf_If1nS-wrtArTmS1cYN0Z8QqWgpdAEXSr2C2CsElCtc&_nc_zt=23&_nc_ht=scontent-mba2-1.xx&_nc_gid=3y8G3O52p7gTTRao9p-3Ag&oh=00_AYGFp_RDl5hBdcojq1IgCxZsZF9bOT8EdyRDrUKmMi8OcQ&oe=67EAD774" alt="Bektas Blocks Logo">
         <h1>BEKTAS BLOCKS</h1>
       </div>
       
       <!-- Right: Kenyan Flag -->
-      <img class="flag" src="https://i.pinimg.com/474x/33/54/8a/33548ab261a60a06058da6b2c7e08751.jpg" 
-           alt="Kenyan Flag">
+      <img class="flag" src="https://i.pinimg.com/474x/33/54/8a/33548ab261a60a06058da6b2c7e08751.jpg" alt="Kenyan Flag">
     </div>
     <!-- Regular Navigation Menu for Desktop -->
     <nav class="site-nav">
@@ -334,6 +330,7 @@
     <button class="dropdown-toggle" onclick="toggleMobileNav()">Menu</button>
     <div class="mobile-nav">
       <ul>
+        <li><a href="index.html">HOME</a></li>
         <li><a href="productgallery.html">PRODUCTS</a></li>
         <li><a href="projects.html">PROJECTS</a></li>
         <li><a href="contacts.html">CONTACTS</a></li>
@@ -554,7 +551,7 @@
   <section class="request-quote">
     <div class="container quote-container">
       <div class="quote-form">
-        <h2>REQUEST A QUOTE</h2>
+        <h2 class="tm-element-content-heading">REQUEST A QUOTE</h2>
         <form id="quoteForm">
           <div class="form-group">
             <label for="qName">Name</label>
@@ -618,7 +615,7 @@
       }
     }
   </script>
-  <!-- External JavaScript (if any) -->
+  <!-- External JavaScript -->
   <script src="script.js"></script>
   <!-- Lightbox2 JavaScript (if needed) -->
   <script src="script.js"
