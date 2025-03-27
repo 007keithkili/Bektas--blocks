@@ -213,9 +213,14 @@
     .stat-card .label {
       font-size: 1.2em;
     }
-    /* ===================== Responsive CSS Inserted ===================== */
+    
+    /* Updated Header Styles */
+    /* Hide dropdown toggle in PC view */
+    .dropdown-toggle {
+      display: none;
+    }
+    /* Mobile view: Show dropdown toggle as the only navigation link */
     @media (max-width: 768px) {
-      /* Header adjustments */
       .header-container {
         flex-direction: column;
         align-items: center;
@@ -231,76 +236,40 @@
         font-size: 2em;
         margin: 10px 0;
       }
-      /* Navigation adjustments */
       .site-nav ul {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
+        display: none;
+      }
+      .dropdown-toggle {
+        display: block;
+        background: #333;
+        color: #fff;
+        padding: 10px 20px;
+        border: none;
+        border-radius: 5px;
+        font-size: 1em;
+        margin: 10px auto;
+        cursor: pointer;
+      }
+      .mobile-nav {
+        display: none;
+        text-align: center;
+        background: #f7f7f7;
+      }
+      .mobile-nav ul {
+        list-style: none;
         padding: 0;
+        margin: 0;
       }
-      .site-nav ul li {
-        margin: 5px 0;
+      .mobile-nav ul li {
+        padding: 10px;
+        border-bottom: 1px solid #ddd;
       }
-      /* Stats Bar adjustments */
-      .stats-container {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-      }
-      .stats-container .stat {
-        margin: 10px 0;
-      }
-      /* Professional Details: Stack cards vertically */
-      .professional-details .details-cards {
-        flex-direction: column;
-        align-items: center;
-      }
-      .professional-details .card {
-        margin: 10px 0;
-        width: 90%;
-      }
-      /* Vision & Mission: Stack columns */
-      .vision-mission .container {
-        flex-direction: column;
-        align-items: center;
-      }
-      .vision, .mission {
-        margin: 20px 0;
-        width: 100%;
-        text-align: center;
-      }
-      /* Latest News: Stack blog posts vertically */
-      section[style*="padding: 20px; background-color: #f9f9f9;"] > div[style*="display: flex"] {
-        flex-direction: column;
-        align-items: center;
-      }
-      /* Client Boxes: Adjust layout */
-      #client-boxes {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-      }
-      .client-box {
-        width: 90%;
-        margin-bottom: 20px;
-      }
-      /* Request a Quote: Stack form and info vertically */
-      .quote-container {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-      }
-      .quote-form, .quote-info {
-        width: 100%;
-        text-align: center;
-        margin-bottom: 20px;
-      }
-      /* Footer: Center text */
-      .site-footer .container {
-        text-align: center;
-        padding: 20px;
+      .mobile-nav ul li a {
+        color: inherit;
+        text-decoration: none;
       }
     }
+    
     /* ===================== End Responsive CSS ===================== */
   </style>
 </head>
