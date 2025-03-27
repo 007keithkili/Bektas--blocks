@@ -28,7 +28,6 @@
       color: rgb(12, 59, 98);
       background-color: transparent;
     }
-
     section div.tm-content-header {
       display: block;
       position: flex;
@@ -44,7 +43,6 @@
       background-color: transparent;
       text-align: left;
     }
-
     section h4.tm-element-subhead {
       display: inline-block;
       position: static;
@@ -67,19 +65,29 @@
       padding: 0;
       box-sizing: border-box;
     }
-
     body {
       font-family: 'Roboto', sans-serif;
       overflow-x: hidden;
     }
-
     .container {
       max-width: 1200px;
       margin: 0 auto;
       padding: 0 15px;
     }
 
-    /* Header: Adjusted for responsiveness and removal of absolute positioning */
+    /* Top Bar */
+    .top-bar {
+      background: #f1f1f1;
+      padding: 5px 0;
+    }
+    .top-bar .contact-info {
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      font-size: 0.9em;
+    }
+
+    /* Header: Adjusted for responsiveness */
     .header-container {
       display: flex;
       align-items: center;
@@ -109,27 +117,46 @@
       color: #0965f0;
     }
 
-    /* Navigation */
+    /* Navigation: Desktop */
+    .site-nav {
+      background: #333;
+    }
     .site-nav ul {
       display: flex;
-      flex-wrap: wrap;
       justify-content: center;
       list-style: none;
       padding: 10px 0;
+      margin: 0;
     }
     .site-nav ul li {
       margin: 0 15px;
     }
     .site-nav ul li a {
       text-decoration: none;
-      color: inherit;
+      color: #fff;
       font-weight: bold;
     }
     .site-nav ul li a.active {
       color: #0159e6;
     }
 
-    /* Responsive adjustments (existing media query) */
+    /* Hamburger Menu for Mobile */
+    .hamburger {
+      display: none;
+      font-size: 1.5em;
+      color: #fff;
+      cursor: pointer;
+      padding: 10px;
+    }
+    .site-nav.responsive ul {
+      flex-direction: column;
+      display: none;
+    }
+    .site-nav.responsive ul.show {
+      display: flex;
+    }
+
+    /* Responsive adjustments */
     @media (max-width: 768px) {
       /* Header adjustments */
       .header-container {
@@ -149,6 +176,9 @@
       .site-nav ul {
         flex-direction: column;
         align-items: center;
+      }
+      .hamburger {
+        display: block;
       }
       .site-nav ul li {
         margin: 5px 0;
@@ -235,7 +265,7 @@
       </div>
       <!-- Center: Logo and Title -->
       <div class="logo-title">
-        <img src="https://res-console.cloudinary.com/dl5cjekuk/thumbnails/v1/image/upload/v1742984774/MWM1MGY0MzMtMzcyOS00NGVhLTg5ZDctZDYyOWQyODFmNGE3X2RkZWg5Zw==/drilldown" alt="Bektas Blocks Logo">
+        <img src="https://scontent-mba2-1.xx.fbcdn.net/v/t39.30808-6/486706616_122137008848592990_9213781367601452384_n.jpg?stp=c148.0.278.278a_dst-jpg_s206x206_tt6&_nc_cat=110&ccb=1-7&_nc_sid=714c7a&_nc_eui2=AeEq8m1dYa5AvWa7m0LQQtdraUoVvy_vXFBpShW_L-9cUErpYCa-RSgOFdsE-IVnbePbcfWkNkZ2lPRqt0i6DTG7&_nc_ohc=NO3A68hAWVYQ7kNvgE0fLkU&_nc_oc=AdnHVeeXxxP1QmegXA_mEKZf_If1nS-wrtArTmS1cYN0Z8QqWgpdAEXSr2C2CsElCtc&_nc_zt=23&_nc_ht=scontent-mba2-1.xx&_nc_gid=ph2l6PRRMjK483UY3zsE_Q&oh=00_AYEkpee_bkmIobtCZqYHMVtmA6stSh64tAMLljbTLIkNQQ&oe=67EAD774" alt="Bektas Blocks Logo">
         <h1>BEKTAS BLOCKS</h1>
       </div>
       <!-- Right: Kenyan Flag -->
@@ -243,8 +273,10 @@
         <img src="https://i.pinimg.com/474x/33/54/8a/33548ab261a60a06058da6b2c7e08751.jpg" alt="Kenyan Flag">
       </div>
     </div>
-    <nav class="site-nav">
-      <ul>
+    <!-- Navigation with Hamburger Toggle -->
+    <nav class="site-nav" id="navMenu">
+      <span class="hamburger" onclick="toggleMenu()"><i class="fas fa-bars"></i></span>
+      <ul id="navLinks">
         <li><a href="index.html" class="active">HOME</a></li>
         <li><a href="productgallery.html">PRODUCTS</a></li>
         <li><a href="projects.html">PROJECTS</a></li>
@@ -292,15 +324,20 @@
       };
       window.requestAnimationFrame(step);
     }
-
     // Once the window loads, animate each stat number from 0 to its final value
     window.addEventListener('load', () => {
       const numbers = document.querySelectorAll('.stat .number');
       numbers.forEach((numElement) => {
         const finalValue = parseInt(numElement.innerText, 10);
-        animateValue(numElement, 0, finalValue, 2000); // Animate over 2000ms
+        animateValue(numElement, 0, finalValue, 2000);
       });
     });
+    
+    // Toggle mobile menu display
+    function toggleMenu() {
+      const navLinks = document.getElementById('navLinks');
+      navLinks.classList.toggle('show');
+    }
   </script>
 
   <!-- Main Featured Products Section -->
@@ -388,10 +425,11 @@
         </div>
       </section>
       
+      <!-- Latest News Section -->
       <section style="padding: 20px; background-color: #f9f9f9;">
         <h2 style="text-align: center; font-size: 2em; margin-bottom: 20px;">Latest News</h2>
         <div style="display: flex; flex-wrap: wrap; gap: 20px; justify-content: center;">
-          <!-- Blog Post 1: New Concrete Mix Technology -->
+          <!-- Blog Post 1 -->
           <div style="flex: 1 1 300px; border: 1px solid #ddd; border-radius: 8px; overflow: hidden; background-color: #fff; box-shadow: 0 2px 4px rgba(0,0,0,0.1);">
             <img src="https://i.pinimg.com/474x/fe/2c/b8/fe2cb8df025ea93fbb62bdd9c11dbfbb.jpg" alt="New Concrete Mix Technology" style="width: 100%; display: block;">
             <div style="padding: 15px;">
@@ -402,7 +440,7 @@
               </p>
             </div>
           </div>
-          <!-- Blog Post 2: Award-Winning Infrastructure Project -->
+          <!-- Blog Post 2 -->
           <div style="flex: 1 1 300px; border: 1px solid #ddd; border-radius: 8px; overflow: hidden; background-color: #fff; box-shadow: 0 2px 4px rgba(0,0,0,0.1);">
             <img src="https://i.pinimg.com/474x/61/eb/54/61eb549a0be0760b1ebe3e163ff5dc64.jpg" alt="Award-Winning Infrastructure Project" style="width: 100%; display: block;">
             <div style="padding: 15px;">
@@ -413,9 +451,9 @@
               </p>
             </div>
           </div>
-          <!-- Blog Post 3: Sustainability in Construction -->
+          <!-- Blog Post 3 -->
           <div style="flex: 1 1 300px; border: 1px solid #ddd; border-radius: 8px; overflow: hidden; background-color: #fff; box-shadow: 0 2px 4px rgba(0,0,0,0.1);">
-            <img src="https://i.pinimg.com/736x/b8/12/b9/b812b944b0635a68040313740677dc3e.jpg" style="width: 100%; display: block;" alt="Sustainability in Construction">
+            <img src="https://i.pinimg.com/736x/b8/12/b9/b812b944b0635a68040313740677dc3e.jpg" alt="Sustainability in Construction" style="width: 100%; display: block;">
             <div style="padding: 15px;">
               <h3 style="font-size: 1.2em; margin: 0 0 10px;">Sustainability in Construction</h3>
               <p style="font-size: 0.9em; color: #555; margin-bottom: 10px;">October 01, 2024</p>
@@ -427,6 +465,7 @@
         </div>
       </section>
 
+      <!-- Client Boxes Section -->
       <div id="client-boxes">
         <!-- Client Box 1 -->
         <div class="client-box" style="border: 1px solid #ddd; border-radius: 1px; padding: 20px; box-shadow: 0 2px 6px rgba(0,0,0,0.1); margin-bottom: 20px;">
@@ -443,7 +482,6 @@
             </div>
           </div>
         </div>
-
         <!-- Client Box 2 -->
         <div class="client-box" style="display: none; border: 1px solid #ddd; border-radius: 5px; padding: 20px; box-shadow: 0 2px 6px rgba(0,0,0,0.1); margin-bottom: 20px;">
           <div style="display: flex; align-items: center; gap: 20px;">
@@ -457,7 +495,6 @@
             </div>
           </div>
         </div>
-
         <!-- Client Box 3 -->
         <div class="client-box" style="display: none; border: 1px solid #ddd; border-radius: 1px; padding: 20px; box-shadow: 0 2px 6px rgba(0,0,0,0.1); margin-bottom: 20px;">
           <div style="display: flex; align-items: center; gap: 20px;">
@@ -473,7 +510,7 @@
         </div>
       </div>
 
-      <!-- Navigation Button -->
+      <!-- Navigation Button for Clients -->
       <div style="text-align: center;">
         <button onclick="showNextClient()" style="padding: 10px 20px; font-size: 1em; border: none; background-color: #007BFF; color: #fff; border-radius: 5px; cursor: pointer;">
           Next Client
