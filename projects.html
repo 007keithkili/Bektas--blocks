@@ -127,6 +127,7 @@
       }
     }
     /* ===================== End Responsive CSS ===================== */
+    
     /* ================= Static Background Section ================= */
     .static-bg-section {
       background-image: url(https://res-console.cloudinary.com/dl5cjekuk/thumbnails/v1/image/upload/v1742984818/Q29ybi1CYXNlZC1Db25jcmV0ZS1CdWlsZGluZy10aGUtRnV0dXJlLW9mLUxvdy1DYXJib24tQ29uc3RydWN0aW9uLU1hdGVyaWFsc19pY2NqaDU=/drilldown);
@@ -252,36 +253,10 @@
       color: #fff;
     }
     
-    /* ================= Responsive Adjustments ================= */
-    @media (max-width: 768px) {
-      /* For mobile, stack header elements vertically */
-      .header-container {
-        flex-direction: column;
-        align-items: center;
-        padding: 10px;
-      }
-      /* Remove absolute positioning on flags */
-      .header-container img.flag {
-        position: static !important;
-        margin: 10px 0;
-      }
-      /* Mobile: Center container becomes vertical; logo between flags and text below logo */
-      .logo-heading {
-        flex-direction: column;
-        gap: 10px;
-        left: 0;
-      }
-      .logo-heading h1 {
-        font-size: 2em;
-        left: 0;
-      }
-      /* Hide desktop navigation and show mobile dropdown */
-      .site-nav ul {
-        display: none;
-      }
-      .dropdown-toggle {
-        display: block;
-      }
+    /* ================= Default Styles ================= */
+    /* Hide the dropdown button on desktop */
+    .dropdown-toggle {
+      display: none;
     }
   </style>
 </head>
@@ -296,7 +271,7 @@
     </div>
   </div>
   
-<!-- Header: Logo and Navigation -->
+  <!-- Header: Logo and Navigation -->
   <header class="site-header">
     <div class="container header-container" style="display: flex; align-items: center; justify-content: space-between; padding: 0 50px;">
       <!-- Left: Turkey Flag -->
@@ -624,4 +599,3 @@
   <!-- External JavaScript -->
 </body>
 </html>
-
