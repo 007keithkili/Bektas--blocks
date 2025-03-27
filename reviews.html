@@ -1,4 +1,4 @@
-!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
@@ -14,8 +14,240 @@
   <!-- Main CSS -->
   <link rel="stylesheet" href="styles.css" />
   <style>
+    /* ===================== Global Styles & Responsive CSS ===================== */
+    @media (max-width: 768px) {
+      .header-container {
+        flex-direction: column !important;
+        align-items: center !important;
+        justify-content: center !important;
+        padding: 10px !important;
+      }
+      .header-container img {
+        position: static !important;
+        margin: 5px 0 !important;
+      }
+      .logo-heading-container {
+        flex-direction: column !important;
+        align-items: center !important;
+        gap: 10px !important;
+        left: 0 !important;
+      }
+      .logo-heading-container h1 {
+        position: static !important;
+        text-align: center !important;
+        font-size: 2em !important;
+        margin: 5px 0 !important;
+        left: 0 !important;
+      }
+      /* Hide regular navigation */
+      .site-nav ul {
+        display: none;
+      }
+      /* Show mobile dropdown button */
+      .dropdown-toggle {
+        display: block;
+        background: #333;
+        color: #fff;
+        padding: 10px 20px;
+        border: none;
+        border-radius: 5px;
+        font-size: 1em;
+        margin: 10px auto;
+        cursor: pointer;
+      }
+      .mobile-nav {
+        display: none;
+        text-align: center;
+        background: #f7f7f7;
+      }
+      .mobile-nav ul {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+      }
+      .mobile-nav ul li {
+        padding: 10px;
+        border-bottom: 1px solid #ddd;
+      }
+      .mobile-nav ul li a {
+        color: inherit;
+        text-decoration: none;
+      }
+    }
+    @media (min-width: 769px) {
+      .dropdown-toggle,
+      .mobile-nav {
+        display: none;
+      }
+      .site-nav ul {
+        display: flex;
+        justify-content: center;
+      }
+      .site-nav ul li {
+        margin: 0 15px;
+      }
+    }
+    /* ===================== Existing CSS for Other Sections ===================== */
+    @media (max-width: 768px) {
+      .header-container img {
+        position: static !important;
+        margin: 10px 0;
+      }
+      .header-container h1 {
+        position: static;
+        text-align: center;
+        margin: 10px 0;
+      }
+      /* Stats Bar, Professional Details, Vision & Mission, etc. remain unchanged */
+      .stats-container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
+      .stats-container .stat {
+        margin: 10px 0;
+      }
+      .professional-details .details-cards {
+        flex-direction: column;
+        align-items: center;
+      }
+      .professional-details .card {
+        margin: 10px 0;
+        width: 90%;
+      }
+      .vision-mission .container {
+        flex-direction: column;
+        align-items: center;
+      }
+      .vision, .mission {
+        margin: 20px 0;
+        width: 100%;
+        text-align: center;
+      }
+      section[style*="padding: 20px; background-color: #f9f9f9;"] > div[style*="display: flex"] {
+        flex-direction: column;
+        align-items: center;
+      }
+      #client-boxes {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
+      .client-box {
+        width: 90%;
+        margin-bottom: 20px;
+      }
+      .quote-container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
+      .quote-form, .quote-info {
+        width: 100%;
+        text-align: center;
+        margin-bottom: 20px;
+      }
+      .site-footer .container {
+        text-align: center;
+        padding: 20px;
+      }
+    }
+    /* ===================== End Global Responsive CSS ===================== */
+
+    /* ===================== Header Section CSS (Updated from Perfect Code) ===================== */
+    .header-container {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 50px;
+      position: relative;
+    }
+    /* Left Flag */
+    .left-flag {
+      width: 100px;
+      height: auto;
+      position: absolute;
+      left: 10px;
+    }
+    /* Right Flag */
+    .right-flag {
+      width: 100px;
+      height: auto;
+      position: absolute;
+      right: 10px;
+    }
+    /* Center: Logo and Heading Container */
+    .logo-heading-container {
+      display: flex;
+      align-items: center;
+      gap: 70px;
+      position: relative;
+      left: 50px;
+    }
+    .logo-heading-container img {
+      width: 250px;
+      height: 130px;
+      border-radius: 1px;
+      position: relative;
+      left: 35%;
+    }
+    .logo-heading-container h1 {
+      font-size: 3em;
+      margin: 0;
+      position: relative;
+      left: 27%;
+      color: #0965f0;
+    }
+    /* Regular Navigation (Desktop) */
+    .site-nav ul {
+      list-style: none;
+      display: flex;
+      justify-content: center;
+      padding: 0;
+      margin: 10px 0 0;
+    }
+    .site-nav ul li {
+      margin: 0 15px;
+    }
+    .site-nav ul li a {
+      text-decoration: none;
+      color: inherit;
+    }
+    /* Mobile Dropdown Styles */
+    .dropdown-toggle {
+      display: none;
+      background: #333;
+      color: #fff;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 5px;
+      font-size: 1em;
+      margin: 10px auto;
+      cursor: pointer;
+    }
+    .mobile-nav {
+      display: none;
+      text-align: center;
+      background: #f7f7f7;
+    }
+    .mobile-nav ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+    .mobile-nav ul li {
+      padding: 10px;
+      border-bottom: 1px solid #ddd;
+    }
+    .mobile-nav ul li a {
+      color: inherit;
+      text-decoration: none;
+    }
+    /* ===================== End Header Section CSS ===================== */
+    
+    /* ===================== Other Section CSS Remains Unchanged ===================== */
     .static-bg-section {
-      background-image: url(https://res-console.cloudinary.com/dl5cjekuk/thumbnails/v1/image/upload/v1742984818/Q29ybi1CYXNlZC1Db25jcmV0ZS1CdWlsZGluZy10aGUtRnV0dXJlLW9mLUxvdy1DYXJib24tQ29uc3RydWN0aW9uLU1hdGVyaWFsc19pY2NqaDU=/drilldown); /* Replace with your image path */
+      background-image: url(https://res-console.cloudinary.com/dl5cjekuk/thumbnails/v1/image/upload/v1742984818/Q29ybi1CYXNlZC1Db25jcmV0ZS1CdWlsZGluZy10aGUtRnV0dXJlLW9mLUxvdy1DYXJib24tQ29uc3RydWN0aW9uLU1hdGVyaWFsc19pY2NqaDU=/drilldown);
       background-attachment: fixed;
       background-position: center;
       background-repeat: no-repeat;
@@ -49,120 +281,26 @@
       font-size: 1.2em;
       line-height: 1.6;
     }
-    /* Container for the images */
+    /* Image container styles remain unchanged */
     .image-container {
-      display: flex; /* Use flexbox for layout */
-      flex-wrap: wrap; /* Allow images to wrap to the next line */
-      margin: 0; /* Remove the negative margin */
+      display: flex;
+      flex-wrap: wrap;
+      margin: 0;
     }
-
-    /* Image parent */
     .image-container [class*="col-md"] {
-        flex: 0 0 33.333%; /* Make each image parent take up 33.333% of the row */
-        max-width: 33.333%; /* Make each image parent take up 33.333% of the row */
-        padding: 0 15px; /* Add padding to the left and right */
-        width: auto;
-        height: auto;
-        margin: 0;
+      flex: 0 0 33.333%;
+      max-width: 33.333%;
+      padding: 0 15px;
+      width: auto;
+      height: auto;
+      margin: 0;
     }
-
-    /* Individual images */
     .tes__icon {
-      width: 100%; /* Make the images fill the width of their parent */
-      height: auto; /* Maintain aspect ratio */
-      object-fit: cover; /* Cover the entire area, cropping if necessary */
-      margin-bottom: 0px; /* Remove the bottom margin */
+      width: 100%;
+      height: auto;
+      object-fit: cover;
+      margin-bottom: 0px;
     }
-    /* ===================== Responsive CSS Inserted ===================== */
-@media (max-width: 768px) {
-  /* Header adjustments */
-  .header-container {
-    flex-direction: column;
-    align-items: center;
-    padding: 10px;
-  }
-  .header-container img {
-    position: static !important;
-    margin: 10px 0;
-  }
-  .header-container h1 {
-    position: static;
-    text-align: center;
-    font-size: 2em;
-    margin: 10px 0;
-  }
-  /* Navigation adjustments */
-  .site-nav ul {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    padding: 0;
-  }
-  .site-nav ul li {
-    margin: 5px 0;
-  }
-  /* Stats Bar adjustments */
-  .stats-container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-  }
-  .stats-container .stat {
-    margin: 10px 0;
-  }
-  /* Professional Details: Stack cards vertically */
-  .professional-details .details-cards {
-    flex-direction: column;
-    align-items: center;
-  }
-  .professional-details .card {
-    margin: 10px 0;
-    width: 90%;
-  }
-  /* Vision & Mission: Stack columns */
-  .vision-mission .container {
-    flex-direction: column;
-    align-items: center;
-  }
-  .vision, .mission {
-    margin: 20px 0;
-    width: 100%;
-    text-align: center;
-  }
-  /* Latest News: Stack blog posts vertically */
-  section[style*="padding: 20px; background-color: #f9f9f9;"] > div[style*="display: flex"] {
-    flex-direction: column;
-    align-items: center;
-  }
-  /* Client Boxes: Adjust layout */
-  #client-boxes {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-  }
-  .client-box {
-    width: 90%;
-    margin-bottom: 20px;
-  }
-  /* Request a Quote: Stack form and info vertically */
-  .quote-container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-  }
-  .quote-form, .quote-info {
-    width: 100%;
-    text-align: center;
-    margin-bottom: 20px;
-  }
-  /* Footer: Center text */
-  .site-footer .container {
-    text-align: center;
-    padding: 20px;
-  }
-}
-/* ===================== End Responsive CSS ===================== */
-
   </style>
 </head>
 <body>
@@ -175,252 +313,245 @@
       </div>
     </div>
   </div>
- 
-
-  <!-- Header: Logo and Navigation -->
+  
+  <!-- Updated Header: Logo and Navigation -->
   <header class="site-header">
-    <div class="container header-container" style="display: flex; align-items: center; justify-content: space-between; padding: 0 50px;">
+    <div class="container header-container">
       <!-- Left: Turkey Flag -->
-      <img src="https://i.pinimg.com/474x/f1/de/73/f1de7316c0d4c8110f19c32a317eef3b.jpg" alt="Turkey Flag" style="width: 100px; height: auto; position: absolute; left: 10px;">
+      <img class="left-flag" src="https://i.pinimg.com/474x/f1/de/73/f1de7316c0d4c8110f19c32a317eef3b.jpg" alt="Turkey Flag">
       
-      <!-- Center: Logo and Title -->
-      <div style="display: flex; align-items: center; gap: 70px; left:50px">
-        <img src="https://res-console.cloudinary.com/dl5cjekuk/thumbnails/v1/image/upload/v1742984774/MWM1MGY0MzMtMzcyOS00NGVhLTg5ZDctZDYyOWQyODFmNGE3X2RkZWg5Zw==/drilldown" alt="Bektas Blocks Logo" style="width: 250px; height: 130px; position: relative; left: 35%; border-radius: 1px;">
-        <h1 style="font-size: 3em; margin: 0; position:relative; left:27%; color: #0965f0;">BEKTAS BLOCKS</h1>
+      <!-- Center: Logo and Heading -->
+      <div class="logo-heading-container">
+        <img src="https://scontent-mba2-1.xx.fbcdn.net/v/t39.30808-6/486706616_122137008848592990_9213781367601452384_n.jpg?_nc_cat=110&ccb=1-7&_nc_sid=127cfc&_nc_eui2=AeEq8m1dYa5AvWa7m0LQQtdraUoVvy_vXFBpShW_L-9cUErpYCa-RSgOFdsE-IVnbePbcfWkNkZ2lPRqt0i6DTG7&_nc_ohc=NO3A68hAWVYQ7kNvgE0fLkU&_nc_oc=AdnHVeeXxxP1QmegXA_mEKZf_If1nS-wrtArTmS1cYN0Z8QqWgpdAEXSr2C2CsElCtc&_nc_zt=23&_nc_ht=scontent-mba2-1.xx&_nc_gid=3y8G3O52p7gTTRao9p-3Ag&oh=00_AYGFp_RDl5hBdcojq1IgCxZsZF9bOT8EdyRDrUKmMi8OcQ&oe=67EAD774" alt="Bektas Blocks Logo">
+        <h1>BEKTAS BLOCKS</h1>
       </div>
       
       <!-- Right: Kenyan Flag -->
-      <img src="https://i.pinimg.com/474x/33/54/8a/33548ab261a60a06058da6b2c7e08751.jpg" alt="Kenyan Flag" style="width: 100px; height: auto; position: absolute; right: 10px;">
+      <img class="right-flag" src="https://i.pinimg.com/474x/33/54/8a/33548ab261a60a06058da6b2c7e08751.jpg" alt="Kenyan Flag">
     </div>
+    <!-- Regular Navigation Menu for PC -->
     <nav class="site-nav">
       <ul>
-          <li><a href="index.html" class="active">HOME</a></li>
-          <li><a href="productgallery.html">PRODUCTS</a></li>
-          <li><a href="projects.html">PROJECTS</a></li>
-          <li><a href="contacts.html">CONTACTS</a></li>
-          <li><a href="reviews.html">REVIEWS</a></li>
-          <li><a href="staff.html">ABOUT US</a></li>
-        </ul>
-      </nav>
+        <li><a href="index.html" class="active">HOME</a></li>
+        <li><a href="productgallery.html">PRODUCTS</a></li>
+        <li><a href="projects.html">PROJECTS</a></li>
+        <li><a href="contacts.html">CONTACTS</a></li>
+        <li><a href="reviews.html">REVIEWS</a></li>
+        <li><a href="staff.html">ABOUT US</a></li>
+      </ul>
+    </nav>
+    <!-- Mobile Dropdown Toggle Button & Mobile Navigation -->
+    <button class="dropdown-toggle" onclick="toggleMobileNav()">Menu</button>
+    <div class="mobile-nav">
+      <ul>
+        <li><a href="index.html">HOME</a></li>
+        <li><a href="productgallery.html">PRODUCTS</a></li>
+        <li><a href="projects.html">PROJECTS</a></li>
+        <li><a href="contacts.html">CONTACTS</a></li>
+        <li><a href="reviews.html">REVIEWS</a></li>
+        <li><a href="staff.html">ABOUT US</a></li>
+      </ul>
     </div>
   </header>
-
-  <!-- Stats Bar -->
-  <!-- Stats Bar -->
-<section class="stats-bar">
-  <div class="container stats-container">
-    <div class="stat">
-      <span class="number">587</span>
-      <span class="label">CLIENTS</span>
-    </div>
-    <div class="stat">
-      <span class="number">30</span>
-      <span class="label">EMPLOYEES</span>
-    </div>
-    <div class="stat">
-      <span class="number">2</span>
-      <span class="label">AWARDS</span>
-    </div>
-    <div class="stat">
-      <span class="number">20</span>
-      <span class="label">PRODUCTS</span>
-    </div>
-  </div>
-</section>
-
-<!-- Inline JavaScript to animate numbers -->
-<script>
-  // Function to animate a number from start to end over 'duration' milliseconds
-  function animateValue(obj, start, end, duration) {
-    let startTimestamp = null;
-    const step = (timestamp) => {
-      if (!startTimestamp) startTimestamp = timestamp;
-      const progress = Math.min((timestamp - startTimestamp) / duration, 1);
-      obj.innerText = Math.floor(progress * (end - start) + start);
-      if (progress < 1) {
-        window.requestAnimationFrame(step);
-      }
-    };
-    window.requestAnimationFrame(step);
-  }
-
-  // Once the window loads, animate each stat number from 0 to its final value
-  window.addEventListener('load', () => {
-    const numbers = document.querySelectorAll('.stat .number');
-    numbers.forEach((numElement) => {
-      const finalValue = parseInt(numElement.innerText, 10);
-      animateValue(numElement, 0, finalValue, 2000); // Animate over 2000ms
+  
+  <!-- Inline JavaScript to animate numbers and toggle mobile navigation -->
+  <script>
+    // Function to animate a number from start to end over 'duration' milliseconds
+    function animateValue(obj, start, end, duration) {
+      let startTimestamp = null;
+      const step = (timestamp) => {
+        if (!startTimestamp) startTimestamp = timestamp;
+        const progress = Math.min((timestamp - startTimestamp) / duration, 1);
+        obj.innerText = Math.floor(progress * (end - start) + start);
+        if (progress < 1) {
+          window.requestAnimationFrame(step);
+        }
+      };
+      window.requestAnimationFrame(step);
+    }
+    window.addEventListener('load', () => {
+      const numbers = document.querySelectorAll('.stat .number');
+      numbers.forEach((numElement) => {
+        const finalValue = parseInt(numElement.innerText, 10);
+        animateValue(numElement, 0, finalValue, 2000);
+      });
     });
-  });
-</script>
+    // Toggle function for mobile navigation
+    function toggleMobileNav() {
+      var nav = document.querySelector('.mobile-nav');
+      if (nav.style.display === "block") {
+        nav.style.display = "none";
+      } else {
+        nav.style.display = "block";
+      }
+    }
+  </script>
+  
+  <!-- Stats Bar -->
+  <section class="stats-bar">
+    <div class="container stats-container">
+      <div class="stat">
+        <span class="number">587</span>
+        <span class="label">CLIENTS</span>
+      </div>
+      <div class="stat">
+        <span class="number">30</span>
+        <span class="label">EMPLOYEES</span>
+      </div>
+      <div class="stat">
+        <span class="number">2</span>
+        <span class="label">AWARDS</span>
+      </div>
+      <div class="stat">
+        <span class="number">20</span>
+        <span class="label">PRODUCTS</span>
+      </div>
+    </div>
+  </section>
+  
+  <!-- Inline JavaScript for Stats Animation already included above -->
 
- <style>
-  /* ===== REVIEWS SECTION STYLING ===== */
-  #reviews {
-    background: #f8f9fa;
-    padding: 4rem 0;
-    font-family: 'Roboto', sans-serif;
-  }
-
-  #reviews .container {
-    max-width: 1200px;
-    margin: 0 auto;
-  }
-
-  #reviews h2 {
-    text-align: center;
-    font-size: 2.5rem;
-    color: #005dde;
-    margin-bottom: 3rem;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-  }
-
-  .reviews-container {
-    display: grid;
-    grid-template-columns: 1fr 2fr;
-    gap: 3rem;
-    background: white;
-    padding: 2rem;
-    border-radius: 10px;
-    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-  }
-
-  #reviewForm {
-    display: flex;
-    flex-direction: column;
-    gap: 1.5rem;
-    padding-right: 2rem;
-    border-right: 2px solid #eee;
-  }
-
-  #reviewForm h3 {
-    color: #34495e;
-    font-size: 1.5rem;
-    margin-bottom: 1rem;
-  }
-
-  #reviewForm input,
-  #reviewForm textarea,
-  #reviewForm select {
-    width: 100%;
-    padding: 12px;
-    border: 2px solid #ecf0f1;
-    border-radius: 6px;
-    font-size: 1rem;
-    transition: all 0.3s ease;
-  }
-
-  #reviewForm input:focus,
-  #reviewForm textarea:focus,
-  #reviewForm select:focus {
-    border-color: #3498db;
-    outline: none;
-  }
-
-  .rating {
-    display: flex;
-    align-items: center;
-    gap: 1rem;
-  }
-
-  .rating label {
-    font-weight: 500;
-    color: #7f8c8d;
-  }
-
-  .rating select {
-    appearance: none;
-    background: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3e%3cpolyline points='6 9 12 15 18 9'%3e%3c/polyline%3e%3c/svg%3e") no-repeat right 0.75rem center/16px 16px;
-    background-color: #fff;
-    padding-right: 2.5rem;
-  }
-
-  #reviewForm button {
-    background: #3498db;
-    color: white;
-    padding: 12px 25px;
-    border: none;
-    border-radius: 6px;
-    font-size: 1rem;
-    cursor: pointer;
-    transition: all 0.3s ease;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-  }
-
-  #reviewForm button:hover {
-    background: #2980b9;
-    transform: translateY(-2px);
-  }
-
-  #reviewsDisplay {
-    display: flex;
-    flex-direction: column;
-    gap: 1.5rem;
-    max-height: 500px;
-    overflow-y: auto;
-    padding: 0 1rem;
-  }
-
-  .review-card {
-    background: #fff;
-    padding: 1.5rem;
-    border-radius: 8px;
-    box-shadow: 0 3px 6px rgba(0,0,0,0.05);
-    border-left: 4px solid #3498db;
-  }
-
-  .review-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-bottom: 1rem;
-  }
-
-  .review-author {
-    font-weight: 700;
-    color: #2c3e50;
-  }
-
-  .review-rating {
-    color: #f1c40f;
-    font-size: 1.2rem;
-  }
-
-  .review-content {
-    color: #f0bc0f;
-    line-height: 1.6;
-  }
-
-  @media (max-width: 768px) {
+  <!-- Reviews Section Styling and Content -->
+  <style>
+    /* ===== REVIEWS SECTION STYLING ===== */
+    #reviews {
+      background: #f8f9fa;
+      padding: 4rem 0;
+      font-family: 'Roboto', sans-serif;
+    }
+    #reviews .container {
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+    #reviews h2 {
+      text-align: center;
+      font-size: 2.5rem;
+      color: #005dde;
+      margin-bottom: 3rem;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
     .reviews-container {
-      grid-template-columns: 1fr;
+      display: grid;
+      grid-template-columns: 1fr 2fr;
+      gap: 3rem;
+      background: white;
+      padding: 2rem;
+      border-radius: 10px;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.1);
     }
-    
     #reviewForm {
-      border-right: none;
-      padding-right: 0;
-      padding-bottom: 2rem;
-      border-bottom: 2px solid #eee;
+      display: flex;
+      flex-direction: column;
+      gap: 1.5rem;
+      padding-right: 2rem;
+      border-right: 2px solid #eee;
     }
-  }
-</style>
-<!-- Static Background Image Section -->
-<section class="static-bg-section">
-  <div class="static-bg-content">
-    <h2>Welcome to our Review section</h2>
-    <p>Tell us about your experience with us,.The data will helpus improve our service for better Bektas future.</p>
-  </div>
-</section>
-
-
-
-
-
-
-
-
+    #reviewForm h3 {
+      color: #34495e;
+      font-size: 1.5rem;
+      margin-bottom: 1rem;
+    }
+    #reviewForm input,
+    #reviewForm textarea,
+    #reviewForm select {
+      width: 100%;
+      padding: 12px;
+      border: 2px solid #ecf0f1;
+      border-radius: 6px;
+      font-size: 1rem;
+      transition: all 0.3s ease;
+    }
+    #reviewForm input:focus,
+    #reviewForm textarea:focus,
+    #reviewForm select:focus {
+      border-color: #3498db;
+      outline: none;
+    }
+    .rating {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+    }
+    .rating label {
+      font-weight: 500;
+      color: #7f8c8d;
+    }
+    .rating select {
+      appearance: none;
+      background: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3e%3cpolyline points='6 9 12 15 18 9'%3e%3c/polyline%3e%3c/svg%3e") no-repeat right 0.75rem center/16px 16px;
+      background-color: #fff;
+      padding-right: 2.5rem;
+    }
+    #reviewForm button {
+      background: #3498db;
+      color: white;
+      padding: 12px 25px;
+      border: none;
+      border-radius: 6px;
+      font-size: 1rem;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+    #reviewForm button:hover {
+      background: #2980b9;
+      transform: translateY(-2px);
+    }
+    #reviewsDisplay {
+      display: flex;
+      flex-direction: column;
+      gap: 1.5rem;
+      max-height: 500px;
+      overflow-y: auto;
+      padding: 0 1rem;
+    }
+    .review-card {
+      background: #fff;
+      padding: 1.5rem;
+      border-radius: 8px;
+      box-shadow: 0 3px 6px rgba(0,0,0,0.05);
+      border-left: 4px solid #3498db;
+    }
+    .review-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 1rem;
+    }
+    .review-author {
+      font-weight: 700;
+      color: #2c3e50;
+    }
+    .review-rating {
+      color: #f1c40f;
+      font-size: 1.2rem;
+    }
+    .review-content {
+      color: #f0bc0f;
+      line-height: 1.6;
+    }
+    @media (max-width: 768px) {
+      .reviews-container {
+        grid-template-columns: 1fr;
+      }
+      #reviewForm {
+        border-right: none;
+        padding-right: 0;
+        padding-bottom: 2rem;
+        border-bottom: 2px solid #eee;
+      }
+    }
+  </style>
+  <!-- Static Background Section for Reviews -->
+  <section class="static-bg-section">
+    <div class="static-bg-content">
+      <h2>Welcome to our Review section</h2>
+      <p>Tell us about your experience with us. The data will help us improve our service for a better Bektas future.</p>
+    </div>
+  </section>
+  
   <!-- REVIEWS SECTION -->
   <section id="reviews" class="section reviews">
     <div class="container">
@@ -448,7 +579,7 @@
       </div>
     </div>
   </section>
-
+  
   <!-- Request a Quote Section -->
   <section class="request-quote">
     <div class="container quote-container">
@@ -492,7 +623,7 @@
       </div>
     </div>
   </section>
-
+  
   <!-- Footer -->
   <footer class="site-footer">
     <div class="container">
@@ -505,8 +636,8 @@
       <p>&copy; 2025 Bektas Blocks. Developed by Keith Kili.</p>
     </div>
   </footer>
-
-  <!-- JavaScript -->
+  
+  <!-- External JavaScript -->
   <script src="script.js"></script>
   <!-- Lightbox2 JavaScript -->
   <script src="script.js"
