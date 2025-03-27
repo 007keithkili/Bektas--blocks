@@ -16,74 +16,80 @@
   <style>
     /* ===================== Global Responsive CSS ===================== */
     @media (max-width: 768px) {
-      /* Header container: keep flags on sides and logo-title centered */
+      /* Header container: keep flags on sides and logo-heading container centered */
       .header-container {
-        flex-direction: row;
-        justify-content: space-between;
-        padding: 10px 20px;
+        flex-direction: column !important;
+        align-items: center !important;
+        justify-content: center !important;
+        padding: 10px !important;
       }
-      /* Logo and title: stack vertically and center */
-      .logo-title {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
+      .header-container img {
+        position: static !important;
+        margin: 5px 0 !important;
       }
-      .logo-title h1 {
-        font-size: 1.8em;
-        margin: 5px 0 0;
-        color: #0965f0;
+      .logo-heading-container {
+        flex-direction: column !important;
+        align-items: center !important;
+        gap: 10px !important;
+        left: 0 !important;
       }
-      .logo-title img {
-        margin: 0;
+      .logo-heading-container h1 {
+        position: static !important;
+        text-align: center !important;
+        font-size: 2em !important;
+        margin: 5px 0 !important;
+        left: 0 !important;
       }
-      /* Navigation adjustments */
-      /* Hide the desktop horizontal links */
-      .site-nav ul.nav-links {
+      /* Hide regular navigation */
+      .site-nav ul {
         display: none;
       }
-      /* Display dropdown button on mobile */
-      .site-nav .dropdown-btn {
+      /* Show mobile dropdown button */
+      .dropdown-toggle {
         display: block;
-        background: none;
+        background: #333;
+        color: #fff;
+        padding: 10px 20px;
         border: none;
-        font-size: 1.2em;
-        cursor: pointer;
+        border-radius: 5px;
+        font-size: 1em;
         margin: 10px auto;
+        cursor: pointer;
       }
-      /* Dropdown menu styling */
-      .site-nav ul.dropdown-menu {
+      .mobile-nav {
         display: none;
-        flex-direction: column;
-        align-items: center;
+        text-align: center;
+        background: #f7f7f7;
+      }
+      .mobile-nav ul {
         list-style: none;
         padding: 0;
         margin: 0;
       }
-      .site-nav ul.dropdown-menu li {
-        margin: 8px 0;
+      .mobile-nav ul li {
+        padding: 10px;
+        border-bottom: 1px solid #ddd;
       }
-      .site-nav ul.dropdown-menu li a {
-        text-decoration: none;
+      .mobile-nav ul li a {
         color: inherit;
+        text-decoration: none;
       }
     }
-    /* Desktop view: show horizontal nav links and hide dropdown */
     @media (min-width: 769px) {
-      .site-nav .dropdown-btn,
-      .site-nav ul.dropdown-menu {
+      .dropdown-toggle,
+      .mobile-nav {
         display: none;
       }
-      .site-nav ul.nav-links {
+      .site-nav ul {
         display: flex;
         justify-content: center;
       }
-      .site-nav ul.nav-links li {
+      .site-nav ul li {
         margin: 0 15px;
       }
     }
     /* ===================== Existing Responsive CSS (for other sections) ===================== */
     @media (max-width: 768px) {
-      /* Header adjustments */
       .header-container img {
         position: static !important;
         margin: 10px 0;
@@ -93,17 +99,7 @@
         text-align: center;
         margin: 10px 0;
       }
-      /* Navigation adjustments */
-      .site-nav ul {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        padding: 0;
-      }
-      .site-nav ul li {
-        margin: 5px 0;
-      }
-      /* Stats Bar adjustments */
+      /* Other sections adjustments remain unchanged */
       .stats-container {
         display: flex;
         flex-direction: column;
@@ -112,7 +108,6 @@
       .stats-container .stat {
         margin: 10px 0;
       }
-      /* Professional Details: Stack cards vertically */
       .professional-details .details-cards {
         flex-direction: column;
         align-items: center;
@@ -121,7 +116,6 @@
         margin: 10px 0;
         width: 90%;
       }
-      /* Vision & Mission: Stack columns */
       .vision-mission .container {
         flex-direction: column;
         align-items: center;
@@ -131,12 +125,10 @@
         width: 100%;
         text-align: center;
       }
-      /* Latest News: Stack blog posts vertically */
       section[style*="padding: 20px; background-color: #f9f9f9;"] > div[style*="display: flex"] {
         flex-direction: column;
         align-items: center;
       }
-      /* Client Boxes: Adjust layout */
       #client-boxes {
         display: flex;
         flex-direction: column;
@@ -146,7 +138,6 @@
         width: 90%;
         margin-bottom: 20px;
       }
-      /* Request a Quote: Stack form and info vertically */
       .quote-container {
         display: flex;
         flex-direction: column;
@@ -157,37 +148,165 @@
         text-align: center;
         margin-bottom: 20px;
       }
-      /* Footer: Center text */
       .site-footer .container {
         text-align: center;
         padding: 20px;
       }
     }
-    /* ===================== End Responsive CSS ===================== */
+    /* ===================== End Global Responsive CSS ===================== */
 
     /* Container for the images */
     .image-container {
-      display: flex; /* Use flexbox for layout */
-      flex-wrap: wrap; /* Allow images to wrap to the next line */
-      margin: 0; /* Remove the negative margin */
+      display: flex;
+      flex-wrap: wrap;
+      margin: 0;
     }
-
-    /* Image parent */
     .image-container [class*="col-md"] {
-      flex: 0 0 33.333%; /* Make each image parent take up 33.333% of the row */
-      max-width: 33.333%; /* Make each image parent take up 33.333% of the row */
-      padding: 0 15px; /* Add padding to the left and right */
+      flex: 0 0 33.333%;
+      max-width: 33.333%;
+      padding: 0 15px;
       width: auto;
       height: auto;
       margin: 0;
     }
-
-    /* Individual images */
     .tes__icon {
-      width: 100%; /* Make the images fill the width of their parent */
-      height: auto; /* Maintain aspect ratio */
-      object-fit: cover; /* Cover the entire area, cropping if necessary */
-      margin-bottom: 0px; /* Remove the bottom margin */
+      width: 100%;
+      height: auto;
+      object-fit: cover;
+      margin-bottom: 0px;
+    }
+
+    /* ===================== Header Section CSS (Updated) ===================== */
+    .header-container {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 50px;
+      position: relative;
+    }
+    /* Left Flag */
+    .left-flag {
+      width: 100px;
+      height: auto;
+      position: absolute;
+      left: 10px;
+    }
+    /* Right Flag */
+    .right-flag {
+      width: 100px;
+      height: auto;
+      position: absolute;
+      right: 10px;
+    }
+    /* Center: Logo and Heading Container */
+    .logo-heading-container {
+      display: flex;
+      align-items: center;
+      gap: 70px;
+      position: relative;
+      left: 50px;
+    }
+    .logo-heading-container img {
+      width: 250px;
+      height: 130px;
+      border-radius: 1px;
+      position: relative;
+      left: 35%;
+    }
+    .logo-heading-container h1 {
+      font-size: 3em;
+      margin: 0;
+      position: relative;
+      left: 27%;
+      color: #0965f0;
+    }
+    /* Regular Navigation (Desktop) */
+    .site-nav ul {
+      list-style: none;
+      display: flex;
+      justify-content: center;
+      padding: 0;
+      margin: 10px 0 0;
+    }
+    .site-nav ul li {
+      margin: 0 15px;
+    }
+    .site-nav ul li a {
+      text-decoration: none;
+      color: inherit;
+    }
+    /* Mobile Dropdown Styles */
+    .dropdown-toggle {
+      display: none;
+      background: #333;
+      color: #fff;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 5px;
+      font-size: 1em;
+      margin: 10px auto;
+      cursor: pointer;
+    }
+    .mobile-nav {
+      display: none;
+      text-align: center;
+      background: #f7f7f7;
+    }
+    .mobile-nav ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+    .mobile-nav ul li {
+      padding: 10px;
+      border-bottom: 1px solid #ddd;
+    }
+    .mobile-nav ul li a {
+      color: inherit;
+      text-decoration: none;
+    }
+    /* Responsive adjustments for header */
+    @media (max-width: 768px) {
+      .header-container {
+        flex-direction: column !important;
+        align-items: center !important;
+        justify-content: center !important;
+        padding: 10px !important;
+      }
+      .header-container img {
+        position: static !important;
+        margin: 5px 0 !important;
+      }
+      .logo-heading-container {
+        flex-direction: column !important;
+        align-items: center !important;
+        gap: 10px !important;
+        left: 0 !important;
+      }
+      .logo-heading-container h1 {
+        position: static !important;
+        text-align: center !important;
+        font-size: 2em !important;
+        margin: 5px 0 !important;
+        left: 0 !important;
+      }
+      /* Hide the regular navigation menu */
+      .site-nav ul {
+        display: none;
+      }
+      /* Show mobile dropdown button */
+      .dropdown-toggle {
+        display: block;
+      }
+    }
+    @media (min-width: 769px) {
+      .dropdown-toggle,
+      .mobile-nav {
+        display: none;
+      }
+      .site-nav ul {
+        display: flex;
+      }
     }
   </style>
 </head>
@@ -204,25 +323,22 @@
 
   <!-- Updated Header: Logo and Navigation -->
   <header class="site-header">
-    <div class="container header-container" style="display: flex; align-items: center; justify-content: space-between; padding: 0 50px;">
+    <div class="container header-container">
       <!-- Left: Turkey Flag -->
-      <div class="flag-container left-flag">
-        <img src="https://i.pinimg.com/474x/f1/de/73/f1de7316c0d4c8110f19c32a317eef3b.jpg" alt="Turkey Flag" style="width: 100px; height: auto;">
+      <img class="left-flag" src="https://i.pinimg.com/474x/f1/de/73/f1de7316c0d4c8110f19c32a317eef3b.jpg" alt="Turkey Flag">
+      
+      <!-- Center: Logo and Heading -->
+      <div class="logo-heading-container">
+        <img src="https://scontent-mba2-1.xx.fbcdn.net/v/t39.30808-6/486706616_122137008848592990_9213781367601452384_n.jpg?_nc_cat=110&ccb=1-7&_nc_sid=127cfc&_nc_eui2=AeEq8m1dYa5AvWa7m0LQQtdraUoVvy_vXFBpShW_L-9cUErpYCa-RSgOFdsE-IVnbePbcfWkNkZ2lPRqt0i6DTG7&_nc_ohc=NO3A68hAWVYQ7kNvgE0fLkU&_nc_oc=AdnHVeeXxxP1QmegXA_mEKZf_If1nS-wrtArTmS1cYN0Z8QqWgpdAEXSr2C2CsElCtc&_nc_zt=23&_nc_ht=scontent-mba2-1.xx&_nc_gid=3y8G3O52p7gTTRao9p-3Ag&oh=00_AYGFp_RDl5hBdcojq1IgCxZsZF9bOT8EdyRDrUKmMi8OcQ&oe=67EAD774" alt="Bektas Blocks Logo">
+        <h1>BEKTAS BLOCKS</h1>
       </div>
-      <!-- Center: Logo and Title -->
-      <div class="logo-title">
-        <img src="https://res-console.cloudinary.com/dl5cjekuk/thumbnails/v1/image/upload/v1742984774/MWM1MGY0MzMtMzcyOS00NGVhLTg5ZDctZDYyOWQyODFmNGE3X2RkZWg5Zw==/drilldown" alt="Bektas Blocks Logo" style="width: 250px; height: 130px; border-radius: 1px;">
-        <h1 style="margin: 0;">BEKTAS BLOCKS</h1>
-      </div>
+      
       <!-- Right: Kenyan Flag -->
-      <div class="flag-container right-flag">
-        <img src="https://i.pinimg.com/474x/33/54/8a/33548ab261a60a06058da6b2c7e08751.jpg" alt="Kenyan Flag" style="width: 100px; height: auto;">
-      </div>
+      <img class="right-flag" src="https://i.pinimg.com/474x/33/54/8a/33548ab261a60a06058da6b2c7e08751.jpg" alt="Kenyan Flag">
     </div>
-    <!-- Navigation -->
+    <!-- Regular Navigation Menu for PC -->
     <nav class="site-nav">
-      <!-- Desktop Navigation -->
-      <ul class="nav-links">
+      <ul>
         <li><a href="index.html" class="active">HOME</a></li>
         <li><a href="productgallery.html">PRODUCTS</a></li>
         <li><a href="projects.html">PROJECTS</a></li>
@@ -230,10 +346,11 @@
         <li><a href="reviews.html">REVIEWS</a></li>
         <li><a href="staff.html">ABOUT US</a></li>
       </ul>
-      <!-- Mobile Dropdown Button -->
-      <button class="dropdown-btn" onclick="toggleDropdown()">Menu <i class="fas fa-bars"></i></button>
-      <!-- Mobile Dropdown Menu -->
-      <ul class="dropdown-menu">
+    </nav>
+    <!-- Mobile Dropdown Toggle Button & Mobile Navigation -->
+    <button class="dropdown-toggle" onclick="toggleMobileNav()">Menu</button>
+    <div class="mobile-nav">
+      <ul>
         <li><a href="index.html">HOME</a></li>
         <li><a href="productgallery.html">PRODUCTS</a></li>
         <li><a href="projects.html">PROJECTS</a></li>
@@ -241,8 +358,41 @@
         <li><a href="reviews.html">REVIEWS</a></li>
         <li><a href="staff.html">ABOUT US</a></li>
       </ul>
-    </nav>
+    </div>
   </header>
+
+  <!-- Inline JavaScript to animate numbers and toggle mobile nav -->
+  <script>
+    // Function to animate numbers (for the stats bar)
+    function animateValue(obj, start, end, duration) {
+      let startTimestamp = null;
+      const step = (timestamp) => {
+        if (!startTimestamp) startTimestamp = timestamp;
+        const progress = Math.min((timestamp - startTimestamp) / duration, 1);
+        obj.innerText = Math.floor(progress * (end - start) + start);
+        if (progress < 1) {
+          window.requestAnimationFrame(step);
+        }
+      };
+      window.requestAnimationFrame(step);
+    }
+    window.addEventListener('load', () => {
+      const numbers = document.querySelectorAll('.stat .number');
+      numbers.forEach((numElement) => {
+        const finalValue = parseInt(numElement.innerText, 10);
+        animateValue(numElement, 0, finalValue, 2000);
+      });
+    });
+    // Toggle function for mobile navigation
+    function toggleMobileNav() {
+      var nav = document.querySelector('.mobile-nav');
+      if (nav.style.display === "block") {
+        nav.style.display = "none";
+      } else {
+        nav.style.display = "block";
+      }
+    }
+  </script>
 
   <!-- Stats Bar -->
   <section class="stats-bar">
@@ -266,42 +416,6 @@
     </div>
   </section>
 
-  <!-- Inline JavaScript to animate numbers -->
-  <script>
-    // Function to animate a number from start to end over 'duration' milliseconds
-    function animateValue(obj, start, end, duration) {
-      let startTimestamp = null;
-      const step = (timestamp) => {
-        if (!startTimestamp) startTimestamp = timestamp;
-        const progress = Math.min((timestamp - startTimestamp) / duration, 1);
-        obj.innerText = Math.floor(progress * (end - start) + start);
-        if (progress < 1) {
-          window.requestAnimationFrame(step);
-        }
-      };
-      window.requestAnimationFrame(step);
-    }
-
-    // Once the window loads, animate each stat number from 0 to its final value
-    window.addEventListener('load', () => {
-      const numbers = document.querySelectorAll('.stat .number');
-      numbers.forEach((numElement) => {
-        const finalValue = parseInt(numElement.innerText, 10);
-        animateValue(numElement, 0, finalValue, 2000); // Animate over 2000ms
-      });
-    });
-
-    // Toggle function for the mobile dropdown menu
-    function toggleDropdown() {
-      var menu = document.querySelector('.dropdown-menu');
-      if (menu.style.display === "block") {
-        menu.style.display = "none";
-      } else {
-        menu.style.display = "block";
-      }
-    }
-  </script>
-
   <!-- Static Background Image Section -->
   <section class="static-bg-section">
     <style>
@@ -319,7 +433,6 @@
         position: relative;
         z-index: 1;
       }
-
       .static-bg-section::before {
         content: '';
         position: absolute;
@@ -330,23 +443,19 @@
         background-color: rgba(0, 0, 0, 0.5);
         z-index: -1;
       }
-
       .static-bg-content {
         max-width: 800px;
         width: 100%;
         padding: 20px;
       }
-
       .static-bg-content h2 {
         font-size: 2.5rem;
         margin-bottom: 20px;
       }
-
       .static-bg-content p {
         font-size: 1.1rem;
         line-height: 1.6;
       }
-
       @media (max-width: 768px) {
         .static-bg-content h2 {
           font-size: 2rem;
@@ -361,6 +470,8 @@
       <p>Discover quality concrete and precast building materials for your projects.</p>
     </div>
   </section>
+
+  <!-- Contact Info Section -->
   <section class="contact-info-section">
     <style>
       .contact-info-section {
@@ -369,40 +480,32 @@
         text-align: center;
         font-family: Arial, sans-serif;
       }
-
       .contact-info-section h3 {
         color: #333;
         margin-bottom: 20px;
         font-size: 1.5rem;
       }
-
       .contact-info-section address {
         font-style: normal;
         margin-bottom: 20px;
       }
-
       .contact-info-section p {
         margin-bottom: 10px;
         line-height: 1.6;
       }
-
       .contact-info-section a {
         color: #007bff;
         text-decoration: none;
       }
-
       .contact-info-section a:hover {
         text-decoration: underline;
       }
-
       .contact-info-section .phone-numbers {
         margin-bottom: 20px;
       }
-
       .contact-info-section .phone-numbers p {
         margin-bottom: 5px;
       }
-
       .contact-info-section .send-message {
         font-weight: bold;
         margin-top: 20px;
@@ -414,7 +517,7 @@
         <p>P.O. BOX 81238-80100 ELDORET,</p>
         <p>Eldoret, Kenya</p>
       </address>
-      <a href=" https://wa.me/254704030881" target="_blank"> Whatsapp us at : 0704030881</a>
+      <a href="https://wa.me/254704030881" target="_blank">Whatsapp us at : 0704030881</a>
       <div class="phone-numbers">
         <p><strong>Customer Service and General Enquiries</strong></p>
         <p>0704030881</p>
@@ -425,21 +528,21 @@
         <p>0704030881</p>
       </div>
       <p class="send-message">SEND US A MESSAGE</p>
-      <a href=" https://wa.me/254704030881" target="_blank">0704030881</a>
+      <a href="https://wa.me/254704030881" target="_blank">0704030881</a>
     </div>
   </section>
+
+  <!-- Location Map Section -->
   <section class="location-map-section">
     <style>
       .location-map-section {
         width: 100%;
         margin-top: 20px;
       }
-
       .location-map-section #map-container {
         width: 100%;
         height: 400px;
       }
-
       .location-map-section #map-iframe {
         width: 100%;
         height: 100%;
@@ -458,6 +561,8 @@
       ></iframe>
     </div>
   </section>
+
+  <!-- Additional Contact Details -->
   <div class="quote-info">
     <h3>Contact Details</h3>
     <p>
@@ -466,7 +571,7 @@
     </p>
     <p>
       <strong>WhatsApp:</strong>
-      <a href=" https://wa.me/254704030881" target="_blank">0704030881</a>
+      <a href="https://wa.me/254704030881" target="_blank">0704030881</a>
     </p>
     <p><strong>Alternate:</strong> 0713900030</p>
     <div class="social">
@@ -484,11 +589,11 @@
         </ul>
       </nav>
       <p>&copy; 2025 Bektas Blocks. Developed by Keith Kili.</p>
-       <a href=" https://wa.me/254721473081" target="_blank">0721473081</a>
+      <a href="https://wa.me/254721473081" target="_blank">0721473081</a>
     </div>
   </footer>
 
-  <!-- JavaScript -->
+  <!-- External JavaScript -->
   <script src="script.js"></script>
   <!-- Lightbox2 JavaScript -->
   <script src="script.js"
