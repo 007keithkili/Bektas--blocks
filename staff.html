@@ -97,7 +97,7 @@
         height: auto;
       }
     }
-
+    
     /* Rest of your existing styles */
     .project__card {
       flex-direction: row;
@@ -134,7 +134,7 @@
     .image-container .project__itm:nth-child(even) .project__desc {
       text-align: right;
     }
-
+    
     /* About section styles */
     body {
       font-family: Arial, sans-serif;
@@ -214,95 +214,94 @@
       font-size: 1.2em;
     }
     /* ===================== Responsive CSS Inserted ===================== */
-@media (max-width: 768px) {
-  /* Header adjustments */
-  .header-container {
-    flex-direction: column;
-    align-items: center;
-    padding: 10px;
-  }
-  .header-container img {
-    position: static !important;
-    margin: 10px 0;
-  }
-  .header-container h1 {
-    position: static;
-    text-align: center;
-    font-size: 2em;
-    margin: 10px 0;
-  }
-  /* Navigation adjustments */
-  .site-nav ul {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    padding: 0;
-  }
-  .site-nav ul li {
-    margin: 5px 0;
-  }
-  /* Stats Bar adjustments */
-  .stats-container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-  }
-  .stats-container .stat {
-    margin: 10px 0;
-  }
-  /* Professional Details: Stack cards vertically */
-  .professional-details .details-cards {
-    flex-direction: column;
-    align-items: center;
-  }
-  .professional-details .card {
-    margin: 10px 0;
-    width: 90%;
-  }
-  /* Vision & Mission: Stack columns */
-  .vision-mission .container {
-    flex-direction: column;
-    align-items: center;
-  }
-  .vision, .mission {
-    margin: 20px 0;
-    width: 100%;
-    text-align: center;
-  }
-  /* Latest News: Stack blog posts vertically */
-  section[style*="padding: 20px; background-color: #f9f9f9;"] > div[style*="display: flex"] {
-    flex-direction: column;
-    align-items: center;
-  }
-  /* Client Boxes: Adjust layout */
-  #client-boxes {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-  }
-  .client-box {
-    width: 90%;
-    margin-bottom: 20px;
-  }
-  /* Request a Quote: Stack form and info vertically */
-  .quote-container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-  }
-  .quote-form, .quote-info {
-    width: 100%;
-    text-align: center;
-    margin-bottom: 20px;
-  }
-  /* Footer: Center text */
-  .site-footer .container {
-    text-align: center;
-    padding: 20px;
-  }
-}
-/* ===================== End Responsive CSS ===================== */
-
+    @media (max-width: 768px) {
+      /* Header adjustments */
+      .header-container {
+        flex-direction: column;
+        align-items: center;
+        padding: 10px;
+      }
+      .header-container img {
+        position: static !important;
+        margin: 10px 0;
+      }
+      .header-container h1 {
+        position: static;
+        text-align: center;
+        font-size: 2em;
+        margin: 10px 0;
+      }
+      /* Navigation adjustments */
+      .site-nav ul {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding: 0;
+      }
+      .site-nav ul li {
+        margin: 5px 0;
+      }
+      /* Stats Bar adjustments */
+      .stats-container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
+      .stats-container .stat {
+        margin: 10px 0;
+      }
+      /* Professional Details: Stack cards vertically */
+      .professional-details .details-cards {
+        flex-direction: column;
+        align-items: center;
+      }
+      .professional-details .card {
+        margin: 10px 0;
+        width: 90%;
+      }
+      /* Vision & Mission: Stack columns */
+      .vision-mission .container {
+        flex-direction: column;
+        align-items: center;
+      }
+      .vision, .mission {
+        margin: 20px 0;
+        width: 100%;
+        text-align: center;
+      }
+      /* Latest News: Stack blog posts vertically */
+      section[style*="padding: 20px; background-color: #f9f9f9;"] > div[style*="display: flex"] {
+        flex-direction: column;
+        align-items: center;
+      }
+      /* Client Boxes: Adjust layout */
+      #client-boxes {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
+      .client-box {
+        width: 90%;
+        margin-bottom: 20px;
+      }
+      /* Request a Quote: Stack form and info vertically */
+      .quote-container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
+      .quote-form, .quote-info {
+        width: 100%;
+        text-align: center;
+        margin-bottom: 20px;
+      }
+      /* Footer: Center text */
+      .site-footer .container {
+        text-align: center;
+        padding: 20px;
+      }
+    }
+    /* ===================== End Responsive CSS ===================== */
   </style>
 </head>
 <body>
@@ -316,23 +315,28 @@
     </div>
   </div>
 
-  
-
   <!-- Header: Logo and Navigation -->
   <header class="site-header">
     <div class="container header-container" style="display: flex; align-items: center; justify-content: space-between; padding: 0 50px;">
       <!-- Left: Turkey Flag -->
-      <img src="https://i.pinimg.com/474x/f1/de/73/f1de7316c0d4c8110f19c32a317eef3b.jpg" alt="Turkey Flag" style="width: 100px; height: auto; position: absolute; left: 10px;">
+      <img src="https://i.pinimg.com/474x/f1/de/73/f1de7316c0d4c8110f19c32a317eef3b.jpg" 
+           alt="Turkey Flag" 
+           style="width: 100px; height: auto; position: absolute; left: 10px;">
       
-      <!-- Center: Logo and Title -->
-      <div style="display: flex; align-items: center; gap: 70px; left:50px">
-        <img src="https://res-console.cloudinary.com/dl5cjekuk/thumbnails/v1/image/upload/v1742984774/MWM1MGY0MzMtMzcyOS00NGVhLTg5ZDctZDYyOWQyODFmNGE3X2RkZWg5Zw==/drilldown" alt="Bektas Blocks Logo" style="width: 250px; height: 130px; position: relative; left: 35%; border-radius: 1px;">
+      <!-- Center: Logo and Heading -->
+      <div style="display: flex; align-items: center; gap: 70px; left:50px;">
+        <img src="https://scontent-mba2-1.xx.fbcdn.net/v/t39.30808-6/486706616_122137008848592990_9213781367601452384_n.jpg?_nc_cat=110&ccb=1-7&_nc_sid=127cfc&_nc_eui2=AeEq8m1dYa5AvWa7m0LQQtdraUoVvy_vXFBpShW_L-9cUErpYCa-RSgOFdsE-IVnbePbcfWkNkZ2lPRqt0i6DTG7&_nc_ohc=NO3A68hAWVYQ7kNvgE0fLkU&_nc_oc=AdnHVeeXxxP1QmegXA_mEKZf_If1nS-wrtArTmS1cYN0Z8QqWgpdAEXSr2C2CsElCtc&_nc_zt=23&_nc_ht=scontent-mba2-1.xx&_nc_gid=3y8G3O52p7gTTRao9p-3Ag&oh=00_AYGFp_RDl5hBdcojq1IgCxZsZF9bOT8EdyRDrUKmMi8OcQ&oe=67EAD774" 
+             alt="Bektas Blocks Logo" 
+             style="width: 250px; height: 130px; position: relative; left: 35%; border-radius: 1px;">
         <h1 style="font-size: 3em; margin: 0; position:relative; left:27%; color: #0965f0;">BEKTAS BLOCKS</h1>
       </div>
       
       <!-- Right: Kenyan Flag -->
-      <img src="https://i.pinimg.com/474x/33/54/8a/33548ab261a60a06058da6b2c7e08751.jpg" alt="Kenyan Flag" style="width: 100px; height: auto; position: absolute; right: 10px;">
+      <img src="https://i.pinimg.com/474x/33/54/8a/33548ab261a60a06058da6b2c7e08751.jpg" 
+           alt="Kenyan Flag" 
+           style="width: 100px; height: auto; position: absolute; right: 10px;">
     </div>
+    <!-- Regular Navigation Menu for PC -->
     <nav class="site-nav">
       <ul>
         <li><a href="index.html" class="active">HOME</a></li>
@@ -343,58 +347,67 @@
         <li><a href="staff.html">ABOUT US</a></li>
       </ul>
     </nav>
+    <!-- Mobile Dropdown Toggle Button & Mobile Navigation -->
+    <button class="dropdown-toggle" onclick="toggleMobileNav()">Menu</button>
+    <div class="mobile-nav">
+      <ul>
+        <li><a href="productgallery.html">PRODUCTS</a></li>
+        <li><a href="projects.html">PROJECTS</a></li>
+        <li><a href="contacts.html">CONTACTS</a></li>
+        <li><a href="reviews.html">REVIEWS</a></li>
+        <li><a href="staff.html">ABOUT US</a></li>
+      </ul>
+    </div>
   </header>
 
   <!-- Stats Bar -->
-  <!-- Stats Bar -->
-<section class="stats-bar">
-  <div class="container stats-container">
-    <div class="stat">
-      <span class="number">587</span>
-      <span class="label">CLIENTS</span>
+  <section class="stats-bar">
+    <div class="container stats-container">
+      <div class="stat">
+        <span class="number">587</span>
+        <span class="label">CLIENTS</span>
+      </div>
+      <div class="stat">
+        <span class="number">30</span>
+        <span class="label">EMPLOYEES</span>
+      </div>
+      <div class="stat">
+        <span class="number">2</span>
+        <span class="label">AWARDS</span>
+      </div>
+      <div class="stat">
+        <span class="number">20</span>
+        <span class="label">PRODUCTS</span>
+      </div>
     </div>
-    <div class="stat">
-      <span class="number">30</span>
-      <span class="label">EMPLOYEES</span>
-    </div>
-    <div class="stat">
-      <span class="number">2</span>
-      <span class="label">AWARDS</span>
-    </div>
-    <div class="stat">
-      <span class="number">20</span>
-      <span class="label">PRODUCTS</span>
-    </div>
-  </div>
-</section>
+  </section>
 
-<!-- Inline JavaScript to animate numbers -->
-<script>
-  // Function to animate a number from start to end over 'duration' milliseconds
-  function animateValue(obj, start, end, duration) {
-    let startTimestamp = null;
-    const step = (timestamp) => {
-      if (!startTimestamp) startTimestamp = timestamp;
-      const progress = Math.min((timestamp - startTimestamp) / duration, 1);
-      obj.innerText = Math.floor(progress * (end - start) + start);
-      if (progress < 1) {
-        window.requestAnimationFrame(step);
-      }
-    };
-    window.requestAnimationFrame(step);
-  }
+  <!-- Inline JavaScript to animate numbers -->
+  <script>
+    // Function to animate a number from start to end over 'duration' milliseconds
+    function animateValue(obj, start, end, duration) {
+      let startTimestamp = null;
+      const step = (timestamp) => {
+        if (!startTimestamp) startTimestamp = timestamp;
+        const progress = Math.min((timestamp - startTimestamp) / duration, 1);
+        obj.innerText = Math.floor(progress * (end - start) + start);
+        if (progress < 1) {
+          window.requestAnimationFrame(step);
+        }
+      };
+      window.requestAnimationFrame(step);
+    }
 
-  // Once the window loads, animate each stat number from 0 to its final value
-  window.addEventListener('load', () => {
-    const numbers = document.querySelectorAll('.stat .number');
-    numbers.forEach((numElement) => {
-      const finalValue = parseInt(numElement.innerText, 10);
-      animateValue(numElement, 0, finalValue, 2000); // Animate over 2000ms
+    // Once the window loads, animate each stat number from 0 to its final value
+    window.addEventListener('load', () => {
+      const numbers = document.querySelectorAll('.stat .number');
+      numbers.forEach((numElement) => {
+        const finalValue = parseInt(numElement.innerText, 10);
+        animateValue(numElement, 0, finalValue, 2000); // Animate over 2000ms
+      });
     });
-  });
-</script>
-
- 
+  </script>
+  
   <!-- Static Background Image Section -->
   <section class="static-bg-section">
     <div class="static-bg-content">
@@ -430,22 +443,22 @@
         <div class="project__desc">
            <img class="tes__icon" src="https://res-console.cloudinary.com/dl5cjekuk/thumbnails/v1/image/upload/v1742984980/V2hhdHNBcHBfSW1hZ2VfMjAyNS0wMi0yNV9hdF8xNy4yMC4zM184MjAyYTY1N19veGVkZXQ=/drilldown" alt="Building Materials">
           <h3>Emma</h3>
-          <p> Accountant</p>
+          <p>Accountant</p>
         </div>
       </div>
       
       <div class="project__itm">
         <img class="tes__icon" src="https://res-console.cloudinary.com/dl5cjekuk/thumbnails/v1/image/upload/v1742984829/aWlfbjQ4eWQ2/drilldown" alt="Building Materials">
         <div class="project__desc">
-          <h3>Umut Arslan </h3>
+          <h3>Umut Arslan</h3>
           <p>Managing Director</p>
         </div>
       </div>
       <div class="project__itm">
-        <img class="tes__icon" src="https://res-console.cloudinary.com/dl5cjekuk/thumbnails/v1/image/upload/v1742986173/NDJfYXdzaHh3/drilldown">
+        <img class="tes__icon" src="https://res-console.cloudinary.com/dl5cjekuk/thumbnails/v1/image/upload/v1742986173/NDJfYXdzaHh3/drilldown" alt="Building Materials">
         <div class="project__desc">
           <h3>Humphrey shimenga</h3>
-          <p>chief officer transport and logistics sector</p>
+          <p>Chief Officer, Transport and Logistics Sector</p>
         </div>
       </div>
     </div>
@@ -457,7 +470,7 @@
         </div>
         <div class="vision-mission-card">
             <h3>Our Mission</h3>
-            <p>To be a leading company in the sector that provides convenience and value its customers by providing safe,high quality and cost effective construction products,and its harmonius with its employees and sensitive to the society and the environment</p>
+            <p>To be a leading company in the sector that provides convenience and value its customers by providing safe, high quality and cost effective construction products, and is harmonious with its employees and sensitive to society and the environment.</p>
         </div>
     </section>
 
@@ -538,7 +551,18 @@
     </div>
   </footer>
 
-  <!-- JavaScript -->
+  <!-- JavaScript for Mobile Dropdown -->
+  <script>
+    function toggleMobileNav() {
+      var nav = document.querySelector('.mobile-nav');
+      if (nav.style.display === "block") {
+        nav.style.display = "none";
+      } else {
+        nav.style.display = "block";
+      }
+    }
+  </script>
+  <!-- External JavaScript -->
   <script src="script.js"></script>
   <!-- Lightbox2 JavaScript -->
   <script src="script.js"
