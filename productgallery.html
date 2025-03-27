@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!DOCTYPE html>                                       
 <html lang="en">
 <head>
   <meta charset="UTF-8">
@@ -14,7 +14,7 @@
   <link rel="stylesheet" href="styles.css" />
   <style>
     /* ================================
-       Header & Top Bar Styles
+       Header & Top Bar Styles (Updated)
     ================================ */
     .top-bar {
       background: #09d8e7d0;
@@ -37,69 +37,75 @@
       font-size: 0.9em;
     }
     
-    .site-header {
-      background: #ecf0f0;;
-      border-bottom: 1px solid  #ecf0f0;;
+    /* The updated header styles are now inline in the HTML where needed.
+       Additional styling for mobile dropdown is preserved below: */
+    .dropdown-toggle,
+    .mobile-nav {
+      display: none;
     }
     
-    .site-header .container {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      padding: 10px 20px;
-      position: relative;
-    }
-    
-    .site-header img {
-      max-height: 100px;
-    }
-    
-    .site-header div.logo-title {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      width: 100%;
-    }
-    
-    .site-header div.logo-title img {
-      width: 250px;
-      height: 200px;
-      border-radius: 5px;
-    }
-    
-    .site-header div.logo-title h1 {
-      font-size: 3em;
-      margin-left: 20px;
-      color: #0965f0;
-    }
-    
-    .site-header img.flag {
-      width: 100px;
-      height: auto;
-      position: absolute;
-      top: 10px;
-    }
-    
-    .site-header img.flag.left {
-      left: -180px;
-    }
-    
-    .site-header img.flag.right {
-      right: -180px;
-    }
-    
-    .site-nav ul li a {
-      text-decoration: none;
-      color: #f20707;
-      font-weight: 700;
-    }
-    
-    .site-nav ul li a.active {
-      color: rgb(255, 98, 0);
+    @media (max-width: 768px) {
+      .header-container {
+        flex-direction: column !important;
+        align-items: center !important;
+        justify-content: center !important;
+        padding: 10px !important;
+        position: relative !important;
+      }
+      .header-container img {
+        position: static !important;
+        margin: 5px 0 !important;
+      }
+      .header-container > div {
+        display: flex !important;
+        flex-direction: column !important;
+        align-items: center !important;
+        gap: 10px !important;
+        left: 0 !important;
+      }
+      .header-container h1 {
+        position: static !important;
+        text-align: center !important;
+        font-size: 2em !important;
+        margin: 5px 0 !important;
+        left: 0 !important;
+      }
+      .site-nav ul {
+        display: none;
+      }
+      .dropdown-toggle {
+        display: block;
+        background: #333;
+        color: #fff;
+        padding: 10px 20px;
+        border: none;
+        border-radius: 5px;
+        font-size: 1em;
+        margin: 10px auto;
+        cursor: pointer;
+      }
+      .mobile-nav {
+        display: none;
+        text-align: center;
+        background: #f7f7f7;
+      }
+      .mobile-nav ul {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+      }
+      .mobile-nav ul li {
+        padding: 10px;
+        border-bottom: 1px solid #ddd;
+      }
+      .mobile-nav ul li a {
+        color: inherit;
+        text-decoration: none;
+      }
     }
     
     /* ================================
-       Static Background Section
+       Static Background Section Styles
     ================================ */
     .static-bg-section {
       background-image: url('images/Corn-Based-Concrete-Building-the-Future-of-Low-Carbon-Construction-Materials.jpg');
@@ -141,6 +147,7 @@
     
     /* ================================
        Product Grid & Modal Styles
+       (Unchanged)
     ================================ */
     h1 {
       text-align: center;
@@ -162,7 +169,6 @@
       text-align: center;
     }
     
-    /* Original product grid image styling (will be overridden by uniform rules below) */
     .item img {
       width: 100%;
       max-width: 300px;
@@ -175,7 +181,6 @@
       transform: scale(1.05);
     }
     
-    /* Modal Styles */
     .modal {
       display: none;
       position: fixed;
@@ -222,7 +227,6 @@
       text-align: center;
     }
     
-    /* Original modal image styling (will be overridden by uniform rules below) */
     .modal-image img {
       width: 100%;
       border-radius: 5px;
@@ -273,120 +277,22 @@
     }
     
     /* ================================
-       Footer Styles
-    ================================ */
-    
-    
-    
-    /* ================================
        Uniform Image Styles
-       (Overrides previous image styles in the grid & modals)
     ================================ */
-    
     .image-container .item img {
       width: 100%;
-      max-width: 300px; /* Keeps images from growing too large */
-      aspect-ratio: 1 / 1; /* Enforces a square shape */
-      object-fit: cover; /* Crops the image uniformly */
-      border-radius: 10px; /* Consistent rounded corners */
+      max-width: 300px;
+      aspect-ratio: 1 / 1;
+      object-fit: cover;
+      border-radius: 10px;
     }
     
     .modal-images .modal-image img {
       width: 100%;
-      aspect-ratio: 1 / 1; /* Ensures the same square shape as grid images */
-      object-fit: cover; /* Makes sure images fill their container */
-      border-radius: 10px; /* Uniform rounded corners */
+      aspect-ratio: 1 / 1;
+      object-fit: cover;
+      border-radius: 10px;
     }
-    /* ===================== Responsive CSS Inserted ===================== */
-@media (max-width: 768px) {
-  /* Header adjustments */
-  .header-container {
-    flex-direction: column;
-    align-items: center;
-    padding: 10px;
-  }
-  .header-container img {
-    position: static !important;
-    margin: 10px 0;
-  }
-  .header-container h1 {
-    position: static;
-    text-align: center;
-    font-size: 2em;
-    margin: 10px 0;
-  }
-  /* Navigation adjustments */
-  .site-nav ul {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    padding: 0;
-  }
-  .site-nav ul li {
-    margin: 5px 0;
-  }
-  /* Stats Bar adjustments */
-  .stats-container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-  }
-  .stats-container .stat {
-    margin: 10px 0;
-  }
-  /* Professional Details: Stack cards vertically */
-  .professional-details .details-cards {
-    flex-direction: column;
-    align-items: center;
-  }
-  .professional-details .card {
-    margin: 10px 0;
-    width: 90%;
-  }
-  /* Vision & Mission: Stack columns */
-  .vision-mission .container {
-    flex-direction: column;
-    align-items: center;
-  }
-  .vision, .mission {
-    margin: 20px 0;
-    width: 100%;
-    text-align: center;
-  }
-  /* Latest News: Stack blog posts vertically */
-  section[style*="padding: 20px; background-color: #f9f9f9;"] > div[style*="display: flex"] {
-    flex-direction: column;
-    align-items: center;
-  }
-  /* Client Boxes: Adjust layout */
-  #client-boxes {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-  }
-  .client-box {
-    width: 90%;
-    margin-bottom: 20px;
-  }
-  /* Request a Quote: Stack form and info vertically */
-  .quote-container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-  }
-  .quote-form, .quote-info {
-    width: 100%;
-    text-align: center;
-    margin-bottom: 20px;
-  }
-  /* Footer: Center text */
-  .site-footer .container {
-    text-align: center;
-    padding: 20px;
-  }
-}
-/* ===================== End Responsive CSS ===================== */
-
   </style>
 </head>
 <body>
@@ -400,77 +306,98 @@
     </div>
   </div>
 
-  <!-- Header: Logo and Navigation -->
+  <!-- Updated Header: Logo and Navigation (Perfect Code Style) -->
   <header class="site-header">
-    <div class="container">
-      <img src="images/kenyan.png" alt="Turkey Flag" class="flag left">
-      <div style="display: flex; align-items: center; gap: 5px;">
-        <img src="images/1c50f433-3729-44ea-89d7-d629d281f4a7.jpg" alt="Bektas Blocks Logo" style="width: 270px; height: 170px; position: relative; left: 39%; border-radius: 5px;">
-        <h1 style="font-size: 3em; position: relative; left: 40%; margin: 0; color: #0965f0;">BEKTAS BLOCKS</h1>
+    <div class="container header-container" style="display: flex; align-items: center; justify-content: space-between; padding: 0 50px;">
+      <!-- Left: Turkey Flag -->
+      <img src="https://i.pinimg.com/474x/f1/de/73/f1de7316c0d4c8110f19c32a317eef3b.jpg" 
+           alt="Turkey Flag" 
+           style="width: 100px; height: auto; position: absolute; left: 10px;">
+      
+      <!-- Center: Logo and Heading -->
+      <div style="display: flex; align-items: center; gap: 70px; left:50px;">
+        <img src="https://scontent-mba2-1.xx.fbcdn.net/v/t39.30808-6/486706616_122137008848592990_9213781367601452384_n.jpg?_nc_cat=110&ccb=1-7&_nc_sid=127cfc&_nc_eui2=AeEq8m1dYa5AvWa7m0LQQtdraUoVvy_vXFBpShW_L-9cUErpYCa-RSgOFdsE-IVnbePbcfWkNkZ2lPRqt0i6DTG7&_nc_ohc=NO3A68hAWVYQ7kNvgE0fLkU&_nc_oc=AdnHVeeXxxP1QmegXA_mEKZf_If1nS-wrtArTmS1cYN0Z8QqWgpdAEXSr2C2CsElCtc&_nc_zt=23&_nc_ht=scontent-mba2-1.xx&_nc_gid=3y8G3O52p7gTTRao9p-3Ag&oh=00_AYGFp_RDl5hBdcojq1IgCxZsZF9bOT8EdyRDrUKmMi8OcQ&oe=67EAD774" 
+             alt="Bektas Blocks Logo" 
+             style="width: 250px; height: 130px; position: relative; left: 35%; border-radius: 1px;">
+        <h1 style="font-size: 3em; margin: 0; position: relative; left:27%; color: #0965f0;">BEKTAS BLOCKS</h1>
       </div>
-      <img src="images/turkish.jpeg" alt="Kenyan Flag" class="flag right">
+      
+      <!-- Right: Kenyan Flag -->
+      <img src="https://i.pinimg.com/474x/33/54/8a/33548ab261a60a06058da6b2c7e08751.jpg" 
+           alt="Kenyan Flag" 
+           style="width: 100px; height: auto; position: absolute; right: 10px;">
     </div>
+    <!-- Regular Navigation Menu for PC -->
     <nav class="site-nav">
       <ul>
         <li><a href="index.html" class="active">HOME</a></li>
-        <li><a href="products.html">PRODUCTS</a></li>
+        <li><a href="productgallery.html">PRODUCTS</a></li>
         <li><a href="projects.html">PROJECTS</a></li>
-        <li><a href="contacts.html">CONTACT</a></li>
+        <li><a href="contacts.html">CONTACTS</a></li>
         <li><a href="reviews.html">REVIEWS</a></li>
         <li><a href="staff.html">ABOUT US</a></li>
       </ul>
     </nav>
+    <!-- Mobile Dropdown Toggle Button & Mobile Navigation -->
+    <button class="dropdown-toggle" onclick="toggleMobileNav()">Menu</button>
+    <div class="mobile-nav">
+      <ul>
+        <li><a href="productgallery.html">PRODUCTS</a></li>
+        <li><a href="projects.html">PROJECTS</a></li>
+        <li><a href="contacts.html">CONTACTS</a></li>
+        <li><a href="reviews.html">REVIEWS</a></li>
+        <li><a href="staff.html">ABOUT US</a></li>
+      </ul>
+    </div>
   </header>
+
   <!-- Stats Bar -->
-<section class="stats-bar">
-  <div class="container stats-container">
-    <div class="stat">
-      <span class="number">587</span>
-      <span class="label">CLIENTS</span>
+  <section class="stats-bar">
+    <div class="container stats-container">
+      <div class="stat">
+        <span class="number">587</span>
+        <span class="label">CLIENTS</span>
+      </div>
+      <div class="stat">
+        <span class="number">30</span>
+        <span class="label">EMPLOYEES</span>
+      </div>
+      <div class="stat">
+        <span class="number">2</span>
+        <span class="label">AWARDS</span>
+      </div>
+      <div class="stat">
+        <span class="number">20</span>
+        <span class="label">PRODUCTS</span>
+      </div>
     </div>
-    <div class="stat">
-      <span class="number">30</span>
-      <span class="label">EMPLOYEES</span>
-    </div>
-    <div class="stat">
-      <span class="number">2</span>
-      <span class="label">AWARDS</span>
-    </div>
-    <div class="stat">
-      <span class="number">20</span>
-      <span class="label">PRODUCTS</span>
-    </div>
-  </div>
-</section>
+  </section>
 
-<!-- Inline JavaScript to animate numbers -->
-<script>
-  // Function to animate a number from start to end over 'duration' milliseconds
-  function animateValue(obj, start, end, duration) {
-    let startTimestamp = null;
-    const step = (timestamp) => {
-      if (!startTimestamp) startTimestamp = timestamp;
-      const progress = Math.min((timestamp - startTimestamp) / duration, 1);
-      obj.innerText = Math.floor(progress * (end - start) + start);
-      if (progress < 1) {
-        window.requestAnimationFrame(step);
-      }
-    };
-    window.requestAnimationFrame(step);
-  }
-
-  // Once the window loads, animate each stat number from 0 to its final value
-  window.addEventListener('load', () => {
-    const numbers = document.querySelectorAll('.stat .number');
-    numbers.forEach((numElement) => {
-      const finalValue = parseInt(numElement.innerText, 10);
-      animateValue(numElement, 0, finalValue, 2000); // Animate over 2000ms
+  <!-- Inline JavaScript to animate numbers -->
+  <script>
+    // Function to animate a number from start to end over 'duration' milliseconds
+    function animateValue(obj, start, end, duration) {
+      let startTimestamp = null;
+      const step = (timestamp) => {
+        if (!startTimestamp) startTimestamp = timestamp;
+        const progress = Math.min((timestamp - startTimestamp) / duration, 1);
+        obj.innerText = Math.floor(progress * (end - start) + start);
+        if (progress < 1) {
+          window.requestAnimationFrame(step);
+        }
+      };
+      window.requestAnimationFrame(step);
+    }
+    // Once the window loads, animate each stat number from 0 to its final value
+    window.addEventListener('load', () => {
+      const numbers = document.querySelectorAll('.stat .number');
+      numbers.forEach((numElement) => {
+        const finalValue = parseInt(numElement.innerText, 10);
+        animateValue(numElement, 0, finalValue, 2000); // Animate over 2000ms
+      });
     });
-  });
-</script>
-
- 
-
+  </script>
+  
   <!-- Static Background Section -->
   <section class="static-bg-section">
     <div class="static-bg-content">
@@ -478,6 +405,21 @@
       <p>Discover quality concrete and precast building materials for your projects.</p>
     </div>
   </section>
+  
+  <!-- (The rest of your Products page code, including product grid, modals, footer, etc., remains unchanged) -->
+  
+  <script>
+    function toggleMobileNav() {
+      var nav = document.querySelector('.mobile-nav');
+      if (nav.style.display === "block") {
+        nav.style.display = "none";
+      } else {
+        nav.style.display = "block";
+      }
+    }
+  </script>
+</body>
+</html>
 
   <!-- Product Grid -->
   <h1>Our Products</h1>
