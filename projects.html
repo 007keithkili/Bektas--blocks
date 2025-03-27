@@ -15,27 +15,26 @@
   <link rel="stylesheet" href="styles.css" />
   <style>
     /* ================= Header & Navigation ================= */
-    /* (Existing header styles are assumed to be defined in your external styles.css)
-       The inline styles below handle the mobile adjustments for this demo. */
+    /* Desktop Header Layout */
     .header-container {
       display: flex;
       align-items: center;
       justify-content: space-between;
-      padding: 0 50px;
+      padding: 10px 50px;
       position: relative;
     }
-    /* Flag images (retain original inline positioning for PC) */
+    /* Flags: For desktop, keep them in fixed positions at the far left/right */
     .header-container img.flag {
       width: 100px;
       height: auto;
     }
-    /* Center logo & heading container */
+    /* Center container: now removed the left offsets so logo & heading are closer */
     .logo-heading {
       display: flex;
+      flex-direction: column;
       align-items: center;
-      gap: 70px;
-      position: relative;
-      left: 35%;
+      justify-content: center;
+      gap: 10px;
     }
     .logo-heading img {
       width: 250px;
@@ -46,10 +45,8 @@
       font-size: 3em;
       margin: 0;
       color: #0965f0;
-      position: relative;
-      left: 27%;
     }
-    /* Regular Navigation Menu */
+    /* Regular Navigation Menu for Desktop */
     .site-nav ul {
       list-style: none;
       display: flex;
@@ -60,6 +57,9 @@
     }
     .site-nav ul li a {
       text-decoration: none;
+      color: inherit;
+      font-size: 1.1em;
+      padding: 5px 10px;
     }
     /* Mobile Dropdown Toggle & Menu */
     .dropdown-toggle {
@@ -130,14 +130,12 @@
     }
 
     /* ================= Projects Section ================= */
-    /* Uniform image styling for project cards */
     .tes__icon {
       width: 400px;
       height: 300px;
       object-fit: cover;
       border-radius: 5px;
     }
-    /* Grid layout: 2 columns by default */
     .image-container {
       display: grid;
       grid-template-columns: repeat(2, 1fr);
@@ -145,7 +143,6 @@
       padding: 20px;
       width: 100%;
     }
-    /* Project Card styling */
     .project__card {
       display: flex;
       align-items: center;
@@ -177,14 +174,13 @@
       color: #0c0707;
       line-height: 1.5;
     }
-    /* Text alignment: left for odd items, right for even */
     .image-container .project__itm:nth-child(odd) .project__desc {
       text-align: left;
     }
     .image-container .project__itm:nth-child(even) .project__desc {
       text-align: right;
     }
-    
+
     /* ================= Quote Section ================= */
     .quote-container {
       display: flex;
@@ -223,14 +219,13 @@
 
     /* ================= Responsive Adjustments ================= */
     @media (max-width: 768px) {
-      /* Header adjustments for mobile:
-         Reorder header elements: Turkey flag on top, then logo & heading, then Kenyan flag */
+      /* Header adjustments for mobile: reordering elements */
       .header-container {
         flex-direction: column;
         align-items: center;
         padding: 10px;
       }
-      .header-container img {
+      .header-container img.flag {
         position: static !important;
         margin: 10px 0;
       }
@@ -245,15 +240,12 @@
         margin: 10px 0;
         left: 0 !important;
       }
-      /* Hide the regular navigation and show the mobile dropdown */
+      /* Hide the regular nav menu and show mobile dropdown */
       .site-nav ul {
         display: none;
       }
       .dropdown-toggle {
         display: block;
-      }
-      .mobile-nav {
-        display: none;
       }
       /* Static background text scaling */
       .static-bg-content h2 {
@@ -314,21 +306,18 @@
     <div class="container header-container">
       <!-- Left: Turkey Flag -->
       <img class="flag" src="https://i.pinimg.com/474x/f1/de/73/f1de7316c0d4c8110f19c32a317eef3b.jpg" 
-           alt="Turkey Flag" 
-           style="width: 100px; height: auto; position: absolute; left: 10px;">
+           alt="Turkey Flag">
       
-      <!-- Center: Logo and Heading -->
-      <div class="logo-heading" style="display: flex; align-items: center; gap: 70px; left:50px;">
+      <!-- Center: Logo and Heading (positioned together without extra offsets) -->
+      <div class="logo-heading">
         <img src="https://res-console.cloudinary.com/dl5cjekuk/thumbnails/v1/image/upload/v1742984774/MWM1MGY0MzMtMzcyOS00NGVhLTg5ZDctZDYyOWQyODFmNGE3X2RkZWg5Zw==/drilldown" 
-             alt="Bektas Blocks Logo" 
-             style="width: 250px; height: 130px; border-radius: 1px;">
-        <h1 style="font-size: 3em; margin: 0; color: #0965f0; position: relative; left:27%;">BEKTAS BLOCKS</h1>
+             alt="Bektas Blocks Logo">
+        <h1>BEKTAS BLOCKS</h1>
       </div>
       
       <!-- Right: Kenyan Flag -->
       <img class="flag" src="https://i.pinimg.com/474x/33/54/8a/33548ab261a60a06058da6b2c7e08751.jpg" 
-           alt="Kenyan Flag" 
-           style="width: 100px; height: auto; position: absolute; right: 10px;">
+           alt="Kenyan Flag">
     </div>
     <!-- Regular Navigation Menu for Desktop -->
     <nav class="site-nav">
