@@ -59,6 +59,13 @@
       text-align: left;
     }
 
+    /* ================= Default Styles ================= */
+    /* Hide the dropdown button and mobile navigation on desktop */
+    .dropdown-toggle,
+    .mobile-nav {
+      display: none;
+    }
+
     /* ===================== Responsive CSS Inserted ===================== */
     @media (max-width: 768px) {
       /* Rearranged Header for Mobile:
@@ -108,7 +115,7 @@
       }
       /* Mobile navigation links */
       .mobile-nav {
-        display: none;
+        display: none; /* Will be toggled by JavaScript */
         text-align: center;
         background: #f7f7f7;
       }
@@ -251,12 +258,6 @@
     .site-footer .footer-nav ul li a {
       text-decoration: none;
       color: #fff;
-    }
-    
-    /* ================= Default Styles ================= */
-    /* Hide the dropdown button on desktop */
-    .dropdown-toggle {
-      display: none;
     }
   </style>
 </head>
