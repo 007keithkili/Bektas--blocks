@@ -14,9 +14,87 @@
   <!-- Main CSS -->
   <link rel="stylesheet" href="styles.css" />
   <style>
-    /* Static Background Section */
+    /* ================= Header & Navigation ================= */
+    /* (Existing header styles are assumed to be defined in your external styles.css)
+       The inline styles below handle the mobile adjustments for this demo. */
+    .header-container {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 50px;
+      position: relative;
+    }
+    /* Flag images (retain original inline positioning for PC) */
+    .header-container img.flag {
+      width: 100px;
+      height: auto;
+    }
+    /* Center logo & heading container */
+    .logo-heading {
+      display: flex;
+      align-items: center;
+      gap: 70px;
+      position: relative;
+      left: 35%;
+    }
+    .logo-heading img {
+      width: 250px;
+      height: 130px;
+      border-radius: 1px;
+    }
+    .logo-heading h1 {
+      font-size: 3em;
+      margin: 0;
+      color: #0965f0;
+      position: relative;
+      left: 27%;
+    }
+    /* Regular Navigation Menu */
+    .site-nav ul {
+      list-style: none;
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      padding: 0;
+      margin: 10px 0;
+    }
+    .site-nav ul li a {
+      text-decoration: none;
+    }
+    /* Mobile Dropdown Toggle & Menu */
+    .dropdown-toggle {
+      display: none;
+      background: #333;
+      color: #fff;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 5px;
+      font-size: 1em;
+      margin: 10px auto;
+      cursor: pointer;
+    }
+    .mobile-nav {
+      display: none;
+      text-align: center;
+      background: #f7f7f7;
+    }
+    .mobile-nav ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+    .mobile-nav ul li {
+      padding: 10px;
+      border-bottom: 1px solid #ddd;
+    }
+    .mobile-nav ul li a {
+      text-decoration: none;
+      color: inherit;
+    }
+
+    /* ================= Static Background Section ================= */
     .static-bg-section {
-      background-image: url(https://res-console.cloudinary.com/dl5cjekuk/thumbnails/v1/image/upload/v1742984818/Q29ybi1CYXNlZC1Db25jcmV0ZS1CdWlsZGluZy10aGUtRnV0dXJlLW9mLUxvdy1DYXJib24tQ29uc3RydWN0aW9uLU1hdGVyaWFsc19pY2NqaDU=/drilldown); /* Replace with your image path */
+      background-image: url(https://res-console.cloudinary.com/dl5cjekuk/thumbnails/v1/image/upload/v1742984818/Q29ybi1CYXNlZC1Db25jcmV0ZS1CdWlsZGluZy10aGUtRnV0dXJlLW9mLUxvdy1DYXJib24tQ29uc3RydWN0aW9uLU1hdGVyaWFsc19pY2NqaDU=/drilldown);
       background-attachment: fixed;
       background-position: center;
       background-repeat: no-repeat;
@@ -50,16 +128,16 @@
       font-size: 1.2em;
       line-height: 1.6;
     }
-    
-    /* Uniform image styling */
+
+    /* ================= Projects Section ================= */
+    /* Uniform image styling for project cards */
     .tes__icon {
-      width: 400px;   /* Fixed width */
-      height: 300px;  /* Fixed height */
+      width: 400px;
+      height: 300px;
       object-fit: cover;
       border-radius: 5px;
     }
-    
-    /* Grid layout for project cards */
+    /* Grid layout: 2 columns by default */
     .image-container {
       display: grid;
       grid-template-columns: repeat(2, 1fr);
@@ -67,7 +145,6 @@
       padding: 20px;
       width: 100%;
     }
-    
     /* Project Card styling */
     .project__card {
       display: flex;
@@ -80,19 +157,12 @@
       height: 300px;
       width: 100%;
     }
-    /* Default layout: image on left, text on right */
     .project__card {
       flex-direction: row;
     }
-    /* For even-numbered items, keep same layout (or reverse if desired) */
-    .image-container .project__itm:nth-child(even) .project__card {
-      flex-direction: row;
-    }
-    /* Container for the image inside the project card */
     .project__card .image-wrapper {
-      flex: 0 0 400px; /* Fixed width for image area */
+      flex: 0 0 400px;
     }
-    /* Container for the text description */
     .project__desc {
       flex: 1;
       padding: 20px;
@@ -107,20 +177,92 @@
       color: #0c0707;
       line-height: 1.5;
     }
-    /* Align text: left for odd and right for even */
+    /* Text alignment: left for odd items, right for even */
     .image-container .project__itm:nth-child(odd) .project__desc {
       text-align: left;
     }
     .image-container .project__itm:nth-child(even) .project__desc {
       text-align: right;
     }
-    /* Each grid item */
-    .project__itm {
-      /* No extra styling needed; grid gap controls spacing */
-    }
     
-    /* Responsive adjustments */
-    @media (max-width: 850px) {
+    /* ================= Quote Section ================= */
+    .quote-container {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 40px;
+      padding: 40px 0;
+    }
+    .quote-form, .quote-info {
+      flex: 1;
+      padding: 20px;
+    }
+    .quote-form h2 {
+      margin-top: 0;
+    }
+
+    /* ================= Footer ================= */
+    .site-footer {
+      background: #333;
+      color: #fff;
+      padding: 20px 0;
+      text-align: center;
+    }
+    .site-footer .footer-nav ul {
+      list-style: none;
+      display: flex;
+      justify-content: center;
+      gap: 15px;
+      padding: 0;
+      margin: 10px 0;
+    }
+    .site-footer .footer-nav ul li a {
+      text-decoration: none;
+      color: #fff;
+    }
+
+    /* ================= Responsive Adjustments ================= */
+    @media (max-width: 768px) {
+      /* Header adjustments for mobile:
+         Reorder header elements: Turkey flag on top, then logo & heading, then Kenyan flag */
+      .header-container {
+        flex-direction: column;
+        align-items: center;
+        padding: 10px;
+      }
+      .header-container img {
+        position: static !important;
+        margin: 10px 0;
+      }
+      .logo-heading {
+        flex-direction: column;
+        left: 0 !important;
+      }
+      .logo-heading h1 {
+        position: static;
+        text-align: center;
+        font-size: 2em;
+        margin: 10px 0;
+        left: 0 !important;
+      }
+      /* Hide the regular navigation and show the mobile dropdown */
+      .site-nav ul {
+        display: none;
+      }
+      .dropdown-toggle {
+        display: block;
+      }
+      .mobile-nav {
+        display: none;
+      }
+      /* Static background text scaling */
+      .static-bg-content h2 {
+        font-size: 2em;
+      }
+      .static-bg-content p {
+        font-size: 1em;
+      }
+      /* Projects grid: one column */
       .image-container {
         grid-template-columns: 1fr;
       }
@@ -138,23 +280,8 @@
       .project__desc {
         text-align: left !important;
       }
-    }
-    
-    /* Additional mobile adjustments for other sections (from previous header updates) */
-    @media (max-width: 768px) {
-      /* Header adjustments are handled in your header code already */
-      
-      /* Ensure static background text is scaled */
-      .static-bg-content h2 {
-        font-size: 2em;
-      }
-      .static-bg-content p {
-        font-size: 1em;
-      }
-      
-      /* Quote section: Stack form and info vertically */
+      /* Quote section: stack vertically */
       .quote-container {
-        display: flex;
         flex-direction: column;
         align-items: center;
       }
@@ -163,8 +290,7 @@
         text-align: center;
         margin-bottom: 20px;
       }
-      
-      /* Footer text centering */
+      /* Footer centering */
       .site-footer .container {
         text-align: center;
         padding: 20px;
@@ -183,8 +309,50 @@
     </div>
   </div>
 
-  <!-- Header: (Assumed unchanged from your previous header code) -->
-  <!-- ... Your header and navigation code go here ... -->
+  <!-- Header: Logo, Flags & Navigation -->
+  <header class="site-header">
+    <div class="container header-container">
+      <!-- Left: Turkey Flag -->
+      <img class="flag" src="https://i.pinimg.com/474x/f1/de/73/f1de7316c0d4c8110f19c32a317eef3b.jpg" 
+           alt="Turkey Flag" 
+           style="width: 100px; height: auto; position: absolute; left: 10px;">
+      
+      <!-- Center: Logo and Heading -->
+      <div class="logo-heading" style="display: flex; align-items: center; gap: 70px; left:50px;">
+        <img src="https://res-console.cloudinary.com/dl5cjekuk/thumbnails/v1/image/upload/v1742984774/MWM1MGY0MzMtMzcyOS00NGVhLTg5ZDctZDYyOWQyODFmNGE3X2RkZWg5Zw==/drilldown" 
+             alt="Bektas Blocks Logo" 
+             style="width: 250px; height: 130px; border-radius: 1px;">
+        <h1 style="font-size: 3em; margin: 0; color: #0965f0; position: relative; left:27%;">BEKTAS BLOCKS</h1>
+      </div>
+      
+      <!-- Right: Kenyan Flag -->
+      <img class="flag" src="https://i.pinimg.com/474x/33/54/8a/33548ab261a60a06058da6b2c7e08751.jpg" 
+           alt="Kenyan Flag" 
+           style="width: 100px; height: auto; position: absolute; right: 10px;">
+    </div>
+    <!-- Regular Navigation Menu for Desktop -->
+    <nav class="site-nav">
+      <ul>
+        <li><a href="index.html" class="active">HOME</a></li>
+        <li><a href="productgallery.html">PRODUCTS</a></li>
+        <li><a href="projects.html">PROJECTS</a></li>
+        <li><a href="contacts.html">CONTACTS</a></li>
+        <li><a href="reviews.html">REVIEWS</a></li>
+        <li><a href="staff.html">ABOUT US</a></li>
+      </ul>
+    </nav>
+    <!-- Mobile Dropdown Toggle Button & Mobile Navigation -->
+    <button class="dropdown-toggle" onclick="toggleMobileNav()">Menu</button>
+    <div class="mobile-nav">
+      <ul>
+        <li><a href="productgallery.html">PRODUCTS</a></li>
+        <li><a href="projects.html">PROJECTS</a></li>
+        <li><a href="contacts.html">CONTACTS</a></li>
+        <li><a href="reviews.html">REVIEWS</a></li>
+        <li><a href="staff.html">ABOUT US</a></li>
+      </ul>
+    </div>
+  </header>
 
   <!-- Stats Bar -->
   <section class="stats-bar">
@@ -210,7 +378,6 @@
 
   <!-- Inline JavaScript to animate numbers -->
   <script>
-    // Function to animate a number from start to end over 'duration' milliseconds
     function animateValue(obj, start, end, duration) {
       let startTimestamp = null;
       const step = (timestamp) => {
@@ -223,7 +390,6 @@
       };
       window.requestAnimationFrame(step);
     }
-    // Once the window loads, animate each stat number from 0 to its final value
     window.addEventListener('load', () => {
       const numbers = document.querySelectorAll('.stat .number');
       numbers.forEach((numElement) => {
@@ -247,7 +413,7 @@
       <h2>Our Projects</h2>
       <p>Check out some of our recent projects.</p>
       <div class="htc__latest__project__wrap h1__project clearfix image-container">
-        <!-- Project Card 1 (Left Column - Odd) -->
+        <!-- Project Card 1 (Odd) -->
         <div class="project__itm">
           <div class="project__card">
             <div class="image-wrapper">
@@ -259,7 +425,7 @@
             </div>
           </div>
         </div>
-        <!-- Project Card 2 (Right Column - Even) -->
+        <!-- Project Card 2 (Even) -->
         <div class="project__itm">
           <div class="project__card">
             <div class="image-wrapper">
@@ -267,11 +433,11 @@
             </div>
             <div class="project__desc">
               <h3>Moi barracks</h3>
-              <p>paving blocks.</p>
+              <p>Paving blocks.</p>
             </div>
           </div>
         </div>
-        <!-- Project Card 3 (Left Column - Odd) -->
+        <!-- Project Card 3 (Odd) -->
         <div class="project__itm">
           <div class="project__card">
             <div class="image-wrapper">
@@ -283,7 +449,7 @@
             </div>
           </div>
         </div>
-        <!-- Project Card 4 (Right Column - Even) -->
+        <!-- Project Card 4 (Even) -->
         <div class="project__itm">
           <div class="project__card">
             <div class="image-wrapper">
@@ -295,7 +461,7 @@
             </div>
           </div>
         </div>
-        <!-- Project Card 5 (Left Column - Odd) -->
+        <!-- Project Card 5 (Odd) -->
         <div class="project__itm">
           <div class="project__card">
             <div class="image-wrapper">
@@ -307,7 +473,7 @@
             </div>
           </div>
         </div>
-        <!-- Project Card 6 (Right Column - Even) -->
+        <!-- Project Card 6 (Even) -->
         <div class="project__itm">
           <div class="project__card">
             <div class="image-wrapper">
@@ -319,7 +485,7 @@
             </div>
           </div>
         </div>
-        <!-- Project Card 7 (Left Column - Odd) -->
+        <!-- Project Card 7 (Odd) -->
         <div class="project__itm">
           <div class="project__card">
             <div class="image-wrapper">
@@ -331,7 +497,7 @@
             </div>
           </div>
         </div>
-        <!-- Project Card 8 (Right Column - Even) -->
+        <!-- Project Card 8 (Even) -->
         <div class="project__itm">
           <div class="project__card">
             <div class="image-wrapper">
@@ -343,7 +509,7 @@
             </div>
           </div>
         </div>
-        <!-- Project Card 9 (Left Column - Odd) -->
+        <!-- Project Card 9 (Odd) -->
         <div class="project__itm">
           <div class="project__card">
             <div class="image-wrapper">
@@ -355,7 +521,7 @@
             </div>
           </div>
         </div>
-        <!-- Project Card 10 (Right Column - Even) -->
+        <!-- Project Card 10 (Even) -->
         <div class="project__itm">
           <div class="project__card">
             <div class="image-wrapper">
@@ -367,7 +533,7 @@
             </div>
           </div>
         </div>
-        <!-- Project Card 11 (Left Column - Odd) -->
+        <!-- Project Card 11 (Odd) -->
         <div class="project__itm">
           <div class="project__card">
             <div class="image-wrapper">
@@ -379,7 +545,7 @@
             </div>
           </div>
         </div>
-        <!-- Project Card 12 (Right Column - Even) -->
+        <!-- Project Card 12 (Even) -->
         <div class="project__itm">
           <div class="project__card">
             <div class="image-wrapper">
@@ -452,9 +618,20 @@
     </div>
   </footer>
 
-  <!-- JavaScript -->
+  <!-- JavaScript for Mobile Dropdown -->
+  <script>
+    function toggleMobileNav() {
+      var nav = document.querySelector('.mobile-nav');
+      if (nav.style.display === "block") {
+        nav.style.display = "none";
+      } else {
+        nav.style.display = "block";
+      }
+    }
+  </script>
+  <!-- External JavaScript (if any) -->
   <script src="script.js"></script>
-  <!-- Lightbox2 JavaScript -->
+  <!-- Lightbox2 JavaScript (if needed) -->
   <script src="script.js"
     integrity="sha512-BPz41T2ifN2ZQGl5uK13jwC5p+vLq8xkBTLI6L1o6lp8ZMyRzVvTCtMc79V6FDrTQ//6z5T+ArBqkAgBMoe+DQ=="
     crossorigin="anonymous" referrerpolicy="no-referrer"></script>
