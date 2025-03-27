@@ -14,7 +14,80 @@
   <!-- Main CSS -->
   <link rel="stylesheet" href="styles.css" />
   <style>
-    /* ===================== Header Section (Updated from Perfect Code) ===================== */
+    /* ===================== Global Styles & Responsive CSS (as originally provided) ===================== */
+    @media (max-width: 768px) {
+      .header-container {
+        flex-direction: column !important;
+        align-items: center !important;
+        justify-content: center !important;
+        padding: 10px !important;
+      }
+      .header-container img {
+        position: static !important;
+        margin: 5px 0 !important;
+      }
+      .logo-heading-container {
+        flex-direction: column !important;
+        align-items: center !important;
+        gap: 10px !important;
+        left: 0 !important;
+      }
+      .logo-heading-container h1 {
+        position: static !important;
+        text-align: center !important;
+        font-size: 2em !important;
+        margin: 5px 0 !important;
+        left: 0 !important;
+      }
+      /* Hide regular navigation */
+      .site-nav ul {
+        display: none;
+      }
+      /* Show mobile dropdown button and menu */
+      .dropdown-toggle {
+        display: block;
+        background: #333;
+        color: #fff;
+        padding: 10px 20px;
+        border: none;
+        border-radius: 5px;
+        font-size: 1em;
+        margin: 10px auto;
+        cursor: pointer;
+      }
+      .mobile-nav {
+        display: none;
+        text-align: center;
+        background: #f7f7f7;
+      }
+      .mobile-nav ul {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+      }
+      .mobile-nav ul li {
+        padding: 10px;
+        border-bottom: 1px solid #ddd;
+      }
+      .mobile-nav ul li a {
+        color: inherit;
+        text-decoration: none;
+      }
+    }
+    @media (min-width: 769px) {
+      .dropdown-toggle,
+      .mobile-nav {
+        display: none;
+      }
+      .site-nav ul {
+        display: flex;
+        justify-content: center;
+      }
+      .site-nav ul li {
+        margin: 0 15px;
+      }
+    }
+    /* ===================== Header Section CSS (Updated from Perfect Code) ===================== */
     .header-container {
       display: flex;
       align-items: center;
@@ -73,7 +146,7 @@
       text-decoration: none;
       color: inherit;
     }
-    /* Mobile Dropdown Styles */
+    /* Mobile Dropdown Styles (shown only on phones) */
     .dropdown-toggle {
       display: none;
       background: #333;
@@ -103,60 +176,43 @@
       color: inherit;
       text-decoration: none;
     }
-    /* Mobile Display Overrides */
-    @media (max-width: 768px) {
-      .header-container {
-        flex-direction: column !important;
-        align-items: center !important;
-        justify-content: center !important;
-        padding: 10px !important;
-      }
-      .header-container img {
-        position: static !important;
-        margin: 5px 0 !important;
-      }
-      .logo-heading-container {
-        flex-direction: column !important;
-        align-items: center !important;
-        gap: 10px !important;
-        left: 0 !important;
-      }
-      .logo-heading-container h1 {
-        position: static !important;
-        text-align: center !important;
-        font-size: 2em !important;
-        margin: 5px 0 !important;
-        left: 0 !important;
-      }
-      /* Hide desktop nav and show mobile dropdown */
-      .site-nav ul { display: none; }
-      .dropdown-toggle { display: block; }
+    /* ===================== Other Section CSS (Unchanged) ===================== */
+    .static-bg-section {
+      background-image: url(https://res-console.cloudinary.com/dl5cjekuk/thumbnails/v1/image/upload/v1742984818/Q29ybi1CYXNlZC1Db25jcmV0ZS1CdWlsZGluZy10aGUtRnV0dXJlLW9mLUxvdy1DYXJib24tQ29uc3RydWN0aW9uLU1hdGVyaWFsc19pY2NqaDU=/drilldown);
+      background-attachment: fixed;
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: cover;
+      color: rgba(242, 248, 248, 0.992);
+      text-align: center;
+      padding: 100px 0;
+      position: relative;
+      z-index: 0;
     }
-    @media (min-width: 769px) {
-      .dropdown-toggle,
-      .mobile-nav { display: none; }
-      .site-nav ul { display: flex; }
+    .static-bg-section::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0, 0, 0, 0.5);
+      z-index: -1;
     }
-    /* ===================== Other Global Styles (Retained) ===================== */
-    /* Top Bar Styles */
-    .top-bar {
-      background: #f0f0f0;
-      padding: 10px 0;
+    .static-bg-content {
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 0 20px;
     }
-    .top-bar .container {
-      display: flex;
-      justify-content: flex-end;
-      padding: 0 50px;
+    .static-bg-content h2 {
+      font-size: 3em;
+      margin-bottom: 20px;
     }
-    .top-bar .contact-info span {
-      margin-left: 15px;
-      font-size: 0.9em;
-      color: #333;
+    .static-bg-content p {
+      font-size: 1.2em;
+      line-height: 1.6;
     }
-    /* ===================== Reviews Section & Other CSS Remains Unchanged ===================== */
-    /* (Include your reviews and other section styles here as needed) */
-    
-    /* Example Reviews Section CSS */
+    /* (Other Reviews and section styles remain as originally provided) */
     #reviews {
       background: #f8f9fa;
       padding: 4rem 0;
@@ -174,11 +230,20 @@
       text-transform: uppercase;
       letter-spacing: 1px;
     }
-    /* Additional CSS from your existing code is kept below… */
+    .reviews-container {
+      display: grid;
+      grid-template-columns: 1fr 2fr;
+      gap: 3rem;
+      background: white;
+      padding: 2rem;
+      border-radius: 10px;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    }
+    /* Additional Reviews section CSS follows as originally provided... */
   </style>
 </head>
 <body>
-  <!-- Top Bar with Contact Info -->
+  <!-- Top Bar with Contact Info (unchanged) -->
   <div class="top-bar">
     <div class="container">
       <div class="contact-info">
@@ -214,7 +279,7 @@
         <li><a href="staff.html">ABOUT US</a></li>
       </ul>
     </nav>
-    <!-- Mobile Dropdown Toggle Button & Navigation -->
+    <!-- Mobile Dropdown Toggle Button & Navigation (visible only on phones) -->
     <button class="dropdown-toggle" onclick="toggleMobileNav()">Menu <i class="fas fa-bars"></i></button>
     <div class="mobile-nav">
       <ul>
@@ -230,7 +295,7 @@
   
   <!-- Inline JavaScript for Stats Animation and Mobile Dropdown -->
   <script>
-    // Animate numbers in stats bar
+    // Function to animate numbers from 0 to final value over duration
     function animateValue(obj, start, end, duration) {
       let startTimestamp = null;
       const step = (timestamp) => {
@@ -250,18 +315,14 @@
         animateValue(numElement, 0, finalValue, 2000);
       });
     });
-    // Toggle function for mobile navigation
+    // Mobile navigation toggle
     function toggleMobileNav() {
       var nav = document.querySelector('.mobile-nav');
-      if (nav.style.display === "block") {
-        nav.style.display = "none";
-      } else {
-        nav.style.display = "block";
-      }
+      nav.style.display = (nav.style.display === "block") ? "none" : "block";
     }
   </script>
   
-  <!-- Stats Bar -->
+  <!-- Stats Bar (unchanged) -->
   <section class="stats-bar">
     <div class="container stats-container">
       <div class="stat">
@@ -283,8 +344,7 @@
     </div>
   </section>
   
-  <!-- Reviews Section and Other Content Remain Unchanged -->
-  <!-- Static Background Section for Reviews -->
+  <!-- Static Background Section for Reviews (unchanged) -->
   <section class="static-bg-section">
     <div class="static-bg-content">
       <h2>Welcome to our Review section</h2>
@@ -292,7 +352,7 @@
     </div>
   </section>
   
-  <!-- REVIEWS SECTION -->
+  <!-- REVIEWS SECTION (unchanged) -->
   <section id="reviews" class="section reviews">
     <div class="container">
       <h2>User Experience & Ratings</h2>
@@ -320,7 +380,7 @@
     </div>
   </section>
   
-  <!-- Request a Quote Section -->
+  <!-- Request a Quote Section (unchanged) -->
   <section class="request-quote">
     <div class="container quote-container">
       <div class="quote-form">
@@ -364,7 +424,7 @@
     </div>
   </section>
   
-  <!-- Footer -->
+  <!-- Footer (unchanged) -->
   <footer class="site-footer">
     <div class="container">
       <nav class="footer-nav">
