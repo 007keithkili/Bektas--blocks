@@ -22,7 +22,7 @@
       padding: 10px 50px;
       position: relative;
     }
-    /* Flags positioned absolutely on desktop */
+    /* Flags (desktop) positioned absolutely */
     .header-container img.flag {
       width: 100px;
       height: auto;
@@ -35,7 +35,7 @@
       position: absolute;
       right: 10px;
     }
-    /* Center: Logo & Heading displayed side by side on desktop */
+    /* Center: Logo & Heading (side by side on desktop) */
     .logo-heading {
       display: flex;
       flex-direction: row;
@@ -52,7 +52,7 @@
       margin: 0;
       color: #0965f0;
     }
-    /* Desktop Navigation Menu with smaller links */
+    /* Desktop Navigation Menu (original styling) */
     .site-nav ul {
       list-style: none;
       display: flex;
@@ -64,7 +64,7 @@
     .site-nav ul li a {
       text-decoration: none;
       color: inherit;
-      font-size: 1em; /* Reduced from 1.1em to 1em */
+      font-size: 1.1em;
       padding: 5px 10px;
     }
     /* Mobile Dropdown Toggle & Menu */
@@ -135,6 +135,94 @@
       line-height: 1.6;
     }
     
+    /* ================= Projects Section ================= */
+    .tes__icon {
+      width: 400px;
+      height: 300px;
+      object-fit: cover;
+      border-radius: 5px;
+    }
+    .image-container {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 20px;
+      padding: 20px;
+      width: 100%;
+    }
+    .project__card {
+      display: flex;
+      align-items: center;
+      background: #e6eae9;
+      border: 1px solid #ddd;
+      border-radius: 5px;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+      overflow: hidden;
+      height: 300px;
+      width: 100%;
+    }
+    .project__card {
+      flex-direction: row;
+    }
+    .project__card .image-wrapper {
+      flex: 0 0 400px;
+    }
+    .project__desc {
+      flex: 1;
+      padding: 20px;
+    }
+    .project__desc h3 {
+      margin-top: 0;
+      font-size: 1.5em;
+      color: #333;
+    }
+    .project__desc p {
+      font-size: 1.1em;
+      color: #0c0707;
+      line-height: 1.5;
+    }
+    .image-container .project__itm:nth-child(odd) .project__desc {
+      text-align: left;
+    }
+    .image-container .project__itm:nth-child(even) .project__desc {
+      text-align: right;
+    }
+    
+    /* ================= Request a Quote Section ================= */
+    .quote-container {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 40px;
+      padding: 40px 0;
+    }
+    .quote-form, .quote-info {
+      flex: 1;
+      padding: 20px;
+    }
+    .quote-form h2 {
+      margin-top: 0;
+    }
+    
+    /* ================= Footer ================= */
+    .site-footer {
+      background: #333;
+      color: #fff;
+      padding: 20px 0;
+      text-align: center;
+    }
+    .site-footer .footer-nav ul {
+      list-style: none;
+      display: flex;
+      justify-content: center;
+      gap: 15px;
+      padding: 0;
+      margin: 10px 0;
+    }
+    .site-footer .footer-nav ul li a {
+      text-decoration: none;
+      color: #fff;
+    }
+    
     /* ================= Responsive Adjustments ================= */
     @media (max-width: 768px) {
       /* For mobile, stack header elements vertically */
@@ -148,7 +236,7 @@
         position: static !important;
         margin: 10px 0;
       }
-      /* Mobile: Logo & Heading stack vertically */
+      /* Mobile: Center container becomes vertical; logo between flags and text below logo */
       .logo-heading {
         flex-direction: column;
         gap: 10px;
@@ -185,8 +273,7 @@
       
       <!-- Center: Logo and Heading -->
       <div class="logo-heading">
-        <img src="https://scontent-mba2-1.xx.fbcdn.net/v/t39.30808-6/486706616_122137008848592990_9213781367601452384_n.jpg?_nc_cat=110&ccb=1-7&_nc_sid=127cfc&_nc_eui2=AeEq8m1dYa5AvWa7m0LQQtdraUoVvy_vXFBpShW_L-9cUErpYCa-RSgOFdsE-IVnbePbcfWkNkZ2lPRqt0i6DTG7&_nc_ohc=NO3A68hAWVYQ7kNvgE0fLkU&_nc_oc=AdnHVeeXxxP1QmegXA_mEKZf_If1nS-wrtArTmS1cYN0Z8QqWgpdAEXSr2C2CsElCtc&_nc_zt=23&_nc_ht=scontent-mba2-1.xx&_nc_gid=3y8G3O52p7gTTRao9p-3Ag&oh=00_AYGFp_RDl5hBdcojq1IgCxZsZF9bOT8EdyRDrUKmMi8OcQ&oe=67EAD774" 
-             alt="Bektas Blocks Logo">
+        <img src="https://scontent-mba2-1.xx.fbcdn.net/v/t39.30808-6/486706616_122137008848592990_9213781367601452384_n.jpg?_nc_cat=110&ccb=1-7&_nc_sid=127cfc&_nc_eui2=AeEq8m1dYa5AvWa7m0LQQtdraUoVvy_vXFBpShW_L-9cUErpYCa-RSgOFdsE-IVnbePbcfWkNkZ2lPRqt0i6DTG7&_nc_ohc=NO3A68hAWVYQ7kNvgE0fLkU&_nc_oc=AdnHVeeXxxP1QmegXA_mEKZf_If1nS-wrtArTmS1cYN0Z8QqWgpdAEXSr2C2CsElCtc&_nc_zt=23&_nc_ht=scontent-mba2-1.xx&_nc_gid=3y8G3O52p7gTTRao9p-3Ag&oh=00_AYGFp_RDl5hBdcojq1IgCxZsZF9bOT8EdyRDrUKmMi8OcQ&oe=67EAD774" alt="Bektas Blocks Logo">
         <h1>BEKTAS BLOCKS</h1>
       </div>
       
@@ -498,6 +585,3 @@
     }
   </script>
   <!-- External JavaScript -->
-  <script src="script.js"></script>
-</body>
-</html>
