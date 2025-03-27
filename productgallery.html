@@ -37,8 +37,6 @@
       font-size: 0.9em;
     }
     
-    /* Other styles remain unchanged */
-    
     /* ===================== Responsive CSS Inserted ===================== */
     @media (max-width: 768px) {
       /* Header adjustments */
@@ -73,6 +71,41 @@
        Other CSS Sections (Static Background, Product Grid, etc.)
        remain unchanged.
     ================================ */
+    .static-bg-section {
+      background: url('your-background-image.jpg') no-repeat center center/cover;
+      padding: 100px 20px;
+      text-align: center;
+      color: #fff;
+    }
+    
+    /* Example Product Grid Styles */
+    .product-grid {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+      justify-content: center;
+      padding: 20px;
+    }
+    .product-grid .item {
+      width: 200px;
+      text-align: center;
+    }
+    .product-grid .item img {
+      width: 100%;
+    }
+    
+    /* Footer (if needed) */
+    .site-footer {
+      background: #333;
+      color: #fff;
+      padding: 20px 0;
+      text-align: center;
+    }
+    
+    /* Main content wrapper to clear the header overlap */
+    .main-content {
+      margin-top: 170px; /* Adjust this value if needed */
+    }
   </style>
 </head>
 <body>
@@ -88,17 +121,17 @@
 
   <!-- Updated Header: Logo, Flags, Navigation & Mobile Dropdown -->
   <header class="site-header">
-    <div class="container header-container" style="display: flex; align-items: center; justify-content: space-between; padding: 0 50px;">
+    <div class="container header-container" style="display: flex; align-items: center; justify-content: space-between; padding: 0 50px; position: relative;">
       <!-- Left: Turkey Flag -->
       <img src="https://i.pinimg.com/474x/f1/de/73/f1de7316c0d4c8110f19c32a317eef3b.jpg" 
            alt="Turkey Flag" 
            style="width: 100px; height: auto; position: absolute; left: 10px;">
       
       <!-- Center: Logo and Heading -->
-      <div style="display: flex; align-items: center; gap: 70px; left:50px;">
+      <div style="display: flex; align-items: center; gap: 70px; position: relative; left:50px;">
         <img src="https://scontent-mba2-1.xx.fbcdn.net/v/t39.30808-6/486706616_122137008848592990_9213781367601452384_n.jpg?_nc_cat=110&ccb=1-7&_nc_sid=127cfc&_nc_eui2=AeEq8m1dYa5AvWa7m0LQQtdraUoVvy_vXFBpShW_L-9cUErpYCa-RSgOFdsE-IVnbePbcfWkNkZ2lPRqt0i6DTG7&_nc_ohc=NO3A68hAWVYQ7kNvgE0fLkU&_nc_oc=AdnHVeeXxxP1QmegXA_mEKZf_If1nS-wrtArTmS1cYN0Z8QqWgpdAEXSr2C2CsElCtc&_nc_zt=23&_nc_ht=scontent-mba2-1.xx&_nc_gid=3y8G3O52p7gTTRao9p-3Ag&oh=00_AYGFp_RDl5hBdcojq1IgCxZsZF9bOT8EdyRDrUKmMi8OcQ&oe=67EAD774" 
              alt="Bektas Blocks Logo" 
-             style="width: 250px; height: 130px; position: relative; left: 35%; border-radius: 1px;">
+             style="width: 250px; height: 130px; border-radius: 1px;">
         <h1 style="font-size: 3em; margin: 0; position: relative; left:27%; color: #0965f0;">BEKTAS BLOCKS</h1>
       </div>
       
@@ -120,7 +153,7 @@
     </nav>
     <!-- Mobile Dropdown Toggle Button & Mobile Navigation -->
     <button class="dropdown-toggle" onclick="toggleMobileNav()">Menu</button>
-    <div class="mobile-nav">
+    <div class="mobile-nav" style="display: none;">
       <ul>
         <li><a href="productgallery.html">PRODUCTS</a></li>
         <li><a href="projects.html">PROJECTS</a></li>
@@ -153,9 +186,45 @@
     </div>
   </section>
 
-  <!-- Inline JavaScript to animate numbers -->
+  <!-- Main Content: Product Grid & Static Background -->
+  <main class="main-content">
+    <!-- Product Grid Section -->
+    <section class="product-grid">
+      <!-- Example Product Item -->
+      <div class="item">
+        <img src="https://i.pinimg.com/474x/46/02/fb/4602fb48129167bc380a68c1958dbd8c.jpg" alt="Interlocking Blocks (Hollow)">
+        <p>Interlocking Blocks (Hollow)</p>
+      </div>
+      <!-- Add additional product items as needed -->
+    </section>
+
+    <!-- Static Background Section -->
+    <section class="static-bg-section">
+      <div class="static-bg-content">
+        <h2>Welcome to Bektas Products</h2>
+        <p>Discover quality concrete and precast building materials for your projects.</p>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="container">
+      <nav class="footer-nav">
+        <ul>
+          <li><a href="#">Concrete Blocks</a></li>
+          <li><a href="#">Concrete Precast</a></li>
+          <li><a href="#">Paving Blocks</a></li>
+          <li><a href="#">Floor Well</a></li>
+        </ul>
+      </nav>
+      <p>&copy; 2025 Bektas Blocks. Developed by Keith Kili.</p>
+    </div>
+  </footer>
+
+  <!-- Inline JavaScript for Stats Animation -->
   <script>
-    // Function to animate a number from start to end over 'duration' milliseconds
+    // Animate numbers from 0 to their final value over 2000ms
     function animateValue(obj, start, end, duration) {
       let startTimestamp = null;
       const step = (timestamp) => {
@@ -168,19 +237,15 @@
       };
       window.requestAnimationFrame(step);
     }
-
-    // Once the window loads, animate each stat number from 0 to its final value
     window.addEventListener('load', () => {
       const numbers = document.querySelectorAll('.stat .number');
       numbers.forEach((numElement) => {
         const finalValue = parseInt(numElement.innerText, 10);
-        animateValue(numElement, 0, finalValue, 2000); // Animate over 2000ms
+        animateValue(numElement, 0, finalValue, 2000);
       });
     });
   </script>
 
-  <!-- Rest of your Products page content goes here -->
-  
   <!-- Mobile Navigation Toggle Script -->
   <script>
     function toggleMobileNav() {
@@ -192,17 +257,6 @@
       }
     }
   </script>
-</body>
-</html>
-
-  <!-- Static Background Section -->
-  <section class="static-bg-section">
-    <div class="static-bg-content">
-      <h2>Welcome to Bektas Products</h2>
-      <p>Discover quality concrete and precast building materials for your projects.</p>
-    </div>
-  </section>
-
   <!-- Product Grid -->
   <h1>Our Products</h1>
   <div class="image-container">
