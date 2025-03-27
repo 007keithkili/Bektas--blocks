@@ -81,7 +81,7 @@
       height: 300px;
     }
     
-    /* Responsive adjustments */
+    /* Responsive adjustments for image grid */
     @media (max-width: 1200px) {
       .image-container {
         grid-template-columns: repeat(2, 1fr);
@@ -102,32 +102,26 @@
     .project__card {
       flex-direction: row;
     }
-    
     .image-container .project__itm:nth-child(even) .project__card {
       flex-direction: row-reverse;
     }
-    
     .project__card .image-wrapper {
       flex: 0 0 400px;
     }
-    
     .project__desc {
       flex: 1;
       padding: 20px;
     }
-    
     .project__desc h3 {
       margin-top: 0;
       font-size: 1.5em;
       color: #333;
     }
-    
     .project__desc p {
       font-size: 1em;
       color: #666;
       line-height: 1.5;
     }
-    
     .image-container .project__itm:nth-child(odd) .project__desc {
       text-align: left;
     }
@@ -214,13 +208,20 @@
       font-size: 1.2em;
     }
     
-    /* Updated Header Styles */
-    /* Hide dropdown toggle in PC view */
-    .dropdown-toggle {
+    /* Header Section and Navigation */
+    /* By default (PC view) hide dropdown toggle and its content */
+    .dropdown-toggle,
+    .mobile-nav {
       display: none;
     }
-    /* Mobile view: Show dropdown toggle as the only navigation link */
+    /* In PC view, show regular navigation */
+    .site-nav {
+      display: block;
+    }
+
+    /* Mobile view adjustments */
     @media (max-width: 768px) {
+      /* Header adjustments */
       .header-container {
         flex-direction: column;
         align-items: center;
@@ -236,9 +237,11 @@
         font-size: 2em;
         margin: 10px 0;
       }
-      .site-nav ul {
+      /* Hide the regular navigation in mobile view */
+      .site-nav {
         display: none;
       }
+      /* Show the dropdown toggle and its content */
       .dropdown-toggle {
         display: block;
         background: #333;
@@ -251,7 +254,7 @@
         cursor: pointer;
       }
       .mobile-nav {
-        display: none;
+        display: none; /* Initially hidden; will be toggled via JavaScript */
         text-align: center;
         background: #f7f7f7;
       }
@@ -269,8 +272,7 @@
         text-decoration: none;
       }
     }
-    
-    /* ===================== End Responsive CSS ===================== */
+    /* End Mobile view adjustments */
   </style>
 </head>
 <body>
@@ -305,7 +307,7 @@
            alt="Kenyan Flag" 
            style="width: 100px; height: auto; position: absolute; right: 10px;">
     </div>
-    <!-- Regular Navigation Menu for PC -->
+    <!-- Regular Navigation Menu (visible in PC view only) -->
     <nav class="site-nav">
       <ul>
         <li><a href="index.html" class="active">HOME</a></li>
@@ -316,10 +318,11 @@
         <li><a href="staff.html">ABOUT US</a></li>
       </ul>
     </nav>
-    <!-- Mobile Dropdown Toggle Button & Mobile Navigation -->
+    <!-- Dropdown Toggle & Mobile Navigation (visible in mobile view only) -->
     <button class="dropdown-toggle" onclick="toggleMobileNav()">Menu</button>
     <div class="mobile-nav">
       <ul>
+        <li><a href="index.html" class="active">HOME</a></li>
         <li><a href="productgallery.html">PRODUCTS</a></li>
         <li><a href="projects.html">PROJECTS</a></li>
         <li><a href="contacts.html">CONTACTS</a></li>
@@ -366,13 +369,12 @@
       };
       window.requestAnimationFrame(step);
     }
-
     // Once the window loads, animate each stat number from 0 to its final value
     window.addEventListener('load', () => {
       const numbers = document.querySelectorAll('.stat .number');
       numbers.forEach((numElement) => {
         const finalValue = parseInt(numElement.innerText, 10);
-        animateValue(numElement, 0, finalValue, 2000); // Animate over 2000ms
+        animateValue(numElement, 0, finalValue, 2000);
       });
     });
   </script>
@@ -415,7 +417,6 @@
           <p> Accountant</p>
         </div>
       </div>
-      
       <div class="project__itm">
         <img class="tes__icon" src="images/ii.jpg" alt="Building Materials">
         <div class="project__desc">
@@ -526,5 +527,12 @@
   <script src="script.js"
     integrity="sha512-BPz41T2ifN2ZQGl5uK13jwC5p+vLq8xkBTLI6L1o6lp8ZMyRzVvTCtMc79V6FDrTQ//6z5T+ArBqkAgBMoe+DQ=="
     crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  <script>
+    function toggleMobileNav() {
+      var nav = document.querySelector('.mobile-nav');
+      // Toggle display between block and none
+      nav.style.display = (nav.style.display === "block") ? "none" : "block";
+    }
+  </script>
 </body>
 </html>
