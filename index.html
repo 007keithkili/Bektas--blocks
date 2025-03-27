@@ -28,7 +28,6 @@
       color: rgb(12, 59, 98);
       background-color: transparent;
     }
-
     section div.tm-content-header {
       display: block;
       position: flex;
@@ -44,7 +43,6 @@
       background-color: transparent;
       text-align: left;
     }
-
     section h4.tm-element-subhead {
       display: inline-block;
       position: static;
@@ -63,132 +61,72 @@
 
     /* ===================== Responsive CSS Inserted ===================== */
     @media (max-width: 768px) {
-      /* Header adjustments */
+      /* Rearranged Header for Mobile:
+         Display Turkey flag on top, then logo, then heading, then Kenyan flag */
       .header-container {
-        flex-direction: column;
-        align-items: center;
-        padding: 10px;
+        flex-direction: column !important;
+        align-items: center !important;
+        justify-content: center !important;
+        padding: 10px !important;
+        position: relative !important;
       }
+      /* Override inline absolute positioning */
       .header-container img {
         position: static !important;
-        margin: 10px 0;
+        margin: 5px 0 !important;
+      }
+      /* Stack the logo and heading vertically */
+      .header-container > div {
+        display: flex !important;
+        flex-direction: column !important;
+        align-items: center !important;
+        gap: 10px !important;
+        left: 0 !important;
       }
       .header-container h1 {
-        position: static;
-        text-align: center;
-        font-size: 2em;
-        margin: 10px 0;
+        position: static !important;
+        text-align: center !important;
+        font-size: 2em !important;
+        margin: 5px 0 !important;
+        left: 0 !important;
       }
-      /* Navigation adjustments */
+      /* Hide the regular navigation menu */
       .site-nav ul {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
+        display: none;
+      }
+      /* Show the mobile dropdown button */
+      .dropdown-toggle {
+        display: block;
+        background: #333;
+        color: #fff;
+        padding: 10px 20px;
+        border: none;
+        border-radius: 5px;
+        font-size: 1em;
+        margin: 10px auto;
+        cursor: pointer;
+      }
+      /* Mobile navigation links */
+      .mobile-nav {
+        display: none;
+        text-align: center;
+        background: #f7f7f7;
+      }
+      .mobile-nav ul {
+        list-style: none;
         padding: 0;
+        margin: 0;
       }
-      .site-nav ul li {
-        margin: 5px 0;
+      .mobile-nav ul li {
+        padding: 10px;
+        border-bottom: 1px solid #ddd;
       }
-      /* Stats Bar adjustments */
-      .stats-container {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-      }
-      .stats-container .stat {
-        margin: 10px 0;
-      }
-      /* Professional Details: Stack cards vertically */
-      .professional-details .details-cards {
-        flex-direction: column;
-        align-items: center;
-      }
-      .professional-details .card {
-        margin: 10px 0;
-        width: 90%;
-      }
-      /* Vision & Mission: Stack columns */
-      .vision-mission .container {
-        flex-direction: column;
-        align-items: center;
-      }
-      .vision, .mission {
-        margin: 20px 0;
-        width: 100%;
-        text-align: center;
-      }
-      /* Latest News: Stack blog posts vertically */
-      section[style*="padding: 20px; background-color: #f9f9f9;"] > div[style*="display: flex"] {
-        flex-direction: column;
-        align-items: center;
-      }
-      /* Client Boxes: Adjust layout */
-      #client-boxes {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-      }
-      .client-box {
-        width: 90%;
-        margin-bottom: 20px;
-      }
-      /* Request a Quote: Stack form and info vertically */
-      .quote-container {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-      }
-      .quote-form, .quote-info {
-        width: 100%;
-        text-align: center;
-        margin-bottom: 20px;
-      }
-      /* Footer: Center text */
-      .site-footer .container {
-        text-align: center;
-        padding: 20px;
+      .mobile-nav ul li a {
+        color: inherit;
+        text-decoration: none;
       }
     }
     /* ===================== End Responsive CSS ===================== */
-
-    /* --- Dropdown Menu Styling --- */
-    .site-nav ul {
-      list-style: none;
-      padding: 0;
-      margin: 0;
-      display: flex;
-      justify-content: center;
-      gap: 20px;
-    }
-    .site-nav ul li {
-      position: relative;
-    }
-    .site-nav ul li a {
-      text-decoration: none;
-      /* Using the original colors (inherit or defined elsewhere) */
-      padding: 5px 10px;
-      display: block;
-    }
-    /* Dropdown container - hidden by default */
-    .site-nav ul li .dropdown-content {
-      display: none;
-      position: absolute;
-      top: 100%;
-      left: 0;
-      background-color: #fff;
-      min-width: 160px;
-      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
-      z-index: 100;
-    }
-    /* Dropdown links styling */
-    .site-nav ul li .dropdown-content li a {
-      padding: 8px 12px;
-      white-space: nowrap;
-    }
-    /* Show dropdown on hover */
-    .site-nav ul li:hover .dropdown-content {
-      display: block;
-    }
   </style>
 </head>
 <body>
@@ -205,41 +143,46 @@
   <!-- Header: Logo and Navigation -->
   <header class="site-header">
     <div class="container header-container" style="display: flex; align-items: center; justify-content: space-between; padding: 0 50px;">
-      <!-- Left: Turkey Flag (original positioning) -->
+      <!-- Left: Turkey Flag -->
       <img src="https://i.pinimg.com/474x/f1/de/73/f1de7316c0d4c8110f19c32a317eef3b.jpg" 
            alt="Turkey Flag" 
            style="width: 100px; height: auto; position: absolute; left: 10px;">
       
-      <!-- Center: Logo and Title -->
-      <div style="display: flex; align-items: center; gap: 70px; left:50px">
+      <!-- Center: Logo and Heading -->
+      <div style="display: flex; align-items: center; gap: 70px; left:50px;">
         <img src="https://scontent-mba2-1.xx.fbcdn.net/v/t39.30808-6/486706616_122137008848592990_9213781367601452384_n.jpg?_nc_cat=110&ccb=1-7&_nc_sid=127cfc&_nc_eui2=AeEq8m1dYa5AvWa7m0LQQtdraUoVvy_vXFBpShW_L-9cUErpYCa-RSgOFdsE-IVnbePbcfWkNkZ2lPRqt0i6DTG7&_nc_ohc=NO3A68hAWVYQ7kNvgE0fLkU&_nc_oc=AdnHVeeXxxP1QmegXA_mEKZf_If1nS-wrtArTmS1cYN0Z8QqWgpdAEXSr2C2CsElCtc&_nc_zt=23&_nc_ht=scontent-mba2-1.xx&_nc_gid=3y8G3O52p7gTTRao9p-3Ag&oh=00_AYGFp_RDl5hBdcojq1IgCxZsZF9bOT8EdyRDrUKmMi8OcQ&oe=67EAD774" 
              alt="Bektas Blocks Logo" 
              style="width: 250px; height: 130px; position: relative; left: 35%; border-radius: 1px;">
         <h1 style="font-size: 3em; margin: 0; position:relative; left:27%; color: #0965f0;">BEKTAS BLOCKS</h1>
       </div>
       
-      <!-- Right: Kenyan Flag (original positioning) -->
+      <!-- Right: Kenyan Flag -->
       <img src="https://i.pinimg.com/474x/33/54/8a/33548ab261a60a06058da6b2c7e08751.jpg" 
            alt="Kenyan Flag" 
            style="width: 100px; height: auto; position: absolute; right: 10px;">
     </div>
+    <!-- Regular Navigation Menu for PC -->
     <nav class="site-nav">
       <ul>
         <li><a href="index.html" class="active">HOME</a></li>
-        <!-- Dropdown for PRODUCTS -->
-        <li>
-          <a href="productgallery.html">PRODUCTS</a>
-          <ul class="dropdown-content">
-            <li><a href="productgallery.html#concrete">Concrete Blocks</a></li>
-            <li><a href="productgallery.html#paving">Paving Blocks</a></li>
-          </ul>
-        </li>
+        <li><a href="productgallery.html">PRODUCTS</a></li>
         <li><a href="projects.html">PROJECTS</a></li>
         <li><a href="contacts.html">CONTACTS</a></li>
         <li><a href="reviews.html">REVIEWS</a></li>
         <li><a href="staff.html">ABOUT US</a></li>
       </ul>
     </nav>
+    <!-- Mobile Dropdown Toggle Button & Navigation -->
+    <button class="dropdown-toggle" onclick="toggleMobileNav()">Menu</button>
+    <div class="mobile-nav">
+      <ul>
+        <li><a href="productgallery.html">PRODUCTS</a></li>
+        <li><a href="projects.html">PROJECTS</a></li>
+        <li><a href="contacts.html">CONTACTS</a></li>
+        <li><a href="reviews.html">REVIEWS</a></li>
+        <li><a href="staff.html">ABOUT US</a></li>
+      </ul>
+    </div>
   </header>
 
   <!-- Stats Bar -->
@@ -279,7 +222,6 @@
       };
       window.requestAnimationFrame(step);
     }
-
     // Once the window loads, animate each stat number from 0 to its final value
     window.addEventListener('load', () => {
       const numbers = document.querySelectorAll('.stat .number');
@@ -293,7 +235,7 @@
   <!-- Main Featured Products Section -->
   <div class="video-bg-wrapper" style="position: relative; overflow: hidden; height: 420px;">
     <video autoplay loop muted playsinline style="width: 100%; height: 100%; object-fit: cover;">
-      <source src="https://scontent-mba2-1.xx.fbcdn.net/v/t15.5256-10/486612907_1184302793317135_1517838238920447447_n.jpg?stp=dst-jpg_p206x206_tt6&_nc_cat=105&ccb=1-7&_nc_sid=282d23&_nc_eui2=AeFbV0elvs7BNBzidt3syWdHgYuBo9fghh2Bi4Gj1-CGHS3t5ZJPURDPxcWtZ0DJtJlR-3z-RvuoroXPo-7lDXU3&_nc_ohc=FzDdDcsVXegQ7kNvgEx2Lj3&_nc_oc=Adk3mfdq_opALuGT4974UI5O2fwKNDDe6beMdZ5ZRDzB_wbU6V64MIuVfQSaVPzsntk&_nc_zt=23&_nc_ht=scontent-mba2-1.xx&_nc_gid=f7VLt-PR24uNvazecPc6GQ&oh=00_AYH9wMhhpuhZnpfwNgJaYg3f6uBzOaum15QBTHg3pzKe-A&oe=67EAD996" type="video/mp4">
+      <source src="images/202503072032 (2).mp4" type="video/mp4">
     </video>
     <!-- Optional overlay to darken the video for better text contrast -->
     <div class="video-overlay" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;"></div>
@@ -459,7 +401,7 @@
         </div>
       </div>
 
-      <!-- Navigation Button -->
+      <!-- Navigation Button for Client Boxes -->
       <div style="text-align: center;">
         <button onclick="showNextClient()" style="padding: 10px 20px; font-size: 1em; border: none; background-color: #007BFF; color: #fff; border-radius: 5px; cursor: pointer;">
           Next Client
@@ -540,7 +482,18 @@
     </div>
   </footer>
 
-  <!-- JavaScript -->
+  <!-- JavaScript for Mobile Dropdown -->
+  <script>
+    function toggleMobileNav() {
+      var nav = document.querySelector('.mobile-nav');
+      if (nav.style.display === "block") {
+        nav.style.display = "none";
+      } else {
+        nav.style.display = "block";
+      }
+    }
+  </script>
+  <!-- External JavaScript -->
   <script src="cript.js"></script>
 </body>
 </html>
