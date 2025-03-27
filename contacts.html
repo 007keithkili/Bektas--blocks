@@ -14,95 +14,156 @@
   <!-- Main CSS -->
   <link rel="stylesheet" href="styles.css" />
   <style>
-    /* ===================== Responsive CSS Inserted ===================== */
-@media (max-width: 768px) {
-  /* Header adjustments */
-  .header-container {
-    flex-direction: column;
-    align-items: center;
-    padding: 10px;
-  }
-  .header-container img {
-    position: static !important;
-    margin: 10px 0;
-  }
-  .header-container h1 {
-    position: static;
-    text-align: center;
-    font-size: 2em;
-    margin: 10px 0;
-  }
-  /* Navigation adjustments */
-  .site-nav ul {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    padding: 0;
-  }
-  .site-nav ul li {
-    margin: 5px 0;
-  }
-  /* Stats Bar adjustments */
-  .stats-container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-  }
-  .stats-container .stat {
-    margin: 10px 0;
-  }
-  /* Professional Details: Stack cards vertically */
-  .professional-details .details-cards {
-    flex-direction: column;
-    align-items: center;
-  }
-  .professional-details .card {
-    margin: 10px 0;
-    width: 90%;
-  }
-  /* Vision & Mission: Stack columns */
-  .vision-mission .container {
-    flex-direction: column;
-    align-items: center;
-  }
-  .vision, .mission {
-    margin: 20px 0;
-    width: 100%;
-    text-align: center;
-  }
-  /* Latest News: Stack blog posts vertically */
-  section[style*="padding: 20px; background-color: #f9f9f9;"] > div[style*="display: flex"] {
-    flex-direction: column;
-    align-items: center;
-  }
-  /* Client Boxes: Adjust layout */
-  #client-boxes {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-  }
-  .client-box {
-    width: 90%;
-    margin-bottom: 20px;
-  }
-  /* Request a Quote: Stack form and info vertically */
-  .quote-container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-  }
-  .quote-form, .quote-info {
-    width: 100%;
-    text-align: center;
-    margin-bottom: 20px;
-  }
-  /* Footer: Center text */
-  .site-footer .container {
-    text-align: center;
-    padding: 20px;
-  }
-}
-/* ===================== End Responsive CSS ===================== */
+    /* ===================== Global Responsive CSS ===================== */
+    @media (max-width: 768px) {
+      /* Header container: keep flags on sides and logo-title centered */
+      .header-container {
+        flex-direction: row;
+        justify-content: space-between;
+        padding: 10px 20px;
+      }
+      /* Logo and title: stack vertically and center */
+      .logo-title {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
+      .logo-title h1 {
+        font-size: 1.8em;
+        margin: 5px 0 0;
+        color: #0965f0;
+      }
+      .logo-title img {
+        margin: 0;
+      }
+      /* Navigation adjustments */
+      /* Hide the desktop horizontal links */
+      .site-nav ul.nav-links {
+        display: none;
+      }
+      /* Display dropdown button on mobile */
+      .site-nav .dropdown-btn {
+        display: block;
+        background: none;
+        border: none;
+        font-size: 1.2em;
+        cursor: pointer;
+        margin: 10px auto;
+      }
+      /* Dropdown menu styling */
+      .site-nav ul.dropdown-menu {
+        display: none;
+        flex-direction: column;
+        align-items: center;
+        list-style: none;
+        padding: 0;
+        margin: 0;
+      }
+      .site-nav ul.dropdown-menu li {
+        margin: 8px 0;
+      }
+      .site-nav ul.dropdown-menu li a {
+        text-decoration: none;
+        color: inherit;
+      }
+    }
+    /* Desktop view: show horizontal nav links and hide dropdown */
+    @media (min-width: 769px) {
+      .site-nav .dropdown-btn,
+      .site-nav ul.dropdown-menu {
+        display: none;
+      }
+      .site-nav ul.nav-links {
+        display: flex;
+        justify-content: center;
+      }
+      .site-nav ul.nav-links li {
+        margin: 0 15px;
+      }
+    }
+    /* ===================== Existing Responsive CSS (for other sections) ===================== */
+    @media (max-width: 768px) {
+      /* Header adjustments */
+      .header-container img {
+        position: static !important;
+        margin: 10px 0;
+      }
+      .header-container h1 {
+        position: static;
+        text-align: center;
+        margin: 10px 0;
+      }
+      /* Navigation adjustments */
+      .site-nav ul {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding: 0;
+      }
+      .site-nav ul li {
+        margin: 5px 0;
+      }
+      /* Stats Bar adjustments */
+      .stats-container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
+      .stats-container .stat {
+        margin: 10px 0;
+      }
+      /* Professional Details: Stack cards vertically */
+      .professional-details .details-cards {
+        flex-direction: column;
+        align-items: center;
+      }
+      .professional-details .card {
+        margin: 10px 0;
+        width: 90%;
+      }
+      /* Vision & Mission: Stack columns */
+      .vision-mission .container {
+        flex-direction: column;
+        align-items: center;
+      }
+      .vision, .mission {
+        margin: 20px 0;
+        width: 100%;
+        text-align: center;
+      }
+      /* Latest News: Stack blog posts vertically */
+      section[style*="padding: 20px; background-color: #f9f9f9;"] > div[style*="display: flex"] {
+        flex-direction: column;
+        align-items: center;
+      }
+      /* Client Boxes: Adjust layout */
+      #client-boxes {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
+      .client-box {
+        width: 90%;
+        margin-bottom: 20px;
+      }
+      /* Request a Quote: Stack form and info vertically */
+      .quote-container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
+      .quote-form, .quote-info {
+        width: 100%;
+        text-align: center;
+        margin-bottom: 20px;
+      }
+      /* Footer: Center text */
+      .site-footer .container {
+        text-align: center;
+        padding: 20px;
+      }
+    }
+    /* ===================== End Responsive CSS ===================== */
 
     /* Container for the images */
     .image-container {
@@ -113,12 +174,12 @@
 
     /* Image parent */
     .image-container [class*="col-md"] {
-        flex: 0 0 33.333%; /* Make each image parent take up 33.333% of the row */
-        max-width: 33.333%; /* Make each image parent take up 33.333% of the row */
-        padding: 0 15px; /* Add padding to the left and right */
-        width: auto;
-        height: auto;
-        margin: 0;
+      flex: 0 0 33.333%; /* Make each image parent take up 33.333% of the row */
+      max-width: 33.333%; /* Make each image parent take up 33.333% of the row */
+      padding: 0 15px; /* Add padding to the left and right */
+      width: auto;
+      height: auto;
+      margin: 0;
     }
 
     /* Individual images */
@@ -149,24 +210,37 @@
         <img src="https://i.pinimg.com/474x/f1/de/73/f1de7316c0d4c8110f19c32a317eef3b.jpg" alt="Turkey Flag" style="width: 100px; height: auto;">
       </div>
       <!-- Center: Logo and Title -->
-      <div class="logo-title" style="display: flex; align-items: center; gap: 20px;">
+      <div class="logo-title">
         <img src="https://res-console.cloudinary.com/dl5cjekuk/thumbnails/v1/image/upload/v1742984774/MWM1MGY0MzMtMzcyOS00NGVhLTg5ZDctZDYyOWQyODFmNGE3X2RkZWg5Zw==/drilldown" alt="Bektas Blocks Logo" style="width: 250px; height: 130px; border-radius: 1px;">
-        <h1 style="font-size: 3em; margin: 0; color: #0965f0;">BEKTAS BLOCKS</h1>
+        <h1 style="margin: 0;">BEKTAS BLOCKS</h1>
       </div>
       <!-- Right: Kenyan Flag -->
       <div class="flag-container right-flag">
         <img src="https://i.pinimg.com/474x/33/54/8a/33548ab261a60a06058da6b2c7e08751.jpg" alt="Kenyan Flag" style="width: 100px; height: auto;">
       </div>
     </div>
+    <!-- Navigation -->
     <nav class="site-nav">
-      <ul>
-          <li><a href="index.html" class="active">HOME</a></li>
-          <li><a href="productgallery.html">PRODUCTS</a></li>
-          <li><a href="projects.html">PROJECTS</a></li>
-          <li><a href="contacts.html">CONTACTS</a></li>
-          <li><a href="reviews.html">REVIEWS</a></li>
-          <li><a href="staff.html">ABOUT US</a></li>
-        </ul>
+      <!-- Desktop Navigation -->
+      <ul class="nav-links">
+        <li><a href="index.html" class="active">HOME</a></li>
+        <li><a href="productgallery.html">PRODUCTS</a></li>
+        <li><a href="projects.html">PROJECTS</a></li>
+        <li><a href="contacts.html">CONTACTS</a></li>
+        <li><a href="reviews.html">REVIEWS</a></li>
+        <li><a href="staff.html">ABOUT US</a></li>
+      </ul>
+      <!-- Mobile Dropdown Button -->
+      <button class="dropdown-btn" onclick="toggleDropdown()">Menu <i class="fas fa-bars"></i></button>
+      <!-- Mobile Dropdown Menu -->
+      <ul class="dropdown-menu">
+        <li><a href="index.html">HOME</a></li>
+        <li><a href="productgallery.html">PRODUCTS</a></li>
+        <li><a href="projects.html">PROJECTS</a></li>
+        <li><a href="contacts.html">CONTACTS</a></li>
+        <li><a href="reviews.html">REVIEWS</a></li>
+        <li><a href="staff.html">ABOUT US</a></li>
+      </ul>
     </nav>
   </header>
 
@@ -216,19 +290,29 @@
         animateValue(numElement, 0, finalValue, 2000); // Animate over 2000ms
       });
     });
+
+    // Toggle function for the mobile dropdown menu
+    function toggleDropdown() {
+      var menu = document.querySelector('.dropdown-menu');
+      if (menu.style.display === "block") {
+        menu.style.display = "none";
+      } else {
+        menu.style.display = "block";
+      }
+    }
   </script>
 
   <!-- Static Background Image Section -->
   <section class="static-bg-section">
     <style>
       .static-bg-section {
-        background-image: url(https://res-console.cloudinary.com/dl5cjekuk/thumbnails/v1/image/upload/v1742984818/Q29ybi1CYXNlZC1Db25jcmV0ZS1CdWlsZGluZy10aGUtRnV0dXJlLW9mLUxvdy1DYXJib24tQ29uc3RydWN0aW9uLU1hdGVyaWFsc19pY2NqaDU=/drilldown); /* Replace with your image path */
+        background-image: url(https://res-console.cloudinary.com/dl5cjekuk/thumbnails/v1/image/upload/v1742984818/Q29ybi1CYXNlZC1Db25jcmV0ZS1CdWlsZGluZy10aGUtRnV0dXJlLW9mLUxvdy1DYXJib24tQ29uc3RydWN0aW9uLU1hdGVyaWFsc19pY2NqaDU=/drilldown);
         background-size: cover;
         background-position: center;
         background-repeat: no-repeat;
-        color: white; /* Adjust text color as needed */
+        color: white;
         text-align: center;
-        padding: 100px 20px; /* Adjust padding as needed */
+        padding: 100px 20px;
         display: flex;
         justify-content: center;
         align-items: center;
@@ -243,27 +327,26 @@
         left: 0;
         width: 100%;
         height: 100%;
-        background-color: rgba(0, 0, 0, 0.5); /* Adjust overlay color and opacity */
+        background-color: rgba(0, 0, 0, 0.5);
         z-index: -1;
       }
 
       .static-bg-content {
-        max-width: 800px; /* Adjust max-width as needed */
+        max-width: 800px;
         width: 100%;
         padding: 20px;
       }
 
       .static-bg-content h2 {
-        font-size: 2.5rem; /* Adjust font size as needed */
+        font-size: 2.5rem;
         margin-bottom: 20px;
       }
 
       .static-bg-content p {
-        font-size: 1.1rem; /* Adjust font size as needed */
+        font-size: 1.1rem;
         line-height: 1.6;
       }
 
-      /* Responsive design */
       @media (max-width: 768px) {
         .static-bg-content h2 {
           font-size: 2rem;
@@ -281,14 +364,14 @@
   <section class="contact-info-section">
     <style>
       .contact-info-section {
-        background-color: #f4f4f4; /* Light gray background */
+        background-color: #f4f4f4;
         padding: 40px 20px;
         text-align: center;
-        font-family: Arial, sans-serif; /* Example font */
+        font-family: Arial, sans-serif;
       }
 
       .contact-info-section h3 {
-        color: #333; /* Dark gray heading color */
+        color: #333;
         margin-bottom: 20px;
         font-size: 1.5rem;
       }
@@ -304,7 +387,7 @@
       }
 
       .contact-info-section a {
-        color: #007bff; /* Blue link color */
+        color: #007bff;
         text-decoration: none;
       }
 
@@ -354,7 +437,7 @@
 
       .location-map-section #map-container {
         width: 100%;
-        height: 400px; /* Adjust height as needed */
+        height: 400px;
       }
 
       .location-map-section #map-iframe {
@@ -385,14 +468,11 @@
       <strong>WhatsApp:</strong>
       <a href=" https://wa.me/254704030881" target="_blank">0704030881</a>
     </p>
-    
     <p><strong>Alternate:</strong> 0713900030</p>
     <div class="social">
       <a href="https://www.facebook.com/people/Bektas-Blocks-LTD/61558517308412/" target="_blank"><i class="fab fa-facebook"></i> FACEBOOK</a>
     </div>
   </div>
-  </div>
-  </section>
 
   <!-- Footer -->
   <footer class="site-footer">
