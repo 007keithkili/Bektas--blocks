@@ -18,11 +18,11 @@
     .header-container {
       display: flex;
       align-items: center;
-      justify-content: center;
-      padding: 10px 50px;
+      justify-content: space-between;
+      padding: 0 50px;
       position: relative;
     }
-    /* Flags (desktop) positioned absolutely */
+    /* Flags positioned absolutely */
     .header-container img.flag {
       width: 100px;
       height: auto;
@@ -35,24 +35,29 @@
       position: absolute;
       right: 10px;
     }
-    /* Center: Logo & Heading (side by side on desktop) */
+    /* Center: Logo & Heading styled like Home page */
     .logo-heading {
       display: flex;
-      flex-direction: row;
       align-items: center;
-      gap: 20px;
+      gap: 70px;
+      position: relative;
+      left: 50px;
     }
     .logo-heading img {
       width: 250px;
       height: 130px;
       border-radius: 1px;
+      position: relative;
+      left: 35%;
     }
     .logo-heading h1 {
       font-size: 3em;
       margin: 0;
+      position: relative;
+      left: 27%;
       color: #0965f0;
     }
-    /* Updated Desktop Navigation Menu styling */
+    /* Desktop Navigation Menu */
     .site-nav ul {
       list-style: none;
       display: flex;
@@ -246,9 +251,11 @@
       .logo-heading {
         flex-direction: column;
         gap: 10px;
+        left: 0;
       }
       .logo-heading h1 {
         font-size: 2em;
+        left: 0;
       }
       /* Hide desktop navigation and show mobile dropdown */
       .site-nav ul {
@@ -271,7 +278,7 @@
     </div>
   </div>
   
-  <!-- Header: Logo, Flags & Navigation -->
+  <!-- Header: Logo, Flags & Navigation (Updated to match Home page) -->
   <header class="site-header">
     <div class="container header-container">
       <!-- Left: Turkey Flag -->
@@ -593,3 +600,4 @@
   <!-- External JavaScript -->
 </body>
 </html>
+
