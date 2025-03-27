@@ -432,7 +432,6 @@
   }
 }
 /* ===================== End Responsive CSS ===================== */
-
   </style>
 </head>
 <body>
@@ -446,21 +445,22 @@
     </div>
   </div>
 
-
-  <!-- Header: Logo and Navigation -->
+  <!-- Updated Header: Logo and Navigation -->
   <header class="site-header">
     <div class="container header-container" style="display: flex; align-items: center; justify-content: space-between; padding: 0 50px;">
       <!-- Left: Turkey Flag -->
-      <img src="https://i.pinimg.com/474x/f1/de/73/f1de7316c0d4c8110f19c32a317eef3b.jpg" alt="Turkey Flag" style="width: 100px; height: auto; position: absolute; left: 10px;">
-      
-      <!-- Center: Logo and Title -->
-      <div style="display: flex; align-items: center; gap: 70px; left:50px">
-        <img src="https://res-console.cloudinary.com/dl5cjekuk/thumbnails/v1/image/upload/v1742984774/MWM1MGY0MzMtMzcyOS00NGVhLTg5ZDctZDYyOWQyODFmNGE3X2RkZWg5Zw==/drilldown" alt="Bektas Blocks Logo" style="width: 250px; height: 130px; position: relative; left: 35%; border-radius: 1px;">
-        <h1 style="font-size: 3em; margin: 0; position:relative; left:27%; color: #0965f0;">BEKTAS BLOCKS</h1>
+      <div class="flag-container left-flag">
+        <img src="https://i.pinimg.com/474x/f1/de/73/f1de7316c0d4c8110f19c32a317eef3b.jpg" alt="Turkey Flag" style="width: 100px; height: auto;">
       </div>
-      
+      <!-- Center: Logo and Title -->
+      <div class="logo-title" style="display: flex; align-items: center; gap: 20px;">
+        <img src="https://res-console.cloudinary.com/dl5cjekuk/thumbnails/v1/image/upload/v1742984774/MWM1MGY0MzMtMzcyOS00NGVhLTg5ZDctZDYyOWQyODFmNGE3X2RkZWg5Zw==/drilldown" alt="Bektas Blocks Logo" style="width: 250px; height: 130px; border-radius: 1px;">
+        <h1 style="font-size: 3em; margin: 0; color: #0965f0;">BEKTAS BLOCKS</h1>
+      </div>
       <!-- Right: Kenyan Flag -->
-      <img src="ttps://i.pinimg.com/474x/33/54/8a/33548ab261a60a06058da6b2c7e08751.jpg" alt="Kenyan Flag" style="width: 100px; height: auto; position: absolute; right: 10px;">
+      <div class="flag-container right-flag">
+        <img src="https://i.pinimg.com/474x/33/54/8a/33548ab261a60a06058da6b2c7e08751.jpg" alt="Kenyan Flag" style="width: 100px; height: auto;">
+      </div>
     </div>
     <nav class="site-nav">
       <ul>
@@ -473,55 +473,54 @@
       </ul>
     </nav>
   </header>
+
   <!-- Stats Bar -->
-<section class="stats-bar">
-  <div class="container stats-container">
-    <div class="stat">
-      <span class="number">587</span>
-      <span class="label">CLIENTS</span>
+  <section class="stats-bar">
+    <div class="container stats-container">
+      <div class="stat">
+        <span class="number">587</span>
+        <span class="label">CLIENTS</span>
+      </div>
+      <div class="stat">
+        <span class="number">30</span>
+        <span class="label">EMPLOYEES</span>
+      </div>
+      <div class="stat">
+        <span class="number">2</span>
+        <span class="label">AWARDS</span>
+      </div>
+      <div class="stat">
+        <span class="number">20</span>
+        <span class="label">PRODUCTS</span>
+      </div>
     </div>
-    <div class="stat">
-      <span class="number">30</span>
-      <span class="label">EMPLOYEES</span>
-    </div>
-    <div class="stat">
-      <span class="number">2</span>
-      <span class="label">AWARDS</span>
-    </div>
-    <div class="stat">
-      <span class="number">20</span>
-      <span class="label">PRODUCTS</span>
-    </div>
-  </div>
-</section>
+  </section>
 
-<!-- Inline JavaScript to animate numbers -->
-<script>
-  // Function to animate a number from start to end over 'duration' milliseconds
-  function animateValue(obj, start, end, duration) {
-    let startTimestamp = null;
-    const step = (timestamp) => {
-      if (!startTimestamp) startTimestamp = timestamp;
-      const progress = Math.min((timestamp - startTimestamp) / duration, 1);
-      obj.innerText = Math.floor(progress * (end - start) + start);
-      if (progress < 1) {
-        window.requestAnimationFrame(step);
-      }
-    };
-    window.requestAnimationFrame(step);
-  }
+  <!-- Inline JavaScript to animate numbers -->
+  <script>
+    // Function to animate a number from start to end over 'duration' milliseconds
+    function animateValue(obj, start, end, duration) {
+      let startTimestamp = null;
+      const step = (timestamp) => {
+        if (!startTimestamp) startTimestamp = timestamp;
+        const progress = Math.min((timestamp - startTimestamp) / duration, 1);
+        obj.innerText = Math.floor(progress * (end - start) + start);
+        if (progress < 1) {
+          window.requestAnimationFrame(step);
+        }
+      };
+      window.requestAnimationFrame(step);
+    }
 
-  // Once the window loads, animate each stat number from 0 to its final value
-  window.addEventListener('load', () => {
-    const numbers = document.querySelectorAll('.stat .number');
-    numbers.forEach((numElement) => {
-      const finalValue = parseInt(numElement.innerText, 10);
-      animateValue(numElement, 0, finalValue, 2000); // Animate over 2000ms
+    // Once the window loads, animate each stat number from 0 to its final value
+    window.addEventListener('load', () => {
+      const numbers = document.querySelectorAll('.stat .number');
+      numbers.forEach((numElement) => {
+        const finalValue = parseInt(numElement.innerText, 10);
+        animateValue(numElement, 0, finalValue, 2000); // Animate over 2000ms
+      });
     });
-  });
-</script>
-
- 
+  </script>
 
   <!-- Static Background Section -->
   <section class="static-bg-section">
@@ -530,6 +529,8 @@
       <p>Discover quality concrete and precast building materials for your projects.</p>
     </div>
   </section>
+  
+  <!-- (The rest of your Products page code continues here...) --
 
   <!-- Product Grid -->
   <h1>Our Products</h1>
