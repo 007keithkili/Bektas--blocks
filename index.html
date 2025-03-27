@@ -20,8 +20,8 @@
       position: relative;
       width: 100%;
       height: 57.3333px;
-      padding: 0px;
-      border: 0 none rgb(12, 45, 98);
+      padding: 0;
+      border: none;
       font-size: 43px;
       font-weight: 800;
       font-family: 'Times New Roman', Times, serif;
@@ -36,7 +36,7 @@
       height: 84.6667px;
       margin: 0;
       padding: 0 0 0 28px;
-      border: 0 none rgb(133, 146, 166);
+      border: none;
       font-size: 14px;
       font-weight: 400;
       font-family: Poppins, Tahoma, Geneva, sans-serif;
@@ -52,7 +52,7 @@
       height: 21px;
       margin: 0 0 5px;
       padding: 0;
-      border: 0 none rgb(133, 146, 166);
+      border: none;
       font-size: 14px;
       font-weight: 600;
       font-family: Inter, Arial, Helvetica, sans-serif;
@@ -70,11 +70,10 @@
         padding: 10px;
       }
       .header-container img {
-        position: static !important;
         margin: 10px 0;
+        width: 25%;
       }
       .header-container h1 {
-        position: static;
         text-align: center;
         font-size: 2em;
         margin: 10px 0;
@@ -165,18 +164,19 @@
 
   <!-- Header: Logo and Navigation -->
   <header class="site-header">
-    <div class="container header-container" style="display: flex; align-items: center; justify-content: space-between; padding: 0 50px;">
+    <!-- Updated header container using flexbox with responsive units -->
+    <div class="container header-container" style="display: flex; align-items: center; justify-content: space-between; padding: 0 5%;">
       <!-- Left: Turkey Flag -->
-      <img src="https://i.pinimg.com/474x/f1/de/73/f1de7316c0d4c8110f19c32a317eef3b.jpg" alt="Turkey Flag" style="width: 100px; height: auto; position: absolute; left: 10px;">
+      <img src="https://i.pinimg.com/474x/f1/de/73/f1de7316c0d4c8110f19c32a317eef3b.jpg" alt="Turkey Flag" style="width: 15%; height: auto;">
       
       <!-- Center: Logo and Title -->
-      <div style="display: flex; align-items: center; gap: 70px; left:50px">
-        <img src="https://res-console.cloudinary.com/dl5cjekuk/thumbnails/v1/image/upload/v1742984774/MWM1MGY0MzMtMzcyOS00NGVhLTg5ZDctZDYyOWQyODFmNGE3X2RkZWg5Zw==/drilldown" alt="Bektas Blocks Logo" style="width: 250px; height: 130px; position: relative; left: 35%; border-radius: 1px;">
-        <h1 style="font-size: 3em; margin: 0; position:relative; left:27%; color: #0965f0;">BEKTAS BLOCKS</h1>
+      <div style="display: flex; align-items: center; gap: 1em;">
+        <img src="https://res-console.cloudinary.com/dl5cjekuk/thumbnails/v1/image/upload/v1742984774/MWM1MGY0MzMtMzcyOS00NGVhLTg5ZDctZDYyOWQyODFmNGE3X2RkZWg5Zw==/drilldown" alt="Bektas Blocks Logo" style="width: 30%; height: auto; border-radius: 1px;">
+        <h1 style="font-size: 2em; margin: 0; color: #0965f0;">BEKTAS BLOCKS</h1>
       </div>
       
       <!-- Right: Kenyan Flag -->
-      <img src="https://i.pinimg.com/474x/33/54/8a/33548ab261a60a06058da6b2c7e08751.jpg" alt="Kenyan Flag" style="width: 100px; height: auto; position: absolute; right: 10px;">
+      <img src="https://i.pinimg.com/474x/33/54/8a/33548ab261a60a06058da6b2c7e08751.jpg" alt="Kenyan Flag" style="width: 15%; height: auto;">
     </div>
     <nav class="site-nav">
       <ul>
@@ -233,7 +233,7 @@
       const numbers = document.querySelectorAll('.stat .number');
       numbers.forEach((numElement) => {
         const finalValue = parseInt(numElement.innerText, 10);
-        animateValue(numElement, 0, finalValue, 2000); // Animate over 2000ms
+        animateValue(numElement, 0, finalValue, 2000);
       });
     });
   </script>
@@ -249,7 +249,6 @@
   
   <section class="featured-products">
     <div class="container">
-      <!-- Added class to apply admired heading style (applies only within sections) -->
       <h2 class="tm-element-content-heading"> BEKTAS BLOCKS</h2>
       <p class="subheading">
         Having multiple branches from Mombasa, Nairobi, Nakuru, and Eldoret, we have consistently provided customers with quality products consisting of a wide range of concrete building materials.
@@ -427,7 +426,7 @@
     </div>
   </section>   
 
-  <!-- 7. Request a Quote Section -->
+  <!-- Request a Quote Section -->
   <section class="request-quote">
     <div class="container quote-container">
       <div class="quote-form">
@@ -475,7 +474,7 @@
     </div>
   </section>
 
-  <!-- 8. Footer -->
+  <!-- Footer -->
   <footer class="site-footer">
     <div class="container">
       <nav class="footer-nav">
