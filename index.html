@@ -2,154 +2,513 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
+  <!-- Ensures proper rendering on mobile -->
   <meta name="viewport" content="width=device-width, initial-scale=1" />
+
   <title>Bektas Blocks | Home</title>
   <meta name="description" content="Bektas Blocks - Quality Concrete and Precast Building Materials" />
+
   <!-- Google Fonts -->
-  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" rel="stylesheet" />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap"
+    rel="stylesheet"
+  />
   <!-- Font Awesome (for icons) -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" 
-        integrity="sha512-Fo3rlrZj/k7ujTnHg4C+6I6b4z8n7/YX9/E6R9vUVuE0Q2Lch7RjKXNtC9f+YbUXM7yT+g4n+ef+W4ePyZAlFw==" 
-        crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+    integrity="sha512-Fo3rlrZj/k7ujTnHg4C+6I6b4z8n7/YX9/E6R9vUVuE0Q2Lch7RjKXNtC9f+YbUXM7yT+g4n+ef+W4ePyZAlFw=="
+    crossorigin="anonymous"
+    referrerpolicy="no-referrer"
+  />
   <!-- Main CSS -->
   <link rel="stylesheet" href="styles.css" />
+
   <style>
-    /* Admired website CSS incorporated in sections only */
-    section h2.tm-element-content-heading {
-      display: block;
-      position: relative;
-      width: 100%;
-      height: 57.3333px;
-      padding: 0px;
-      border: 0 none rgb(12, 45, 98);
-      font-size: 43px;
-      font-weight: 800;
-      font-family: 'Times New Roman', Times, serif;
-      color: rgb(12, 59, 98);
-      background-color: transparent;
+    /********************************************************
+     * GENERAL RESETS / GLOBAL STYLES
+     ********************************************************/
+    /* Ensures all elements default to box-sizing: border-box for easier responsiveness */
+    * {
+      box-sizing: border-box;
     }
-
-    section div.tm-content-header {
-      display: block;
-      position: flex;
-      width: 959px;
-      height: 84.6667px;
+    body, html {
       margin: 0;
-      padding: 0 0 0 28px;
-      border: 0 none rgb(133, 146, 166);
-      font-size: 14px;
-      font-weight: 400;
-      font-family: Poppins, Tahoma, Geneva, sans-serif;
-      color: rgb(133, 146, 166);
-      background-color: transparent;
-      text-align: left;
-    }
-
-    section h4.tm-element-subhead {
-      display: inline-block;
-      position: static;
-      width: 230.49px;
-      height: 21px;
-      margin: 0 0 5px;
       padding: 0;
-      border: 0 none rgb(133, 146, 166);
-      font-size: 14px;
-      font-weight: 600;
-      font-family: Inter, Arial, Helvetica, sans-serif;
-      color: rgb(133, 146, 166);
-      background-color: transparent;
-      text-align: left;
+      font-family: 'Roboto', sans-serif;
+      /* Make sure body spans the full height */
+      min-height: 100%;
+      /* A base font-size or color can be placed here */
+    }
+    img {
+      max-width: 100%;
+      height: auto;
+      display: block;
+    }
+    .container {
+      /* Removed any fixed widths; let the container scale. */
+      width: 100%;
+      margin: 0 auto;
+      padding: 0 10px; /* Minimal padding on mobile */
+    }
+    ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+    a {
+      text-decoration: none;
+      color: inherit;
     }
 
-    /* ===================== Responsive CSS Inserted ===================== */
+    /********************************************************
+     * HEADER & NAV
+     ********************************************************/
+    .top-bar {
+      background: #f3f3f3;
+      padding: 5px 0;
+    }
+    .top-bar .container {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    .contact-info span {
+      margin-right: 20px;
+    }
+
+    .site-header {
+      background: #fff;
+      border-bottom: 1px solid #ccc;
+    }
+
+    .header-container {
+      /* CHANGED: Use flex but no fixed widths, no absolute positions */
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 10px; /* simpler for mobile */
+    }
+
+    /* The two flags and the central logo + title will be stacked or spread out in a single row. */
+    .header-container img.flag {
+      /* Flag images get a small max width for mobile scaling */
+      width: 60px;
+      height: auto;
+    }
+    .logo-title-group {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      gap: 5px;
+    }
+    .logo-title-group img {
+      width: 200px; /* smaller for mobile scaling */
+      border-radius: 1px;
+    }
+    .logo-title-group h1 {
+      font-size: 2em; /* reduce from 3em for better fit on mobile */
+      margin: 0;
+      color: #0965f0;
+    }
+
+    /* Navigation menu */
+    .site-nav ul {
+      display: flex;
+      gap: 15px;
+      justify-content: center;
+      flex-wrap: wrap; /* Let the items wrap on smaller screens */
+      background: #eee;
+      padding: 10px 0;
+    }
+    .site-nav ul li a {
+      font-weight: bold;
+      padding: 5px 10px;
+      color: #000;
+      transition: background 0.3s;
+    }
+    .site-nav ul li a:hover {
+      background: #ddd;
+    }
+    .site-nav ul li .active {
+      color: #007BFF;
+    }
+
+    /********************************************************
+     * STATS BAR
+     ********************************************************/
+    .stats-bar {
+      background: #f0f0f0;
+      padding: 10px 0;
+    }
+    .stats-container {
+      display: flex;
+      justify-content: space-around;
+      flex-wrap: wrap; /* allow wrapping on mobile */
+      text-align: center;
+    }
+    .stat {
+      margin: 10px;
+    }
+    .stat .number {
+      display: block;
+      font-size: 2em;
+      font-weight: bold;
+      color: #333;
+    }
+    .stat .label {
+      color: #555;
+    }
+
+    /********************************************************
+     * VIDEO SECTION
+     ********************************************************/
+    .video-bg-wrapper {
+      position: relative;
+      overflow: hidden;
+      height: 420px;
+    }
+    .video-bg-wrapper video {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+    .video-overlay {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+    }
+
+    /********************************************************
+     * FEATURED PRODUCTS SECTION
+     ********************************************************/
+    .featured-products {
+      padding: 20px 0;
+      background: #fff;
+    }
+    .featured-products .tm-element-content-heading {
+      font-family: 'Times New Roman', Times, serif;
+      font-size: 36px;
+      font-weight: 800;
+      color: rgb(12, 59, 98);
+      margin: 0 auto 10px;
+      text-align: center;
+    }
+    .subheading {
+      text-align: center;
+      color: #333;
+      font-size: 1em;
+      max-width: 700px;
+      margin: 0 auto 20px;
+    }
+
+    /********************************************************
+     * PROFESSIONAL DETAILS SECTION
+     ********************************************************/
+    .professional-details {
+      background: #fff;
+      padding: 50px 20px;
+    }
+    .professional-details .container {
+      /* no fixed max-width here if you prefer truly full width on mobile;
+         but 1200px max is typical for larger screens. */
+      max-width: 1200px;
+      margin: auto;
+    }
+    .professional-details .tm-element-content-heading {
+      text-align: center;
+      font-size: 32px;
+      color: #333;
+      margin-bottom: 20px;
+    }
+    .professional-details p {
+      font-size: 20px;
+      text-align: center;
+      color: #555;
+    }
+    .details-cards {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center; /* center them horizontally */
+      margin-top: 40px;
+      gap: 20px; /* add spacing between cards */
+    }
+    .card {
+      flex: 1 1 250px; /* each card can shrink/grow, min 250px wide */
+      max-width: 300px;
+      background: #f9f9f9;
+      padding: 20px;
+      border-radius: 8px;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    }
+    .card h3 {
+      margin-top: 0;
+    }
+    .card p {
+      font-size: 16px;
+      color: #555;
+    }
+    .learn-more-btn {
+      display: inline-block;
+      background: #333;
+      color: #fff;
+      padding: 12px 24px;
+      text-decoration: none;
+      border-radius: 5px;
+      font-weight: bold;
+      text-align: center;
+      margin-top: 40px;
+    }
+
+    /********************************************************
+     * VISION & MISSION SECTION
+     ********************************************************/
+    .vision-mission {
+      background: #f7f7f7;
+      padding: 80px 20px;
+    }
+    .vision-mission .container {
+      max-width: 1200px;
+      margin: auto;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 40px;
+      align-items: center;
+      justify-content: center; /* center the two columns */
+    }
+    .vision, .mission {
+      flex: 1 1 300px;
+      text-align: center;
+      margin: 0 auto;
+    }
+    .vision img, .mission img {
+      max-width: 400px;
+      margin: 0 auto;
+      display: block;
+      border-radius: 10px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    }
+    .vision h2, .mission h2 {
+      font-size: 36px;
+      color: #333;
+      margin: 20px 0 10px;
+    }
+    .vision p, .mission p {
+      font-size: 18px;
+      color: #555;
+    }
+
+    /********************************************************
+     * LATEST NEWS SECTION
+     ********************************************************/
+    .latest-news-section {
+      padding: 20px;
+      background-color: #f9f9f9;
+    }
+    .latest-news-section h2 {
+      text-align: center;
+      font-size: 2em;
+      margin-bottom: 20px;
+    }
+    .news-posts {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+      justify-content: center;
+    }
+    .news-post {
+      flex: 1 1 300px;
+      border: 1px solid #ddd;
+      border-radius: 8px;
+      overflow: hidden;
+      background-color: #fff;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+      max-width: 350px; /* optional limit */
+    }
+    .news-post img {
+      display: block;
+      width: 100%;
+    }
+    .news-post-content {
+      padding: 15px;
+    }
+    .news-post-content h3 {
+      font-size: 1.2em;
+      margin: 0 0 10px;
+    }
+    .news-post-content p {
+      margin-bottom: 10px;
+    }
+
+    /********************************************************
+     * CLIENT BOXES SECTION
+     ********************************************************/
+    #client-boxes {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      margin-top: 20px;
+      gap: 20px;
+    }
+    .client-box {
+      width: 100%;
+      max-width: 800px;
+      border: 1px solid #ddd;
+      border-radius: 1px;
+      padding: 20px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+    }
+    .client-box-inner {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
+    .client-box-inner .client-image {
+      display: flex;
+      justify-content: center;
+      margin-bottom: 10px;
+    }
+    .client-box-inner .client-image img {
+      width: 300px;
+      height: 300px;
+      border-radius: 5px;
+      object-fit: cover;
+    }
+    .client-box-inner .client-text {
+      text-align: center;
+    }
+    .client-box-inner .client-text h3 {
+      margin: 0;
+      font-size: 1.5em;
+      color: #ff3103;
+    }
+    .client-box-inner .client-text p {
+      margin: 5px 0;
+    }
+    /* Hide the ones that are not active by default */
+    .client-box.hidden {
+      display: none;
+    }
+    .client-nav-btn {
+      padding: 10px 20px;
+      font-size: 1em;
+      border: none;
+      background-color: #007BFF;
+      color: #fff;
+      border-radius: 5px;
+      cursor: pointer;
+      margin-bottom: 20px;
+    }
+
+    /********************************************************
+     * REQUEST A QUOTE SECTION
+     ********************************************************/
+    .request-quote {
+      background: #fff;
+      padding: 40px 20px;
+    }
+    .quote-container {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 40px;
+      justify-content: center;
+    }
+    .quote-form, .quote-info {
+      flex: 1 1 300px;
+      max-width: 500px;
+    }
+    .quote-form h2 {
+      margin-top: 0;
+      font-size: 2em;
+      text-align: center;
+      margin-bottom: 20px;
+    }
+    .quote-form form {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+    .quote-form form .form-group {
+      display: flex;
+      flex-direction: column;
+      gap: 5px;
+    }
+    .quote-form form input,
+    .quote-form form textarea {
+      padding: 8px;
+      font-size: 1em;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+    }
+    .quote-form form .btn {
+      background: #0159e6;
+      color: #fff;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      font-size: 1em;
+    }
+    .quote-info {
+      text-align: center;
+    }
+    .quote-info h3 {
+      margin-top: 0;
+      font-size: 1.5em;
+    }
+    .quote-info p {
+      margin: 5px 0;
+    }
+    .quote-info .social a {
+      margin-right: 10px;
+      color: #007BFF;
+      font-weight: bold;
+    }
+
+    /********************************************************
+     * FOOTER
+     ********************************************************/
+    .site-footer {
+      background: #333;
+      color: #fff;
+      padding: 20px 0;
+      text-align: center;
+    }
+    .site-footer .container {
+      /* Just keep it centered and flexible. */
+    }
+    .footer-nav ul {
+      display: flex;
+      gap: 15px;
+      justify-content: center;
+      margin-bottom: 10px;
+      flex-wrap: wrap;
+    }
+    .footer-nav ul li a {
+      color: #fff;
+    }
+
+    /********************************************************
+     * MEDIA QUERIES
+     * You already have some inlined, but here is a cleaner approach.
+     ********************************************************/
     @media (max-width: 768px) {
-      /* Header adjustments */
       .header-container {
         flex-direction: column;
-        align-items: center;
-        padding: 10px;
+        gap: 10px;
       }
-      .header-container img {
-        position: static !important;
-        margin: 10px 0;
+      .logo-title-group img {
+        width: 150px; /* reduce further for smaller screens */
       }
-      .header-container h1 {
-        position: static;
-        text-align: center;
-        font-size: 2em;
-        margin: 10px 0;
+      .logo-title-group h1 {
+        font-size: 1.5em;
       }
-      /* Navigation adjustments */
-      .site-nav ul {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        padding: 0;
-      }
-      .site-nav ul li {
-        margin: 5px 0;
-      }
-      /* Stats Bar adjustments */
-      .stats-container {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-      }
-      .stats-container .stat {
-        margin: 10px 0;
-      }
-      /* Professional Details: Stack cards vertically */
-      .professional-details .details-cards {
-        flex-direction: column;
-        align-items: center;
-      }
-      .professional-details .card {
-        margin: 10px 0;
-        width: 90%;
-      }
-      /* Vision & Mission: Stack columns */
-      .vision-mission .container {
-        flex-direction: column;
-        align-items: center;
-      }
-      .vision, .mission {
-        margin: 20px 0;
-        width: 100%;
-        text-align: center;
-      }
-      /* Latest News: Stack blog posts vertically */
-      section[style*="padding: 20px; background-color: #f9f9f9;"] > div[style*="display: flex"] {
-        flex-direction: column;
-        align-items: center;
-      }
-      /* Client Boxes: Adjust layout */
-      #client-boxes {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-      }
-      .client-box {
-        width: 90%;
-        margin-bottom: 20px;
-      }
-      /* Request a Quote: Stack form and info vertically */
-      .quote-container {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-      }
-      .quote-form, .quote-info {
-        width: 100%;
-        text-align: center;
-        margin-bottom: 20px;
-      }
-      /* Footer: Center text */
-      .site-footer .container {
-        text-align: center;
-        padding: 20px;
-      }
+      /* More minor adjustments if needed... */
     }
-    /* ===================== End Responsive CSS ===================== */
+
   </style>
 </head>
 <body>
@@ -163,20 +522,31 @@
     </div>
   </div>
 
-  <!-- Header: Logo and Navigation -->
+  <!-- Header: Flags, Logo, and Navigation -->
   <header class="site-header">
-    <div class="container header-container" style="display: flex; align-items: center; justify-content: space-between; padding: 0 50px;">
-      <!-- Left: Turkey Flag -->
-      <img src="https://i.pinimg.com/474x/f1/de/73/f1de7316c0d4c8110f19c32a317eef3b.jpg" alt="Turkey Flag" style="width: 100px; height: auto; position: absolute; left: 10px;">
-      
-      <!-- Center: Logo and Title -->
-      <div style="display: flex; align-items: center; gap: 70px; left:50px">
-        <img src="https://scontent-mba2-1.xx.fbcdn.net/v/t39.30808-6/486706616_122137008848592990_9213781367601452384_n.jpg?_nc_cat=110&ccb=1-7&_nc_sid=127cfc&_nc_eui2=AeEq8m1dYa5AvWa7m0LQQtdraUoVvy_vXFBpShW_L-9cUErpYCa-RSgOFdsE-IVnbePbcfWkNkZ2lPRqt0i6DTG7&_nc_ohc=NO3A68hAWVYQ7kNvgE0fLkU&_nc_oc=AdnHVeeXxxP1QmegXA_mEKZf_If1nS-wrtArTmS1cYN0Z8QqWgpdAEXSr2C2CsElCtc&_nc_zt=23&_nc_ht=scontent-mba2-1.xx&_nc_gid=3y8G3O52p7gTTRao9p-3Ag&oh=00_AYGFp_RDl5hBdcojq1IgCxZsZF9bOT8EdyRDrUKmMi8OcQ&oe=67EAD774" alt="Bektas Blocks Logo" style="width: 250px; height: 130px; position: relative; left: 35%; border-radius: 1px;">
-        <h1 style="font-size: 3em; margin: 0; position:relative; left:27%; color: #0965f0;">BEKTAS BLOCKS</h1>
+    <div class="container header-container">
+      <!-- Left: Turkey Flag (remove absolute positioning) -->
+      <img
+        src="https://i.pinimg.com/474x/f1/de/73/f1de7316c0d4c8110f19c32a317eef3b.jpg"
+        alt="Turkey Flag"
+        class="flag"
+      />
+
+      <!-- Center: Logo and Title in a column -->
+      <div class="logo-title-group">
+        <img
+          src="https://scontent-mba2-1.xx.fbcdn.net/v/t39.30808-6/486706616_122137008848592990_9213781367601452384_n.jpg?_nc_cat=110&ccb=1-7&_nc_sid=127cfc&_nc_eui2=AeEq8m1dYa5AvWa7m0LQQtdraUoVvy_vXFBpShW_L-9cUErpYCa-RSgOFdsE-IVnbePbcfWkNkZ2lPRqt0i6DTG7&_nc_ohc=NO3A68hAWVYQ7kNvgE0fLkU&_nc_oc=AdnHVeeXxxP1QmegXA_mEKZf_If1nS-wrtArTmS1cYN0Z8QqWgpdAEXSr2C2CsElCtc&_nc_zt=23&_nc_ht=scontent-mba2-1.xx&_nc_gid=3y8G3O52p7gTTRao9p-3Ag&oh=00_AYGFp_RDl5hBdcojq1IgCxZsZF9bOT8EdyRDrUKmMi8OcQ&oe=67EAD774"
+          alt="Bektas Blocks Logo"
+        />
+        <h1>BEKTAS BLOCKS</h1>
       </div>
-      
+
       <!-- Right: Kenyan Flag -->
-      <img src="https://i.pinimg.com/474x/33/54/8a/33548ab261a60a06058da6b2c7e08751.jpg" alt="Kenyan Flag" style="width: 100px; height: auto; position: absolute; right: 10px;">
+      <img
+        src="https://i.pinimg.com/474x/33/54/8a/33548ab261a60a06058da6b2c7e08751.jpg"
+        alt="Kenyan Flag"
+        class="flag"
+      />
     </div>
     <nav class="site-nav">
       <ul>
@@ -212,7 +582,7 @@
     </div>
   </section>
 
-  <!-- Inline JavaScript to animate numbers -->
+  <!-- Animate Stats -->
   <script>
     // Function to animate a number from start to end over 'duration' milliseconds
     function animateValue(obj, start, end, duration) {
@@ -228,7 +598,6 @@
       window.requestAnimationFrame(step);
     }
 
-    // Once the window loads, animate each stat number from 0 to its final value
     window.addEventListener('load', () => {
       const numbers = document.querySelectorAll('.stat .number');
       numbers.forEach((numElement) => {
@@ -238,170 +607,224 @@
     });
   </script>
 
-  <!-- Main Featured Products Section -->
-  <div class="video-bg-wrapper" style="position: relative; overflow: hidden; height: 420px;">
-    <video autoplay loop muted playsinline style="width: 100%; height: 100%; object-fit: cover;">
-      <source src="images/202503072032 (2).mp4" type="video/mp4">
+  <!-- Video Background -->
+  <div class="video-bg-wrapper">
+    <video autoplay loop muted playsinline>
+      <source src="images/202503072032 (2).mp4" type="video/mp4" />
     </video>
-    <!-- Optional overlay to darken the video for better text contrast -->
-    <div class="video-overlay" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;"></div>
+    <div class="video-overlay"></div>
   </div>
-  
+
+  <!-- Featured Products -->
   <section class="featured-products">
     <div class="container">
-      <!-- Added class to apply admired heading style (applies only within sections) -->
-      <h2 class="tm-element-content-heading"> BEKTAS BLOCKS</h2>
+      <h2 class="tm-element-content-heading">BEKTAS BLOCKS</h2>
       <p class="subheading">
-        Having multiple branches from Mombasa, Nairobi, Nakuru, and Eldoret, we have consistently provided customers with quality products consisting of a wide range of concrete building materials.
+        Having multiple branches from Mombasa, Nairobi, Nakuru, and Eldoret, we
+        have consistently provided customers with quality products consisting
+        of a wide range of concrete building materials.
       </p>
-      
-      <!-- Professional Company Details Section -->
-      <section class="professional-details" style="background: #fff; padding: 50px 20px;">
-        <div class="container" style="max-width: 1200px; margin: auto;">
-          <h2 class="tm-element-content-heading" style="font-size: 32px; text-align: center; color: #333; margin-bottom: 20px;">Why Choose Bektas Blocks?</h2>
-          <p style="font-size: 20px; text-align: center; color: #555;">
-            At Bektas Blocks, we are committed to delivering excellence in every aspect of our business.
-            With decades of experience in the construction materials industry, our products are synonymous with quality, durability, and innovation.
-          </p>
-          <div class="details-cards" style="display: flex; flex-wrap: wrap; justify-content: space-around; margin-top: 40px;">
-            <!-- Card 1: Expertise -->
-            <div class="card" style="flex: 1; min-width: 250px; margin: 10px; background: #f9f9f9; padding: 20px; border-radius: 8px; box-shadow: 0 2px 5px rgba(0,0,0,0.1);">
-              <h3 style="color: #ff9800;">Expertise</h3>
-              <p style="color: #555; font-size: 16px;">
-                Our team of industry experts ensures that every product meets stringent quality standards.
-              </p>
-            </div>
-            <!-- Card 2: Innovation -->
-            <div class="card" style="flex: 1; min-width: 250px; margin: 10px; background: #f9f9f9; padding: 20px; border-radius: 8px; box-shadow: 0 2px 5px rgba(0,0,0,0.1);">
-              <h3 style="color: #4caf50;">Innovation</h3>
-              <p style="color: #555; font-size: 16px;">
-                We invest in cutting-edge technology and research to continuously improve our products.
-              </p>
-            </div>
-            <!-- Card 3: Customer Focus -->
-            <div class="card" style="flex: 1; min-width: 250px; margin: 10px; background: #f9f9f9; padding: 20px; border-radius: 8px; box-shadow: 0 2px 5px rgba(0,0,0,0.1);">
-              <h3 style="color: #2196F3;">Customer Focus</h3>
-              <p style="color: #555; font-size: 16px;">
-                Our commitment to customer satisfaction has earned us a reputation as a reliable partner in the construction industry.
-              </p>
-            </div>
-            <!-- Card 4: Sustainability -->
-            <div class="card" style="flex: 1; min-width: 250px; margin: 10px; background: #f9f9f9; padding: 20px; border-radius: 8px; box-shadow: 0 2px 5px rgba(0,0,0,0.1);">
-              <h3 style="color: #9c27b0;">Sustainability</h3>
-              <p style="color: #555; font-size: 16px;">
-                We are dedicated to eco-friendly practices, ensuring that our products contribute to a greener future.
-              </p>
-            </div>
-          </div>
-          <div style="text-align: center; margin-top: 40px;">
-            <a href="staff.html" style="background: #333; color: #fff; padding: 12px 24px; text-decoration: none; border-radius: 5px; font-weight: bold;">
-              Learn More About Us
-            </a>
-          </div>
-        </div>
-      </section>
-      
-      <!-- Vision & Mission Section -->
-      <section class="vision-mission" style="background: #f7f7f7; padding: 80px 20px;">
-        <div class="container" style="max-width: 1200px; margin: auto; display: flex; flex-wrap: wrap; gap: 40px; align-items: center;">
-          <!-- Vision Column -->
-          <div class="vision" style="flex: 1; min-width: 300px; text-align: center;">
-            <img src="https://i.pinimg.com/474x/12/58/ff/1258ff8acb70b2577200d2b26f9adbea.jpg" alt="Vision" style="width: 100%; max-width: 400px; border-radius: 10px; box-shadow: 0 4px 10px rgba(0,0,0,0.1);">
-            <h2 class="tm-element-content-heading" style="font-size: 36px; color: #333; margin: 20px 0 10px;">Our Vision</h2>
-            <p style="font-size: 18px; color: #555;">
-              To be the largest one-stop shop supplier of premium quality concrete products with advanced manufacturing technology to maintain a greener environment.
-            </p>
-          </div>
-          <!-- Mission Column -->
-          <div class="mission" style="flex: 1; min-width: 300px; text-align: center;">
-            <img src="https://i.pinimg.com/474x/40/84/e1/4084e1f99c66e56a2d1260d60b1ab76d.jpg" alt="Our Mission" style="width: 100%; max-width: 400px; border-radius: 10px; box-shadow: 0 4px 10px rgba(0,0,0,0.1);">
-            <h2 class="tm-element-content-heading" style="font-size: 36px; color: #333; margin: 20px 0 10px;">Our Mission</h2>
-            <p style="font-size: 18px; color: #555;">
-              To be a leading company in the sector that provides convenience and value to its customers by offering safe, high quality, cost effective construction products while maintaining harmony with its employees and sensitivity to society and the environment.
-            </p>
-          </div>
-        </div>
-      </section>
-      <section style="padding: 20px; background-color: #f9f9f9;">
-        <h2 style="text-align: center; font-size: 2em; margin-bottom: 20px;">Latest News</h2>
-        <div style="display: flex; flex-wrap: wrap; gap: 20px; justify-content: center;">
-          <!-- Blog Post 1: New Concrete Mix Technology -->
-          <div style="flex: 1 1 300px; border: 1px solid #ddd; border-radius: 8px; overflow: hidden; background-color: #fff; box-shadow: 0 2px 4px rgba(0,0,0,0.1);">
-            <img src="https://i.pinimg.com/474x/fe/2c/b8/fe2cb8df025ea93fbb62bdd9c11dbfbb.jpg" alt="New Concrete Mix Technology" style="width: 100%; display: block;">
-            <div style="padding: 15px;">
-              <h3 style="font-size: 1.2em; margin: 0 0 10px;">New Concrete Mix Technology</h3>
-              <p style="font-size: 0.9em; color: #555; margin-bottom: 10px;">Feb 10, 2025</p>
-              <p style="font-size: 1em; color: #333;">
-                Discover our latest innovation in concrete mix design that ensures faster curing times and enhanced durability for all our construction projects.
-              </p>
-            </div>
-          </div>
-          <!-- Blog Post 2: Award-Winning Infrastructure Project -->
-          <div style="flex: 1 1 300px; border: 1px solid #ddd; border-radius: 8px; overflow: hidden; background-color: #fff; box-shadow: 0 2px 4px rgba(0,0,0,0.1);">
-            <img src="https://i.pinimg.com/474x/61/eb/54/61eb549a0be0760b1ebe3e163ff5dc64.jpg" alt="Award-Winning Infrastructure Project" style="width: 100%; display: block;">
-            <div style="padding: 15px;">
-              <h3 style="font-size: 1.2em; margin: 0 0 10px;">Award-Winning Infrastructure Project</h3>
-              <p style="font-size: 0.9em; color: #555; margin-bottom: 10px;">July 05, 2025</p>
-              <p style="font-size: 1em; color: #333;">
-                Our team recently completed an award-winning bridge project that showcases our commitment to quality and innovation in concrete construction.
-              </p>
-            </div>
-          </div>
-          <!-- Blog Post 3: Sustainability in Construction -->
-          <div style="flex: 1 1 300px; border: 1px solid #ddd; border-radius: 8px; overflow: hidden; background-color: #fff; box-shadow: 0 2px 4px rgba(0,0,0,0.1);">
-            <img src="https://i.pinimg.com/736x/b8/12/b9/b812b944b0635a68040313740677dc3e.jpg" style="width: 100%; display: block;">
-            <div style="padding: 15px;">
-              <h3 style="font-size: 1.2em; margin: 0 0 10px;">Sustainability in Construction</h3>
-              <p style="font-size: 0.9em; color: #555; margin-bottom: 10px;">October 01, 2024</p>
-              <p style="font-size: 1em; color: #333;">
-                Learn about our eco-friendly practices and how we’re reducing the environmental impact of concrete production while delivering top-quality structures.
-              </p>
-            </div>
-          </div>
-        </div>
-      </section>
+    </div>
+  </section>
 
+  <!-- Professional Details -->
+  <section class="professional-details">
+    <div class="container">
+      <h2 class="tm-element-content-heading">Why Choose Bektas Blocks?</h2>
+      <p>
+        At Bektas Blocks, we are committed to delivering excellence in every
+        aspect of our business. With decades of experience in the construction
+        materials industry, our products are synonymous with quality, durability,
+        and innovation.
+      </p>
+      <div class="details-cards">
+        <!-- Card 1: Expertise -->
+        <div class="card">
+          <h3 style="color: #ff9800;">Expertise</h3>
+          <p>
+            Our team of industry experts ensures that every product meets
+            stringent quality standards.
+          </p>
+        </div>
+        <!-- Card 2: Innovation -->
+        <div class="card">
+          <h3 style="color: #4caf50;">Innovation</h3>
+          <p>
+            We invest in cutting-edge technology and research to continuously
+            improve our products.
+          </p>
+        </div>
+        <!-- Card 3: Customer Focus -->
+        <div class="card">
+          <h3 style="color: #2196F3;">Customer Focus</h3>
+          <p>
+            Our commitment to customer satisfaction has earned us a reputation
+            as a reliable partner in the construction industry.
+          </p>
+        </div>
+        <!-- Card 4: Sustainability -->
+        <div class="card">
+          <h3 style="color: #9c27b0;">Sustainability</h3>
+          <p>
+            We are dedicated to eco-friendly practices, ensuring that our
+            products contribute to a greener future.
+          </p>
+        </div>
+      </div>
+      <div style="text-align: center;">
+        <a href="staff.html" class="learn-more-btn">Learn More About Us</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Vision & Mission -->
+  <section class="vision-mission">
+    <div class="container">
+      <!-- Vision -->
+      <div class="vision">
+        <img
+          src="https://i.pinimg.com/474x/12/58/ff/1258ff8acb70b2577200d2b26f9adbea.jpg"
+          alt="Vision"
+        />
+        <h2 class="tm-element-content-heading">Our Vision</h2>
+        <p>
+          To be the largest one-stop shop supplier of premium quality concrete
+          products with advanced manufacturing technology to maintain a greener
+          environment.
+        </p>
+      </div>
+      <!-- Mission -->
+      <div class="mission">
+        <img
+          src="https://i.pinimg.com/474x/40/84/e1/4084e1f99c66e56a2d1260d60b1ab76d.jpg"
+          alt="Our Mission"
+        />
+        <h2 class="tm-element-content-heading">Our Mission</h2>
+        <p>
+          To be a leading company in the sector that provides convenience and
+          value to its customers by offering safe, high quality, cost effective
+          construction products while maintaining harmony with its employees and
+          sensitivity to society and the environment.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Latest News -->
+  <section class="latest-news-section">
+    <h2>Latest News</h2>
+    <div class="news-posts">
+      <!-- Post 1 -->
+      <div class="news-post">
+        <img
+          src="https://i.pinimg.com/474x/fe/2c/b8/fe2cb8df025ea93fbb62bdd9c11dbfbb.jpg"
+          alt="New Concrete Mix Technology"
+        />
+        <div class="news-post-content">
+          <h3>New Concrete Mix Technology</h3>
+          <p style="font-size: 0.9em; color: #555;">Feb 10, 2025</p>
+          <p>
+            Discover our latest innovation in concrete mix design that ensures
+            faster curing times and enhanced durability for all our construction
+            projects.
+          </p>
+        </div>
+      </div>
+      <!-- Post 2 -->
+      <div class="news-post">
+        <img
+          src="https://i.pinimg.com/474x/61/eb/54/61eb549a0be0760b1ebe3e163ff5dc64.jpg"
+          alt="Award-Winning Infrastructure Project"
+        />
+        <div class="news-post-content">
+          <h3>Award-Winning Infrastructure Project</h3>
+          <p style="font-size: 0.9em; color: #555;">July 05, 2025</p>
+          <p>
+            Our team recently completed an award-winning bridge project that
+            showcases our commitment to quality and innovation in concrete
+            construction.
+          </p>
+        </div>
+      </div>
+      <!-- Post 3 -->
+      <div class="news-post">
+        <img
+          src="https://i.pinimg.com/736x/b8/12/b9/b812b944b0635a68040313740677dc3e.jpg"
+          alt="Sustainability in Construction"
+        />
+        <div class="news-post-content">
+          <h3>Sustainability in Construction</h3>
+          <p style="font-size: 0.9em; color: #555;">October 01, 2024</p>
+          <p>
+            Learn about our eco-friendly practices and how we’re reducing the
+            environmental impact of concrete production while delivering
+            top-quality structures.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Client Boxes -->
+  <section>
+    <div class="container">
       <div id="client-boxes">
-        <!-- Client Box 1 -->
-        <div class="client-box" style="border: 1px solid #ddd; border-radius: 1px; padding: 20px; box-shadow: 0 2px 6px rgba(0,0,0,0.1); margin-bottom: 20px;">
-          <div style="display: flex; align-items: center; gap: 20px;">
-            <!-- Client Image -->
-            <div style="flex: 0 0 200px;">
-              <img src="https://i.pinimg.com/474x/67/19/bb/6719bb089ddf2855e8b401f9addae4a2.jpg" alt="Client John Doe" style="width: 300px; height: 300px; border-radius: 5px; object-fit: cover;">
+        <!-- Client Box 1 (Shown by default) -->
+        <div class="client-box">
+          <div class="client-box-inner">
+            <div class="client-image">
+              <img
+                src="https://i.pinimg.com/474x/67/19/bb/6719bb089ddf2855e8b401f9addae4a2.jpg"
+                alt="Client John Doe"
+              />
             </div>
-            <!-- Client Text on the Right -->
-            <div style="flex: 1;">
-              <h3 style="margin: 0; font-size: 1.5em; color: #ff3103;">JOHN LOOP</h3>
-              <p style="margin: 5px 0; color: #960169;">Owner, BuildRight Construction</p>
-              <p style="font-size: 1em; color: #555;">"Working with this team was a great experience. Their expertise in concrete solutions is unmatched."</p>
+            <div class="client-text">
+              <h3>JOHN LOOP</h3>
+              <p style="color: #960169;">Owner, BuildRight Construction</p>
+              <p>
+                "Working with this team was a great experience. Their expertise
+                in concrete solutions is unmatched."
+              </p>
             </div>
           </div>
         </div>
 
         <!-- Client Box 2 -->
-        <div class="client-box" style="display: none; border: 1px solid #ddd; border-radius: 5px; padding: 20px; box-shadow: 0 2px 6px rgba(0,0,0,0.1); margin-bottom: 20px;">
-          <div style="display: flex; align-items: center; gap: 20px;">
-            <div style="flex: 0 0 200px;">
-              <img src="https://i.pinimg.com/474x/e3/10/db/e310db2fd02fc99904ec501e7f338a82.jpg" alt="Client Alice Johnson" style="width: 300px; height: 300px; border-radius: 15px; object-fit: cover;">
+        <div class="client-box hidden">
+          <div class="client-box-inner">
+            <div class="client-image">
+              <img
+                src="https://i.pinimg.com/474x/e3/10/db/e310db2fd02fc99904ec501e7f338a82.jpg"
+                alt="Client Alice Johnson"
+              />
             </div>
-            <div style="flex: 1;">
-              <h3 style="margin: 0; font-size: 1.5em; color: #165204;"> JOHNSON MWAURA</h3>
-              <p style="margin: 5px 0; color: #777;">Project Manager, Solid Structures</p>
-              <p style="font-size: 1em; color: #555;">"Their innovative concrete solutions transformed our project execution, ensuring top-notch quality every step of the way."</p>
+            <div class="client-text">
+              <h3 style="color: #165204;">JOHNSON MWAURA</h3>
+              <p style="color: #777;">Project Manager, Solid Structures</p>
+              <p>
+                "Their innovative concrete solutions transformed our project
+                execution, ensuring top-notch quality every step of the way."
+              </p>
             </div>
           </div>
         </div>
 
         <!-- Client Box 3 -->
-        <div class="client-box" style="display: none; border: 1px solid #ddd; border-radius: 1px; padding: 20px; box-shadow: 0 2px 6px rgba(0,0,0,0.1); margin-bottom: 20px;">
-          <div style="display: flex; align-items: center; gap: 20px;">
-            <div style="flex: 0 0 200px;">
-              <img src="images/img.jpg" alt="Client Michael Smith" style="width: 300px; height: 300px; border-radius: 5px; object-fit: cover;">
+        <div class="client-box hidden">
+          <div class="client-box-inner">
+            <div class="client-image">
+              <img
+                src="images/img.jpg"
+                alt="Client Michael Smith"
+              />
             </div>
-            <div style="flex: 1;">
-              <h3 style="margin: 0; font-size: 1.7em; color: #012e87;">MICHAEL SMITH</h3>
-              <p style="margin: 5px 0; color: #777;">Senior Exhibitor, Masters Homes</p>
-              <p style="font-size: 1em; color: #555;">"Their commitment to quality and innovative solutions has played a pivotal role in our project's success."</p>
+            <div class="client-text">
+              <h3 style="color: #012e87;">MICHAEL SMITH</h3>
+              <p style="color: #777;">Senior Exhibitor, Masters Homes</p>
+              <p>
+                "Their commitment to quality and innovative solutions has played
+                a pivotal role in our project's success."
+              </p>
             </div>
           </div>
         </div>
@@ -409,25 +832,24 @@
 
       <!-- Navigation Button -->
       <div style="text-align: center;">
-        <button onclick="showNextClient()" style="padding: 10px 20px; font-size: 1em; border: none; background-color: #007BFF; color: #fff; border-radius: 5px; cursor: pointer;">
+        <button onclick="showNextClient()" class="client-nav-btn">
           Next Client
         </button>
       </div>
-
-      <!-- Inline JavaScript to cycle through clients -->
-      <script>
-        var currentClient = 0;
-        var clientBoxes = document.querySelectorAll('.client-box');
-        function showNextClient() {
-          clientBoxes[currentClient].style.display = 'none';
-          currentClient = (currentClient + 1) % clientBoxes.length;
-          clientBoxes[currentClient].style.display = 'block';
-        }
-      </script>
     </div>
-  </section>   
+  </section>
 
-  <!-- 7. Request a Quote Section -->
+  <script>
+    var currentClient = 0;
+    var clientBoxes = document.querySelectorAll(".client-box");
+    function showNextClient() {
+      clientBoxes[currentClient].classList.add("hidden");
+      currentClient = (currentClient + 1) % clientBoxes.length;
+      clientBoxes[currentClient].classList.remove("hidden");
+    }
+  </script>
+
+  <!-- Request a Quote Section -->
   <section class="request-quote">
     <div class="container quote-container">
       <div class="quote-form">
@@ -453,29 +875,35 @@
             <label for="qMessage">Message</label>
             <textarea id="qMessage" name="qMessage" rows="5" required></textarea>
           </div>
-          <button type="submit" class="btn" style="background: #0159e6; color: #fff; padding: 10px 20px; border: none; border-radius: 5px;">SEND MESSAGE</button>
+          <button type="submit" class="btn">SEND MESSAGE</button>
         </form>
       </div>
       <div class="quote-info">
         <h3>Contact Details</h3>
         <p>
-          P.O. BOX 81238-80100,<br>
+          P.O. BOX 81238-80100,<br />
           Baharini, Eldoret.
         </p>
         <p><strong>Phone:</strong> 0704030881</p>
         <p><strong>Alternate:</strong> 0713900030</p>
         <div class="social">
-          <a href="https://www.facebook.com/people/Bektas-Blocks-LTD/61558517308412/" target="_blank"><i class="fab fa-facebook"></i> FACEBOOK</a>
+          <a
+            href="https://www.facebook.com/people/Bektas-Blocks-LTD/61558517308412/"
+            target="_blank"
+            ><i class="fab fa-facebook"></i> FACEBOOK</a
+          >
           <p>
             <strong>WhatsApp:</strong>
-            <a href="https://wa.me/254704030881" target="_blank">0704030881</a>
+            <a href="https://wa.me/254704030881" target="_blank"
+              >0704030881</a
+            >
           </p>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- 8. Footer -->
+  <!-- Footer -->
   <footer class="site-footer">
     <div class="container">
       <nav class="footer-nav">
@@ -488,7 +916,7 @@
     </div>
   </footer>
 
-  <!-- JavaScript -->
+  <!-- External JS (if any) -->
   <script src="cript.js"></script>
 </body>
 </html>
