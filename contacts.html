@@ -16,7 +16,7 @@
   <style>
     /* ===================== Global Responsive CSS ===================== */
     @media (max-width: 768px) {
-      /* Header container: keep flags on sides and logo-heading container centered */
+      /* Header adjustments for mobile */
       .header-container {
         flex-direction: column !important;
         align-items: center !important;
@@ -24,21 +24,16 @@
         padding: 10px !important;
       }
       .header-container img {
-        position: static !important;
         margin: 5px 0 !important;
       }
       .logo-heading-container {
         flex-direction: column !important;
         align-items: center !important;
         gap: 10px !important;
-        left: 0 !important;
       }
       .logo-heading-container h1 {
-        position: static !important;
-        text-align: center !important;
         font-size: 2em !important;
         margin: 5px 0 !important;
-        left: 0 !important;
       }
       /* Hide regular navigation */
       .site-nav ul {
@@ -74,6 +69,32 @@
         color: inherit;
         text-decoration: none;
       }
+      /* Projects Section adjustments for mobile */
+      .image-container {
+        grid-template-columns: 1fr !important;
+      }
+      .project__card {
+        flex-direction: column !important;
+        height: auto !important;
+      }
+      .project__card .image-wrapper {
+        width: 100% !important;
+      }
+      .tes__icon {
+        width: 100% !important;
+        height: auto !important;
+      }
+      .project__desc {
+        text-align: center !important;
+        padding: 10px !important;
+      }
+      /* Static Background adjustments */
+      .static-bg-content h2 {
+        font-size: 2rem;
+      }
+      .static-bg-content p {
+        font-size: 1rem;
+      }
     }
     @media (min-width: 769px) {
       .dropdown-toggle,
@@ -82,142 +103,42 @@
       }
       .site-nav ul {
         display: flex;
-        justify-content: center;
       }
       .site-nav ul li {
         margin: 0 15px;
       }
     }
-    /* ===================== Existing Responsive CSS (for other sections) ===================== */
-    @media (max-width: 768px) {
-      .header-container img {
-        position: static !important;
-        margin: 10px 0;
-      }
-      .header-container h1 {
-        position: static;
-        text-align: center;
-        margin: 10px 0;
-      }
-      /* Other sections adjustments remain unchanged */
-      .stats-container {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-      }
-      .stats-container .stat {
-        margin: 10px 0;
-      }
-      .professional-details .details-cards {
-        flex-direction: column;
-        align-items: center;
-      }
-      .professional-details .card {
-        margin: 10px 0;
-        width: 90%;
-      }
-      .vision-mission .container {
-        flex-direction: column;
-        align-items: center;
-      }
-      .vision, .mission {
-        margin: 20px 0;
-        width: 100%;
-        text-align: center;
-      }
-      section[style*="padding: 20px; background-color: #f9f9f9;"] > div[style*="display: flex"] {
-        flex-direction: column;
-        align-items: center;
-      }
-      #client-boxes {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-      }
-      .client-box {
-        width: 90%;
-        margin-bottom: 20px;
-      }
-      .quote-container {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-      }
-      .quote-form, .quote-info {
-        width: 100%;
-        text-align: center;
-        margin-bottom: 20px;
-      }
-      .site-footer .container {
-        text-align: center;
-        padding: 20px;
-      }
-    }
     /* ===================== End Global Responsive CSS ===================== */
-
-    /* Container for the images */
-    .image-container {
-      display: flex;
-      flex-wrap: wrap;
-      margin: 0;
-    }
-    .image-container [class*="col-md"] {
-      flex: 0 0 33.333%;
-      max-width: 33.333%;
-      padding: 0 15px;
-      width: auto;
-      height: auto;
-      margin: 0;
-    }
-    .tes__icon {
-      width: 100%;
-      height: auto;
-      object-fit: cover;
-      margin-bottom: 0px;
-    }
-
+    
     /* ===================== Header Section CSS (Updated) ===================== */
     .header-container {
       display: flex;
       align-items: center;
       justify-content: space-between;
       padding: 0 50px;
-      position: relative;
+      /* No absolute positioning – header flows with the document */
     }
-    /* Left Flag */
-    .left-flag {
-      width: 100px;
-      height: auto;
-      position: absolute;
-      left: 10px;
-    }
-    /* Right Flag */
+    /* Left & Right Flags are now normal flex items */
+    .left-flag,
     .right-flag {
       width: 100px;
       height: auto;
-      position: absolute;
-      right: 10px;
     }
     /* Center: Logo and Heading Container */
     .logo-heading-container {
       display: flex;
       align-items: center;
       gap: 70px;
-      position: relative;
-      left: 50px;
     }
     .logo-heading-container img {
       width: 250px;
       height: 130px;
       border-radius: 1px;
-      position: relative;
-      left: 35%;
+      object-fit: cover;
     }
     .logo-heading-container h1 {
       font-size: 3em;
       margin: 0;
-      position: relative;
-      left: 27%;
       color: #0965f0;
     }
     /* Regular Navigation (Desktop) */
@@ -265,48 +186,118 @@
       color: inherit;
       text-decoration: none;
     }
-    /* Responsive adjustments for header */
-    @media (max-width: 768px) {
-      .header-container {
-        flex-direction: column !important;
-        align-items: center !important;
-        justify-content: center !important;
-        padding: 10px !important;
-      }
-      .header-container img {
-        position: static !important;
-        margin: 5px 0 !important;
-      }
-      .logo-heading-container {
-        flex-direction: column !important;
-        align-items: center !important;
-        gap: 10px !important;
-        left: 0 !important;
-      }
-      .logo-heading-container h1 {
-        position: static !important;
-        text-align: center !important;
-        font-size: 2em !important;
-        margin: 5px 0 !important;
-        left: 0 !important;
-      }
-      /* Hide the regular navigation menu */
-      .site-nav ul {
-        display: none;
-      }
-      /* Show mobile dropdown button */
-      .dropdown-toggle {
-        display: block;
-      }
+    
+    /* ===================== Other Existing CSS ===================== */
+    /* Container for the images */
+    .image-container {
+      display: flex;
+      flex-wrap: wrap;
+      margin: 0;
     }
-    @media (min-width: 769px) {
-      .dropdown-toggle,
-      .mobile-nav {
-        display: none;
-      }
-      .site-nav ul {
-        display: flex;
-      }
+    .image-container [class*="col-md"] {
+      flex: 0 0 33.333%;
+      max-width: 33.333%;
+      padding: 0 15px;
+      width: auto;
+      height: auto;
+      margin: 0;
+    }
+    .tes__icon {
+      width: 100%;
+      height: auto;
+      object-fit: cover;
+      margin-bottom: 0;
+    }
+    /* Static Background Section */
+    .static-bg-section {
+      background-image: url(https://res-console.cloudinary.com/dl5cjekuk/thumbnails/v1/image/upload/v1742984818/Q29ybi1CYXNlZC1Db25jcmV0ZS1CdWlsZGluZy10aGUtRnV0dXJlLW9mLUxvdy1DYXJib24tQ29uc3RydWN0aW9uLU1hdGVyaWFsc19pY2NqaDU=/drilldown);
+      background-attachment: fixed;
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: cover;
+      color: rgba(242, 248, 248, 0.992);
+      text-align: center;
+      padding: 100px 0;
+      position: relative;
+      z-index: 0;
+    }
+    .static-bg-section::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0, 0, 0, 0.5);
+      z-index: -1;
+    }
+    .static-bg-content {
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 0 20px;
+    }
+    .static-bg-content h2 {
+      font-size: 3em;
+      margin-bottom: 20px;
+    }
+    .static-bg-content p {
+      font-size: 1.2em;
+      line-height: 1.6;
+    }
+    /* ===================== Projects Section ===================== */
+    .project__card {
+      display: flex;
+      align-items: center;
+      background: #e6eae9;
+      border: 1px solid #ddd;
+      border-radius: 5px;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+      overflow: hidden;
+      height: 300px;
+      width: 100%;
+      flex-direction: row;
+    }
+    .project__card .image-wrapper {
+      flex: 0 0 400px;
+    }
+    .project__desc {
+      flex: 1;
+      padding: 20px;
+    }
+    .project__desc h3 {
+      margin-top: 0;
+      font-size: 1.5em;
+      color: #333;
+    }
+    .project__desc p {
+      font-size: 1.1em;
+      color: #0c0707;
+      line-height: 1.5;
+    }
+    .image-container .project__itm:nth-child(odd) .project__desc {
+      text-align: left;
+    }
+    .image-container .project__itm:nth-child(even) .project__desc {
+      text-align: right;
+    }
+    /* ===================== Footer ===================== */
+    .site-footer {
+      background: #333;
+      color: #fff;
+      padding: 20px 0;
+      text-align: center;
+    }
+    .site-footer .footer-nav ul {
+      list-style: none;
+      display: flex;
+      justify-content: center;
+      gap: 15px;
+      padding: 0;
+      margin: 10px 0;
+    }
+    .site-footer .footer-nav ul li a {
+      text-decoration: none;
+      color: #fff;
     }
   </style>
 </head>
@@ -336,7 +327,7 @@
       <!-- Right: Kenyan Flag -->
       <img class="right-flag" src="https://i.pinimg.com/474x/33/54/8a/33548ab261a60a06058da6b2c7e08751.jpg" alt="Kenyan Flag">
     </div>
-    <!-- Regular Navigation Menu for PC -->
+    <!-- Regular Navigation Menu for Desktop -->
     <nav class="site-nav">
       <ul>
         <li><a href="index.html" class="active">HOME</a></li>
