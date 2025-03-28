@@ -475,5 +475,14 @@
   <script src="script.js"
     integrity="sha512-BPz41T2ifN2ZQGl5uK13jwC5p+vLq8xkBTLI6L1o6lp8ZMyRzVvTCtMc79V6FDrTQ//6z5T+ArBqkAgBMoe+DQ=="
     crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  
+  <!-- Inline script to enable mobile dropdown functionality -->
+  <script>
+    function toggleMobileNav() {
+      const mobileNav = document.querySelector('.mobile-nav');
+      // Toggle the display state between block and none
+      mobileNav.style.display = (mobileNav.style.display === "block") ? "none" : "block";
+    }
+  </script>
 </body>
 </html>
