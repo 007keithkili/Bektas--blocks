@@ -58,14 +58,12 @@
       background-color: transparent;
       text-align: left;
     }
-
     /* ================= Default Styles ================= */
     /* Hide the dropdown button and mobile navigation on desktop */
     .dropdown-toggle,
     .mobile-nav {
       display: none;
     }
-   
     /* ===================== Responsive CSS Inserted ===================== */
     @media (max-width: 768px) {
       /* Rearranged Header for Mobile:
@@ -134,7 +132,6 @@
       }
     }
     /* ===================== End Responsive CSS ===================== */
-
     /* ================= Static Background Section ================= */
     .static-bg-section {
       background-image: url(https://res-console.cloudinary.com/dl5cjekuk/thumbnails/v1/image/upload/v1742984818/Q29ybi1CYXNlZC1Db25jcmV0ZS1CdWlsZGluZy10aGUtRnV0dXJlLW9mLUxvdy1DYXJib24tQ29uc3RydWN0aW9uLU1hdGVyaWFsc19pY2NqaDU=/drilldown);
@@ -171,7 +168,6 @@
       font-size: 1.2em;
       line-height: 1.6;
     }
-    
     /* ================= Projects Section ================= */
     .tes__icon {
       width: 400px;
@@ -223,7 +219,6 @@
     .image-container .project__itm:nth-child(even) .project__desc {
       text-align: right;
     }
-    
     /* ================= Request a Quote Section ================= */
     .quote-container {
       display: flex;
@@ -239,7 +234,6 @@
     .quote-form h2 {
       margin-top: 0;
     }
-    
     /* ================= Footer ================= */
     .site-footer {
       background: #333;
@@ -274,18 +268,24 @@
 
   <!-- Updated Header: Logo, Flags, and Navigation -->
   <header class="site-header">
-    <div class="container header-container">
+    <div class="container header-container" style="position: relative; display: flex; align-items: center; justify-content: space-between; padding: 0 50px;">
       <!-- Left: Turkey Flag -->
-      <img class="flag left-flag" src="https://i.pinimg.com/474x/f1/de/73/f1de7316c0d4c8110f19c32a317eef3b.jpg" alt="Turkey Flag">
+      <img src="https://i.pinimg.com/474x/f1/de/73/f1de7316c0d4c8110f19c32a317eef3b.jpg" 
+           alt="Turkey Flag" 
+           style="width: 100px; height: auto; position: absolute; left: 10px;">
       
       <!-- Center: Logo and Heading -->
-      <div class="logo-heading-container">
-        <img class="logo" src="https://scontent-mba2-1.xx.fbcdn.net/v/t39.30808-6/486706616_122137008848592990_9213781367601452384_n.jpg?_nc_cat=110&ccb=1-7&_nc_sid=127cfc&_nc_eui2=AeEq8m1dYa5AvWa7m0LQQtdraUoVvy_vXFBpShW_L-9cUErpYCa-RSgOFdsE-IVnbePbcfWkNkZ2lPRqt0i6DTG7&_nc_ohc=NO3A68hAWVYQ7kNvgE0fLkU&_nc_oc=AdnHVeeXxxP1QmegXA_mEKZf_If1nS-wrtArTmS1cYN0Z8QqWgpdAEXSr2C2CsElCtc&_nc_zt=23&_nc_ht=scontent-mba2-1.xx&_nc_gid=3y8G3O52p7gTTRao9p-3Ag&oh=00_AYGFp_RDl5hBdcojq1IgCxZsZF9bOT8EdyRDrUKmMi8OcQ&oe=67EAD774" alt="Bektas Blocks Logo">
-        <h1>BEKTAS BLOCKS</h1>
+      <div style="display: flex; align-items: center; gap: 70px; position: relative; left: 50px;">
+        <img src="https://scontent-mba2-1.xx.fbcdn.net/v/t39.30808-6/486706616_122137008848592990_9213781367601452384_n.jpg?_nc_cat=110&ccb=1-7&_nc_sid=127cfc&_nc_eui2=AeEq8m1dYa5AvWa7m0LQQtdraUoVvy_vXFBpShW_L-9cUErpYCa-RSgOFdsE-IVnbePbcfWkNkZ2lPRqt0i6DTG7&_nc_ohc=NO3A68hAWVYQ7kNvgE0fLkU&_nc_oc=AdnHVeeXxxP1QmegXA_mEKZf_If1nS-wrtArTmS1cYN0Z8QqWgpdAEXSr2C2CsElCtc&_nc_zt=23&_nc_ht=scontent-mba2-1.xx&_nc_gid=3y8G3O52p7gTTRao9p-3Ag&oh=00_AYGFp_RDl5hBdcojq1IgCxZsZF9bOT8EdyRDrUKmMi8OcQ&oe=67EAD774" 
+             alt="Bektas Blocks Logo" 
+             style="width: 250px; height: 130px; position: relative; left: 35%; border-radius: 1px;">
+        <h1 style="font-size: 3em; margin: 0; position: relative; left: 27%; color: #0965f0;">BEKTAS BLOCKS</h1>
       </div>
       
       <!-- Right: Kenyan Flag -->
-      <img class="flag right-flag" src="https://i.pinimg.com/474x/33/54/8a/33548ab261a60a06058da6b2c7e08751.jpg" alt="Kenyan Flag">
+      <img src="https://i.pinimg.com/474x/33/54/8a/33548ab261a60a06058da6b2c7e08751.jpg" 
+           alt="Kenyan Flag" 
+           style="width: 100px; height: auto; position: absolute; right: 10px;">
     </div>
     <!-- Navigation Menu (Desktop) -->
     <nav class="site-nav">
