@@ -14,15 +14,14 @@
   <!-- Main CSS -->
   <link rel="stylesheet" href="styles.css" />
   <style>
-    /* ---------------- Sticky Header ---------------- */
+    /* ---------------- Header Section (PC View) ---------------- */
     .site-header {
-      position: sticky;
-      top: 0;
+      /* Removed sticky positioning; now relative */
+      position: relative;
       z-index: 1000;
       background: #fff;
       box-shadow: 0 2px 4px rgba(0,0,0,0.1);
     }
-    /* ---------------- Header Layout ---------------- */
     .header-container {
       position: relative;
       display: flex;
@@ -30,7 +29,7 @@
       justify-content: center;
       padding: 0 50px;
     }
-    /* Flags positioned absolutely on desktop */
+    /* Flags are positioned absolutely on PC */
     .header-container img.flag {
       width: 100px;
       height: auto;
@@ -42,11 +41,12 @@
     .right-flag {
       right: 10px;
     }
-    /* Center: Logo & Title */
+    /* Center: Logo & Title arranged in a row on PC */
     .logo-heading-container {
       display: flex;
-      flex-direction: column;
+      flex-direction: row;
       align-items: center;
+      gap: 20px;
     }
     .logo-heading-container img.logo {
       width: 250px;
@@ -104,11 +104,13 @@
         align-items: center;
         padding: 10px;
       }
+      /* Flags resized to 50px and static on mobile */
       .header-container img.flag {
         width: 50px;
         position: static;
         margin: 10px 0;
       }
+      /* Stack logo and text vertically in mobile view */
       .logo-heading-container {
         flex-direction: column;
         align-items: center;
@@ -137,7 +139,6 @@
         cursor: pointer;
       }
     }
-    
     @media (min-width: 769px) {
       .dropdown-toggle,
       .mobile-nav {
@@ -195,13 +196,13 @@
     </div>
   </div>
 
-  <!-- Updated Header: Sticky, with Flags, Logo, and Navigation -->
+  <!-- Updated Header: Without Sticky, with Flags, Logo, and Navigation -->
   <header class="site-header">
     <div class="container header-container">
       <!-- Left: Turkey Flag -->
       <img class="flag left-flag" src="https://i.pinimg.com/474x/f1/de/73/f1de7316c0d4c8110f19c32a317eef3b.jpg" alt="Turkey Flag">
       
-      <!-- Center: Logo and Heading -->
+      <!-- Center: Logo and Heading (Logo and text side-by-side on PC) -->
       <div class="logo-heading-container">
         <img class="logo" src="https://scontent-mba2-1.xx.fbcdn.net/v/t39.30808-6/486706616_122137008848592990_9213781367601452384_n.jpg?_nc_cat=110&ccb=1-7&_nc_sid=127cfc&_nc_eui2=AeEq8m1dYa5AvWa7m0LQQtdraUoVvy_vXFBpShW_L-9cUErpYCa-RSgOFdsE-IVnbePbcfWkNkZ2lPRqt0i6DTG7&_nc_ohc=NO3A68hAWVYQ7kNvgE0fLkU&_nc_oc=AdnHVeeXxxP1QmegXA_mEKZf_If1nS-wrtArTmS1cYN0Z8QqWgpdAEXSr2C2CsElCtc&_nc_zt=23&_nc_ht=scontent-mba2-1.xx&_nc_gid=3y8G3O52p7gTTRao9p-3Ag&oh=00_AYGFp_RDl5hBdcojq1IgCxZsZF9bOT8EdyRDrUKmMi8OcQ&oe=67EAD774" alt="Bektas Blocks Logo">
         <h1>BEKTAS BLOCKS</h1>
