@@ -20,8 +20,8 @@
       position: relative;
       width: 100%;
       height: 57.3333px;
-      padding: 0px;
-      border: 0 none rgb(12, 45, 98);
+      padding: 0;
+      border: none;
       font-size: 43px;
       font-weight: 800;
       font-family: 'Times New Roman', Times, serif;
@@ -35,7 +35,7 @@
       height: 84.6667px;
       margin: 0;
       padding: 0 0 0 28px;
-      border: 0 none rgb(133, 146, 166);
+      border: none;
       font-size: 14px;
       font-weight: 400;
       font-family: Poppins, Tahoma, Geneva, sans-serif;
@@ -50,7 +50,7 @@
       height: 21px;
       margin: 0 0 5px;
       padding: 0;
-      border: 0 none rgb(133, 146, 166);
+      border: none;
       font-size: 14px;
       font-weight: 600;
       font-family: Inter, Arial, Helvetica, sans-serif;
@@ -58,16 +58,16 @@
       background-color: transparent;
       text-align: left;
     }
+    
     /* ================= Default Styles ================= */
     /* Hide the dropdown button and mobile navigation on desktop */
     .dropdown-toggle,
     .mobile-nav {
       display: none;
     }
-    /* ===================== Responsive CSS Inserted ===================== */
+    
+    /* ===================== Responsive CSS ===================== */
     @media (max-width: 768px) {
-      /* Rearranged Header for Mobile:
-         Display Turkey flag on top, then logo, then heading, then Kenyan flag */
       .header-container {
         flex-direction: column !important;
         align-items: center !important;
@@ -75,33 +75,37 @@
         padding: 10px !important;
         position: relative !important;
       }
-      /* Override inline absolute positioning */
+      /* Remove the rule that sets images to static;
+         instead, resize images for mobile view */
       .header-container img {
-        position: static !important;
-        margin: 5px 0 !important;
+        width: 50px;
+        margin: 5px 0;
       }
-      /* Stack the logo and heading vertically */
+      /* Adjust the center container */
       .header-container > div {
         display: flex !important;
         flex-direction: column !important;
         align-items: center !important;
-        gap: 10px !important;
+        gap: 5px !important;
         left: 0 !important;
       }
+      /* Reduce the header text size */
       .header-container h1 {
-        position: static !important;
-        text-align: center !important;
         font-size: 2em !important;
         margin: 5px 0 !important;
         left: 0 !important;
       }
-      /* Hide the regular navigation menu */
+      /* Specifically reduce the logo size */
+      .logo-heading-container img.logo {
+        width: 150px !important;
+        height: auto;
+      }
+      /* Hide the desktop navigation menu */
       .site-nav ul {
         display: none;
       }
-      /* Show the mobile dropdown button */
       .dropdown-toggle {
-        display: block;
+        display: block !important;
         background: #333;
         color: #fff;
         padding: 10px 20px;
@@ -111,7 +115,6 @@
         margin: 10px auto;
         cursor: pointer;
       }
-      /* Mobile navigation links container (remains hidden until toggled) */
       .mobile-nav {
         display: none;
         text-align: center;
@@ -132,6 +135,7 @@
       }
     }
     /* ===================== End Responsive CSS ===================== */
+    
     /* ================= Static Background Section ================= */
     .static-bg-section {
       background-image: url(https://res-console.cloudinary.com/dl5cjekuk/thumbnails/v1/image/upload/v1742984818/Q29ybi1CYXNlZC1Db25jcmV0ZS1CdWlsZGluZy10aGUtRnV0dXJlLW9mLUxvdy1DYXJib24tQ29uc3RydWN0aW9uLU1hdGVyaWFsc19pY2NqaDU=/drilldown);
@@ -168,6 +172,7 @@
       font-size: 1.2em;
       line-height: 1.6;
     }
+    
     /* ================= Projects Section ================= */
     .tes__icon {
       width: 400px;
@@ -219,6 +224,7 @@
     .image-container .project__itm:nth-child(even) .project__desc {
       text-align: right;
     }
+    
     /* ================= Request a Quote Section ================= */
     .quote-container {
       display: flex;
@@ -234,6 +240,7 @@
     .quote-form h2 {
       margin-top: 0;
     }
+    
     /* ================= Footer ================= */
     .site-footer {
       background: #333;
