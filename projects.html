@@ -68,23 +68,42 @@
 
     /* ===================== Responsive CSS Inserted ===================== */
     @media (max-width: 768px) {
-      /* Rearranged Header for Mobile:
-         Display Turkey flag on top, then logo, then heading, then Kenyan flag */
+      /* Prevent horizontal scrolling */
+      html, body {
+        overflow-x: hidden;
+      }
+      
+      /* Rearranged Header for Mobile */
       .header-container {
-        flex-direction: column !important;
+        flex-direction: row !important;
         align-items: center !important;
-        justify-content: center !important;
-        padding: 10px !important;
+        justify-content: space-between !important;
+        padding: 10px 20px !important;
         position: relative !important;
       }
-      /* Override inline absolute positioning for header images and content */
-      .header-container img,
-      .header-container > div,
-      .site-header h1 {
+      /* Shrink and reset positions for flag images and logo */
+      .header-container img.flag {
+        width: 50px !important;
+        height: auto;
+        position: static !important;
+        margin: 0 5px;
+      }
+      .header-container img.logo {
+        width: 150px !important;
+        height: auto;
+        position: static !important;
+      }
+      .header-container h1 {
+        font-size: 1.5em !important;
+        margin: 0 !important;
         position: static !important;
         left: 0 !important;
-        margin: 5px 0 !important;
-        text-align: center !important;
+      }
+      /* Center the logo and header text in a vertical stack */
+      .header-content {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
       }
       /* Hide the regular navigation menu */
       .site-nav ul {
@@ -265,7 +284,7 @@
       text-decoration: none;
       color: #fff;
     }
-
+    
     /* ========== Override Header Image Positioning Globally ========== */
     .site-header .header-container img,
     .site-header .header-container > div,
@@ -290,20 +309,20 @@
   <header class="site-header">
     <div class="container header-container" style="display: flex; align-items: center; justify-content: space-between; padding: 0 50px;">
       <!-- Left: Turkey Flag -->
-      <img src="https://i.pinimg.com/474x/f1/de/73/f1de7316c0d4c8110f19c32a317eef3b.jpg" 
+      <img class="flag" src="https://i.pinimg.com/474x/f1/de/73/f1de7316c0d4c8110f19c32a317eef3b.jpg" 
            alt="Turkey Flag" 
            style="width: 100px; height: auto; position: absolute; left: 10px;">
       
       <!-- Center: Logo and Heading -->
-      <div style="display: flex; align-items: center; gap: 70px; left:50px;">
-        <img src="https://scontent-mba2-1.xx.fbcdn.net/v/t39.30808-6/486706616_122137008848592990_9213781367601452384_n.jpg?_nc_cat=110&ccb=1-7&_nc_sid=127cfc&_nc_eui2=AeEq8m1dYa5AvWa7m0LQQtdraUoVvy_vXFBpShW_L-9cUErpYCa-RSgOFdsE-IVnbePbcfWkNkZ2lPRqt0i6DTG7&_nc_ohc=NO3A68hAWVYQ7kNvgE0fLkU&_nc_oc=AdnHVeeXxxP1QmegXA_mEKZf_If1nS-wrtArTmS1cYN0Z8QqWgpdAEXSr2C2CsElCtc&_nc_zt=23&_nc_ht=scontent-mba2-1.xx&_nc_gid=3y8G3O52p7gTTRao9p-3Ag&oh=00_AYGFp_RDl5hBdcojq1IgCxZsZF9bOT8EdyRDrUKmMi8OcQ&oe=67EAD774" 
+      <div class="header-content" style="display: flex; flex-direction: column; align-items: center; gap: 10px; left:50px;">
+        <img class="logo" src="https://scontent-mba2-1.xx.fbcdn.net/v/t39.30808-6/486706616_122137008848592990_9213781367601452384_n.jpg?_nc_cat=110&ccb=1-7&_nc_sid=127cfc&_nc_eui2=AeEq8m1dYa5AvWa7m0LQQtdraUoVvy_vXFBpShW_L-9cUErpYCa-RSgOFdsE-IVnbePbcfWkNkZ2lPRqt0i6DTG7&_nc_ohc=NO3A68hAWVYQ7kNvgE0fLkU&_nc_oc=AdnHVeeXxxP1QmegXA_mEKZf_If1nS-wrtArTmS1cYN0Z8QqWgpdAEXSr2C2CsElCtc&_nc_zt=23&_nc_ht=scontent-mba2-1.xx&_nc_gid=3y8G3O52p7gTTRao9p-3Ag&oh=00_AYGFp_RDl5hBdcojq1IgCxZsZF9bOT8EdyRDrUKmMi8OcQ&oe=67EAD774" 
              alt="Bektas Blocks Logo" 
              style="width: 250px; height: 130px; position: relative; left: 35%; border-radius: 1px;">
         <h1 style="font-size: 3em; margin: 0; position:relative; left:27%; color: #0965f0;">BEKTAS BLOCKS</h1>
       </div>
       
       <!-- Right: Kenyan Flag -->
-      <img src="https://i.pinimg.com/474x/33/54/8a/33548ab261a60a06058da6b2c7e08751.jpg" 
+      <img class="flag" src="https://i.pinimg.com/474x/33/54/8a/33548ab261a60a06058da6b2c7e08751.jpg" 
            alt="Kenyan Flag" 
            style="width: 100px; height: auto; position: absolute; right: 10px;">
     </div>
