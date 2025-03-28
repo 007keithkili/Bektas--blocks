@@ -119,6 +119,15 @@
     }
 
     /* ===================== Header Section CSS (PC View) ===================== */
+    /* ---------------- Sticky Header ---------------- */
+    .site-header {
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      background: #fff; /* white background for contrast */
+      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    }
+    /* ---------------- Header Layout ---------------- */
     .header-container {
       display: flex;
       align-items: center;
@@ -126,17 +135,18 @@
       padding: 0 50px;
       position: relative;
     }
-    .left-flag,
-    .right-flag {
+    /* Flags */
+    .header-container img.flag {
       width: 100px;
       height: auto;
     }
+    /* Center: Logo & Title */
     .logo-heading-container {
       display: flex;
       align-items: center;
       gap: 70px;
     }
-    .logo-heading-container img {
+    .logo-heading-container img.logo {
       width: 250px;
       height: 130px;
       border-radius: 1px;
@@ -147,6 +157,7 @@
       margin: 0;
       color: #0965f0;
     }
+    /* Navigation Menu (Desktop) */
     .site-nav ul {
       list-style: none;
       display: flex;
@@ -272,22 +283,22 @@
     </div>
   </div>
 
-  <!-- Updated Header: Logo and Navigation -->
+  <!-- Updated Header: Sticky, with Flags, Logo, and Navigation -->
   <header class="site-header">
     <div class="container header-container">
       <!-- Left: Turkey Flag -->
-      <img class="left-flag" src="https://i.pinimg.com/474x/f1/de/73/f1de7316c0d4c8110f19c32a317eef3b.jpg" alt="Turkey Flag">
+      <img class="flag left-flag" src="https://i.pinimg.com/474x/f1/de/73/f1de7316c0d4c8110f19c32a317eef3b.jpg" alt="Turkey Flag">
       
       <!-- Center: Logo and Heading -->
       <div class="logo-heading-container">
-        <img src="https://scontent-mba2-1.xx.fbcdn.net/v/t39.30808-6/486706616_122137008848592990_9213781367601452384_n.jpg?_nc_cat=110&ccb=1-7&_nc_sid=127cfc&_nc_eui2=AeEq8m1dYa5AvWa7m0LQQtdraUoVvy_vXFBpShW_L-9cUErpYCa-RSgOFdsE-IVnbePbcfWkNkZ2lPRqt0i6DTG7&_nc_ohc=NO3A68hAWVYQ7kNvgE0fLkU&_nc_oc=AdnHVeeXxxP1QmegXA_mEKZf_If1nS-wrtArTmS1cYN0Z8QqWgpdAEXSr2C2CsElCtc&_nc_zt=23&_nc_ht=scontent-mba2-1.xx&_nc_gid=3y8G3O52p7gTTRao9p-3Ag&oh=00_AYGFp_RDl5hBdcojq1IgCxZsZF9bOT8EdyRDrUKmMi8OcQ&oe=67EAD774" alt="Bektas Blocks Logo">
+        <img class="logo" src="https://scontent-mba2-1.xx.fbcdn.net/v/t39.30808-6/486706616_122137008848592990_9213781367601452384_n.jpg?_nc_cat=110&ccb=1-7&_nc_sid=127cfc&_nc_eui2=AeEq8m1dYa5AvWa7m0LQQtdraUoVvy_vXFBpShW_L-9cUErpYCa-RSgOFdsE-IVnbePbcfWkNkZ2lPRqt0i6DTG7&_nc_ohc=NO3A68hAWVYQ7kNvgE0fLkU&_nc_oc=AdnHVeeXxxP1QmegXA_mEKZf_If1nS-wrtArTmS1cYN0Z8QqWgpdAEXSr2C2CsElCtc&_nc_zt=23&_nc_ht=scontent-mba2-1.xx&_nc_gid=3y8G3O52p7gTTRao9p-3Ag&oh=00_AYGFp_RDl5hBdcojq1IgCxZsZF9bOT8EdyRDrUKmMi8OcQ&oe=67EAD774" alt="Bektas Blocks Logo">
         <h1>BEKTAS BLOCKS</h1>
       </div>
       
       <!-- Right: Kenyan Flag -->
-      <img class="right-flag" src="https://i.pinimg.com/474x/33/54/8a/33548ab261a60a06058da6b2c7e08751.jpg" alt="Kenyan Flag">
+      <img class="flag right-flag" src="https://i.pinimg.com/474x/33/54/8a/33548ab261a60a06058da6b2c7e08751.jpg" alt="Kenyan Flag">
     </div>
-    <!-- Regular Navigation Menu for Desktop -->
+    <!-- Navigation Menu (Desktop) -->
     <nav class="site-nav">
       <ul>
         <li><a href="index.html" class="active">HOME</a></li>
@@ -344,7 +355,7 @@
       }
     }
   </script>
-
+  
   <!-- Stats Bar -->
   <section class="stats-bar">
     <div class="container stats-container">
@@ -366,7 +377,7 @@
       </div>
     </div>
   </section>
-
+  
   <!-- Static Background Image Section -->
   <section class="static-bg-section">
     <style>
@@ -421,7 +432,7 @@
       <p>Discover quality concrete and precast building materials for your projects.</p>
     </div>
   </section>
-
+  
   <!-- Contact Info Section -->
   <section class="contact-info-section">
     <style>
@@ -482,7 +493,7 @@
       <a href="https://wa.me/254704030881" target="_blank">0704030881</a>
     </div>
   </section>
-
+  
   <!-- Location Map Section -->
   <section class="location-map-section">
     <style>
@@ -512,7 +523,7 @@
       ></iframe>
     </div>
   </section>
-
+  
   <!-- Additional Contact Details -->
   <div class="quote-info">
     <h3>Contact Details</h3>
@@ -529,7 +540,7 @@
       <a href="https://www.facebook.com/people/Bektas-Blocks-LTD/61558517308412/" target="_blank"><i class="fab fa-facebook"></i> FACEBOOK</a>
     </div>
   </div>
-
+  
   <!-- Footer -->
   <footer class="site-footer">
     <div class="container">
@@ -543,7 +554,7 @@
       <a href="https://wa.me/254721473081" target="_blank">0721473081</a>
     </div>
   </footer>
-
+  
   <!-- External JavaScript -->
   <script src="script.js"></script>
   <!-- Lightbox2 JavaScript -->
