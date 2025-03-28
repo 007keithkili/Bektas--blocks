@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Bektas Blocks | Reviews</title>
+  <title>Bektas Blocks | Home</title>
   <meta name="description" content="Bektas Blocks - Quality Concrete and Precast Building Materials" />
   <!-- Google Fonts -->
   <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" rel="stylesheet" />
@@ -14,6 +14,7 @@
   <!-- Main CSS -->
   <link rel="stylesheet" href="styles.css" />
   <style>
+    /* Admired website CSS incorporated in sections only */
     section h2.tm-element-content-heading {
       display: block;
       position: relative;
@@ -140,45 +141,159 @@
         color: inherit;
         text-decoration: none;
       }
+      
+      /* Projects Section adjustments for mobile */
+      .image-container {
+        grid-template-columns: 1fr !important;
+      }
+      .project__card {
+        flex-direction: column !important;
+        height: auto !important;
+      }
+      .project__card .image-wrapper {
+        width: 100% !important;
+      }
+      .tes__icon {
+        width: 100% !important;
+        height: auto !important;
+      }
+      .project__desc {
+        text-align: center !important;
+        padding: 10px !important;
+      }
     }
-    /* ===================== Other Global Styles (Retained) ===================== */
-    /* Top Bar Styles */
-    .top-bar {
-      background: #f0f0f0;
-      padding: 10px 0;
+    /* ===================== End Responsive CSS ===================== */
+    
+    /* ================= Static Background Section ================= */
+    .static-bg-section {
+      background-image: url(https://res-console.cloudinary.com/dl5cjekuk/thumbnails/v1/image/upload/v1742984818/Q29ybi1CYXNlZC1Db25jcmV0ZS1CdWlsZGluZy10aGUtRnV0dXJlLW9mLUxvdy1DYXJib24tQ29uc3RydWN0aW9uLU1hdGVyaWFsc19pY2NqaDU=/drilldown);
+      background-attachment: fixed;
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: cover;
+      color: rgba(242, 248, 248, 0.992);
+      text-align: center;
+      padding: 100px 0;
+      position: relative;
+      z-index: 0;
     }
-    .top-bar .container {
+    .static-bg-section::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0, 0, 0, 0.5);
+      z-index: -1;
+    }
+    .static-bg-content {
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 0 20px;
+    }
+    .static-bg-content h2 {
+      font-size: 3em;
+      margin-bottom: 20px;
+    }
+    .static-bg-content p {
+      font-size: 1.2em;
+      line-height: 1.6;
+    }
+    
+    /* ================= Projects Section ================= */
+    .tes__icon {
+      width: 400px;
+      height: 300px;
+      object-fit: cover;
+      border-radius: 5px;
+    }
+    .image-container {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 20px;
+      padding: 20px;
+      width: 100%;
+    }
+    .project__card {
       display: flex;
-      justify-content: flex-end;
-      padding: 0 50px;
+      align-items: center;
+      background: #e6eae9;
+      border: 1px solid #ddd;
+      border-radius: 5px;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+      overflow: hidden;
+      height: 300px;
+      width: 100%;
+      flex-direction: row;
     }
-    .top-bar .contact-info span {
-      margin-left: 15px;
-      font-size: 0.9em;
+    .project__card .image-wrapper {
+      flex: 0 0 400px;
+    }
+    .project__desc {
+      flex: 1;
+      padding: 20px;
+    }
+    .project__desc h3 {
+      margin-top: 0;
+      font-size: 1.5em;
       color: #333;
     }
-    /* ===================== Reviews Section & Other CSS Remains Unchanged ===================== */
-    /* (Include your reviews and other section styles here as needed) */
+    .project__desc p {
+      font-size: 1.1em;
+      color: #0c0707;
+      line-height: 1.5;
+    }
+    .image-container .project__itm:nth-child(odd) .project__desc {
+      text-align: left;
+    }
+    .image-container .project__itm:nth-child(even) .project__desc {
+      text-align: right;
+    }
     
-    /* Example Reviews Section CSS */
-    #reviews {
-      background: #f8f9fa;
-      padding: 4rem 0;
-      font-family: 'Roboto', sans-serif;
+    /* ================= Request a Quote Section ================= */
+    .quote-container {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 40px;
+      padding: 40px 0;
     }
-    #reviews .container {
-      max-width: 1200px;
-      margin: 0 auto;
+    .quote-form, .quote-info {
+      flex: 1;
+      padding: 20px;
     }
-    #reviews h2 {
+    .quote-form h2 {
+      margin-top: 0;
+    }
+    
+    /* ================= Footer ================= */
+    .site-footer {
+      background: #333;
+      color: #fff;
+      padding: 20px 0;
       text-align: center;
-      font-size: 2.5rem;
-      color: #005dde;
-      margin-bottom: 3rem;
-      text-transform: uppercase;
-      letter-spacing: 1px;
     }
-    /* Additional CSS from your existing code is kept below… */
+    .site-footer .footer-nav ul {
+      list-style: none;
+      display: flex;
+      justify-content: center;
+      gap: 15px;
+      padding: 0;
+      margin: 10px 0;
+    }
+    .site-footer .footer-nav ul li a {
+      text-decoration: none;
+      color: #fff;
+    }
+    
+    /* ========== Override Header Image Positioning Globally (for desktop) ========== */
+    .site-header .header-container img,
+    .site-header .header-container > div,
+    .site-header h1 {
+      position: static !important;
+      left: 0 !important;
+    }
   </style>
 </head>
 <body>
@@ -192,22 +307,28 @@
     </div>
   </div>
   
-  <!-- Updated Header: Logo and Navigation -->
+  <!-- Header: Logo and Navigation -->
   <header class="site-header">
-    <div class="container header-container">
-      <!-- Left: Turkey Flag -->
-      <img class="left-flag" src="https://i.pinimg.com/474x/f1/de/73/f1de7316c0d4c8110f19c32a317eef3b.jpg" alt="Turkey Flag">
+    <div class="container header-container" style="display: flex; align-items: center; justify-content: space-between; padding: 0 50px;">
+      <!-- Left: Turkey Flag (add class "flag" for mobile) -->
+      <img class="flag" src="https://i.pinimg.com/474x/f1/de/73/f1de7316c0d4c8110f19c32a317eef3b.jpg" 
+           alt="Turkey Flag" 
+           style="width: 100px; height: auto; position: absolute; left: 10px;">
       
-      <!-- Center: Logo and Heading -->
-      <div class="logo-heading-container">
-        <img src="https://scontent-mba2-1.xx.fbcdn.net/v/t39.30808-6/486706616_122137008848592990_9213781367601452384_n.jpg?_nc_cat=110&ccb=1-7&_nc_sid=127cfc&_nc_eui2=AeEq8m1dYa5AvWa7m0LQQtdraUoVvy_vXFBpShW_L-9cUErpYCa-RSgOFdsE-IVnbePbcfWkNkZ2lPRqt0i6DTG7&_nc_ohc=NO3A68hAWVYQ7kNvgE0fLkU&_nc_oc=AdnHVeeXxxP1QmegXA_mEKZf_If1nS-wrtArTmS1cYN0Z8QqWgpdAEXSr2C2CsElCtc&_nc_zt=23&_nc_ht=scontent-mba2-1.xx&_nc_gid=3y8G3O52p7gTTRao9p-3Ag&oh=00_AYGFp_RDl5hBdcojq1IgCxZsZF9bOT8EdyRDrUKmMi8OcQ&oe=67EAD774" alt="Bektas Blocks Logo">
-        <h1>BEKTAS BLOCKS</h1>
+      <!-- Center: Logo and Heading wrapped in .header-content (logo gets class "logo") -->
+      <div class="header-content" style="display: flex; flex-direction: column; align-items: center; gap: 10px; left:50px;">
+        <img class="logo" src="https://scontent-mba2-1.xx.fbcdn.net/v/t39.30808-6/486706616_122137008848592990_9213781367601452384_n.jpg?_nc_cat=110&ccb=1-7&_nc_sid=127cfc&_nc_eui2=AeEq8m1dYa5AvWa7m0LQQtdraUoVvy_vXFBpShW_L-9cUErpYCa-RSgOFdsE-IVnbePbcfWkNkZ2lPRqt0i6DTG7&_nc_ohc=NO3A68hAWVYQ7kNvgE0fLkU&_nc_oc=AdnHVeeXxxP1QmegXA_mEKZf_If1nS-wrtArTmS1cYN0Z8QqWgpdAEXSr2C2CsElCtc&_nc_zt=23&_nc_ht=scontent-mba2-1.xx&_nc_gid=3y8G3O52p7gTTRao9p-3Ag&oh=00_AYGFp_RDl5hBdcojq1IgCxZsZF9bOT8EdyRDrUKmMi8OcQ&oe=67EAD774" 
+             alt="Bektas Blocks Logo" 
+             style="width: 250px; height: auto; position: relative; left: 35%; border-radius: 1px;">
+        <h1 style="font-size: 3em; margin: 0; position:relative; left:27%; color: #0965f0;">BEKTAS BLOCKS</h1>
       </div>
       
-      <!-- Right: Kenyan Flag -->
-      <img class="right-flag" src="https://i.pinimg.com/474x/33/54/8a/33548ab261a60a06058da6b2c7e08751.jpg" alt="Kenyan Flag">
+      <!-- Right: Kenyan Flag (add class "flag" for mobile) -->
+      <img class="flag" src="https://i.pinimg.com/474x/33/54/8a/33548ab261a60a06058da6b2c7e08751.jpg" 
+           alt="Kenyan Flag" 
+           style="width: 100px; height: auto; position: absolute; right: 10px;">
     </div>
-    <!-- Regular Navigation Menu for Desktop -->
+    <!-- Desktop Navigation Menu -->
     <nav class="site-nav">
       <ul>
         <li><a href="index.html" class="active">HOME</a></li>
@@ -218,8 +339,8 @@
         <li><a href="staff.html">ABOUT US</a></li>
       </ul>
     </nav>
-    <!-- Mobile Dropdown Toggle Button & Navigation -->
-    <button class="dropdown-toggle" onclick="toggleMobileNav()">Menu <i class="fas fa-bars"></i></button>
+    <!-- Mobile Dropdown Toggle Button & Mobile Navigation -->
+    <button class="dropdown-toggle" onclick="toggleMobileNav()">Menu</button>
     <div class="mobile-nav">
       <ul>
         <li><a href="index.html">HOME</a></li>
@@ -231,39 +352,6 @@
       </ul>
     </div>
   </header>
-  
-  <!-- Inline JavaScript for Stats Animation and Mobile Dropdown -->
-  <script>
-    // Animate numbers in stats bar
-    function animateValue(obj, start, end, duration) {
-      let startTimestamp = null;
-      const step = (timestamp) => {
-        if (!startTimestamp) startTimestamp = timestamp;
-        const progress = Math.min((timestamp - startTimestamp) / duration, 1);
-        obj.innerText = Math.floor(progress * (end - start) + start);
-        if (progress < 1) {
-          window.requestAnimationFrame(step);
-        }
-      };
-      window.requestAnimationFrame(step);
-    }
-    window.addEventListener('load', () => {
-      const numbers = document.querySelectorAll('.stat .number');
-      numbers.forEach((numElement) => {
-        const finalValue = parseInt(numElement.innerText, 10);
-        animateValue(numElement, 0, finalValue, 2000);
-      });
-    });
-    // Toggle function for mobile navigation
-    function toggleMobileNav() {
-      var nav = document.querySelector('.mobile-nav');
-      if (nav.style.display === "block") {
-        nav.style.display = "none";
-      } else {
-        nav.style.display = "block";
-      }
-    }
-  </script>
   
   <!-- Stats Bar -->
   <section class="stats-bar">
