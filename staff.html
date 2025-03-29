@@ -1,4 +1,3 @@
-<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
@@ -164,43 +163,42 @@
     }
     /* ===================== End Responsive CSS ===================== */
     
-    /* ==/* ================= Static Background Section ================= */
-.static-bg-section {
-  background-image: url(https://i.pinimg.com/736x/a0/24/e5/a024e513b51237cb99c486f4fbf4e106.jpg);
-  background-attachment: scroll; /* changed from fixed to scroll */
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
-  color: rgba(242, 248, 248, 0.992);
-  text-align: center;
-  padding: 100px 0;
-  position: relative;
-  z-index: 0;
-}
-.static-bg-section::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-color: rgba(0, 0, 0, 0.5);
-  z-index: -1;
-}
-.static-bg-content {
-  max-width: 800px;
-  margin: 0 auto;
-  padding: 0 20px;
-}
-.static-bg-content h2 {
-  font-size: 3em;
-  margin-bottom: 20px;
-}
-.static-bg-content p {
-  font-size: 1.2em;
-  line-height: 1.6;
-}
-
+    /* ================= Static Background Section ================= */
+    .static-bg-section {
+      background-image: url(https://res-console.cloudinary.com/dl5cjekuk/thumbnails/v1/image/upload/v1742984818/Q29ybi1CYXNlZC1Db25jcmV0ZS1CdWlsZGluZy10aGUtRnV0dXJlLW9mLUxvdy1DYXJib24tQ29uc3RydWN0aW9uLU1hdGVyaWFsc19pY2NqaDU=/drilldown);
+      background-attachment: fixed;
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: cover;
+      color: rgba(242, 248, 248, 0.992);
+      text-align: center;
+      padding: 100px 0;
+      position: relative;
+      z-index: 0;
+    }
+    .static-bg-section::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0, 0, 0, 0.5);
+      z-index: -1;
+    }
+    .static-bg-content {
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 0 20px;
+    }
+    .static-bg-content h2 {
+      font-size: 3em;
+      margin-bottom: 20px;
+    }
+    .static-bg-content p {
+      font-size: 1.2em;
+      line-height: 1.6;
+    }
     
     /* ================= Projects Section ================= */
     .tes__icon {
@@ -295,14 +293,7 @@
       position: static !important;
       left: 0 !important;
     }
-    /* Enhance the main content container */
-.container {
-  margin: 40px auto;
-  max-width: 1200px;
-  padding: 0 20px;
-}
-/* Apply a mix of colors to headers in the main content */
-.container h2 {
+    .container h2 {
   color: #2E86C1; /* Blue */
   font-size: 2.5em;
   text-align: center;
@@ -349,7 +340,16 @@
   </style>
 </head>
 <body>
-
+  <!-- Top Bar with Contact Info -->
+  <div class="top-bar">
+    <div class="container">
+      <div class="contact-info">
+        <span class="phone">0704030882 or 0713900030</span>
+        <span class="email">bektasblocks@gmail.com</span>
+      </div>
+    </div>
+  </div>
+  
   
   <!-- Header: Logo and Navigation -->
   <header class="site-header">
