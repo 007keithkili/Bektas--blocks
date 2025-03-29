@@ -1,16 +1,16 @@
-<!DOCTYPE html>                                       
+<!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Bektas Blocks | Products</title>
   <meta name="description" content="Explore our range of concrete blocks and related products.">
   <!-- Google Fonts -->
-  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" rel="stylesheet" />
   <!-- Font Awesome -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" 
-    integrity="sha512-Fo3rlrZj/k7ujTnHg4C+6I6b4z8n7/YX9/E6R9vUVuE0Q2Lch7RjKXNtC9f+YbUXM7yT+g4n+ef+W4ePyZAlFw==" 
-    crossorigin="anonymous" referrerpolicy="no-referrer">
+        integrity="sha512-Fo3rlrZj/k7ujTnHg4C+6I6b4z8n7/YX9/E6R9vUVuE0Q2Lch7RjKXNtC9f+YbUXM7yT+g4n+ef+W4ePyZAlFw==" 
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
   <link rel="stylesheet" href="styles.css" />
   <style>
     /* ================================
@@ -21,35 +21,30 @@
       padding: 5px 0;
       font-size: 20px;
     }
-    
     .top-bar .container {
       display: flex;
       justify-content: flex-end;
     }
-    
     .top-bar .contact-info span {
       margin-left: 20px;
       color: #555;
     }
-    
     .contact-info span {
       margin-right: 15px;
       font-size: 0.9em;
     }
-    
-    /* The updated header styles are now inline in the HTML where needed.
-       Additional styling for mobile dropdown is preserved below: */
+    /* Hide dropdown button and mobile nav on desktop */
     .dropdown-toggle,
     .mobile-nav {
       display: none;
     }
-    
+    /* Responsive Header adjustments */
     @media (max-width: 768px) {
       .header-container {
         flex-direction: column !important;
         align-items: center !important;
         justify-content: center !important;
-        padding: 10px !important;
+        padding: 10px 20px !important;
         position: relative !important;
       }
       .header-container img {
@@ -85,7 +80,7 @@
         cursor: pointer;
       }
       .mobile-nav {
-        display: none;
+        display: none; /* Will be toggled by JavaScript */
         text-align: center;
         background: #f7f7f7;
       }
@@ -103,7 +98,6 @@
         text-decoration: none;
       }
     }
-    
     /* ================================
        Static Background Section Styles
     ================================ */
@@ -116,7 +110,6 @@
       padding: 100px 20px;
       position: relative;
     }
-    
     .static-bg-section::before {
       content: '';
       position: absolute;
@@ -127,27 +120,22 @@
       background-color: #ecf0f0;
       z-index: -1;
     }
-    
     .static-bg-content {
       position: relative;
       z-index: 1;
       max-width: 800px;
       margin: 0 auto;
     }
-    
     .static-bg-content h2 {
       font-size: 2.5rem;
       margin-bottom: 20px;
     }
-    
     .static-bg-content p {
       font-size: 1.1rem;
       line-height: 1.6;
     }
-    
     /* ================================
        Product Grid & Modal Styles
-       (Unchanged)
     ================================ */
     h1 {
       text-align: center;
@@ -155,7 +143,6 @@
       font-size: 2.5rem;
       color: #333;
     }
-    
     .image-container {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
@@ -164,11 +151,9 @@
       max-width: 1200px;
       margin: 0 auto 40px;
     }
-    
     .item {
       text-align: center;
     }
-    
     .item img {
       width: 100%;
       max-width: 300px;
@@ -176,11 +161,9 @@
       cursor: pointer;
       transition: transform 0.3s ease;
     }
-    
     .item img:hover {
       transform: scale(1.05);
     }
-    
     .modal {
       display: none;
       position: fixed;
@@ -192,11 +175,9 @@
       overflow: auto;
       background: rgba(0,0,0,0.8);
     }
-    
     .modal:target {
       display: block;
     }
-    
     .modal-content {
       background: #fff;
       margin: 5% auto;
@@ -206,7 +187,6 @@
       border-radius: 8px;
       position: relative;
     }
-    
     .close {
       position: absolute;
       top: 10px;
@@ -215,23 +195,19 @@
       font-size: 2em;
       color: #333;
     }
-    
     .modal-images {
       display: flex;
       gap: 20px;
       flex-wrap: wrap;
     }
-    
     .modal-image {
       flex: 1 1 45%;
       text-align: center;
     }
-    
     .modal-image img {
       width: 100%;
       border-radius: 5px;
     }
-    
     .specs {
       margin-top: 10px;
       background: #f9f9f9;
@@ -241,41 +217,33 @@
       text-align: left;
       font-family: 'Times New Roman', Times, serif;
     }
-    
     .specs p {
       margin: 5px 0;
     }
-    
     .related {
       margin-top: 20px;
     }
-    
     .related h3 {
       margin-bottom: 10px;
     }
-    
     .related-images {
       display: flex;
       gap: 10px;
       flex-wrap: wrap;
     }
-    
     .related-item {
       text-align: center;
       text-decoration: none;
       color: #333;
     }
-    
     .related-item img {
       width: 100px;
       border-radius: 5px;
       transition: transform 0.3s ease;
     }
-    
     .related-item img:hover {
       transform: scale(1.05);
     }
-    
     /* ================================
        Uniform Image Styles
     ================================ */
@@ -286,12 +254,18 @@
       object-fit: cover;
       border-radius: 10px;
     }
-    
     .modal-images .modal-image img {
       width: 100%;
       aspect-ratio: 1 / 1;
       object-fit: cover;
       border-radius: 10px;
+    }
+    /* ========== Override Header Image Positioning (for desktop) ========== */
+    .site-header .header-container img,
+    .site-header .header-container > div,
+    .site-header h1 {
+      position: static !important;
+      left: 0 !important;
     }
   </style>
 </head>
@@ -305,29 +279,29 @@
       </div>
     </div>
   </div>
-
-  <!-- Updated Header: Logo and Navigation (Perfect Code Style) -->
+  
+  <!-- Header: Logo and Navigation -->
   <header class="site-header">
     <div class="container header-container" style="display: flex; align-items: center; justify-content: space-between; padding: 0 50px;">
-      <!-- Left: Turkey Flag -->
-      <img src="https://i.pinimg.com/474x/f1/de/73/f1de7316c0d4c8110f19c32a317eef3b.jpg" 
+      <!-- Left: Turkey Flag (for mobile add class "flag") -->
+      <img class="flag" src="https://i.pinimg.com/474x/f1/de/73/f1de7316c0d4c8110f19c32a317eef3b.jpg" 
            alt="Turkey Flag" 
            style="width: 100px; height: auto; position: absolute; left: 10px;">
       
       <!-- Center: Logo and Heading -->
-      <div style="display: flex; align-items: center; gap: 70px; left:50px;">
-        <img src="https://scontent-mba2-1.xx.fbcdn.net/v/t39.30808-6/486706616_122137008848592990_9213781367601452384_n.jpg?_nc_cat=110&ccb=1-7&_nc_sid=127cfc&_nc_eui2=AeEq8m1dYa5AvWa7m0LQQtdraUoVvy_vXFBpShW_L-9cUErpYCa-RSgOFdsE-IVnbePbcfWkNkZ2lPRqt0i6DTG7&_nc_ohc=NO3A68hAWVYQ7kNvgE0fLkU&_nc_oc=AdnHVeeXxxP1QmegXA_mEKZf_If1nS-wrtArTmS1cYN0Z8QqWgpdAEXSr2C2CsElCtc&_nc_zt=23&_nc_ht=scontent-mba2-1.xx&_nc_gid=3y8G3O52p7gTTRao9p-3Ag&oh=00_AYGFp_RDl5hBdcojq1IgCxZsZF9bOT8EdyRDrUKmMi8OcQ&oe=67EAD774" 
+      <div class="header-content" style="display: flex; flex-direction: column; align-items: center; gap: 10px; left:50px;">
+        <img class="logo" src="https://scontent-mba2-1.xx.fbcdn.net/v/t39.30808-6/486706616_122137008848592990_9213781367601452384_n.jpg?_nc_cat=110&ccb=1-7&_nc_sid=127cfc&_nc_eui2=AeEq8m1dYa5AvWa7m0LQQtdraUoVvy_vXFBpShW_L-9cUErpYCa-RSgOFdsE-IVnbePbcfWkNkZ2lPRqt0i6DTG7&_nc_ohc=NO3A68hAWVYQ7kNvgE0fLkU&_nc_oc=AdnHVeeXxxP1QmegXA_mEKZf_If1nS-wrtArTmS1cYN0Z8QqWgpdAEXSr2C2CsElCtc&_nc_zt=23&_nc_ht=scontent-mba2-1.xx&_nc_gid=3y8G3O52p7gTTRao9p-3Ag&oh=00_AYGFp_RDl5hBdcojq1IgCxZsZF9bOT8EdyRDrUKmMi8OcQ&oe=67EAD774" 
              alt="Bektas Blocks Logo" 
-             style="width: 250px; height: 130px; position: relative; left: 35%; border-radius: 1px;">
+             style="width: 250px; height: auto; position: relative; left: 35%; border-radius: 1px;">
         <h1 style="font-size: 3em; margin: 0; position: relative; left:27%; color: #0965f0;">BEKTAS BLOCKS</h1>
       </div>
       
-      <!-- Right: Kenyan Flag -->
-      <img src="https://i.pinimg.com/474x/33/54/8a/33548ab261a60a06058da6b2c7e08751.jpg" 
+      <!-- Right: Kenyan Flag (for mobile add class "flag") -->
+      <img class="flag" src="https://i.pinimg.com/474x/33/54/8a/33548ab261a60a06058da6b2c7e08751.jpg" 
            alt="Kenyan Flag" 
            style="width: 100px; height: auto; position: absolute; right: 10px;">
     </div>
-    <!-- Regular Navigation Menu for PC -->
+    <!-- Desktop Navigation Menu -->
     <nav class="site-nav">
       <ul>
         <li><a href="index.html" class="active">HOME</a></li>
@@ -342,6 +316,7 @@
     <button class="dropdown-toggle" onclick="toggleMobileNav()">Menu</button>
     <div class="mobile-nav">
       <ul>
+        <li><a href="index.html">HOME</a></li>
         <li><a href="productgallery.html">PRODUCTS</a></li>
         <li><a href="projects.html">PROJECTS</a></li>
         <li><a href="contacts.html">CONTACTS</a></li>
@@ -350,7 +325,7 @@
       </ul>
     </div>
   </header>
-
+  
   <!-- Stats Bar -->
   <section class="stats-bar">
     <div class="container stats-container">
@@ -372,10 +347,10 @@
       </div>
     </div>
   </section>
-
+  
   <!-- Inline JavaScript to animate numbers -->
   <script>
-    // Function to animate a number from start to end over 'duration' milliseconds
+    // Animate number from start to end over 'duration' milliseconds
     function animateValue(obj, start, end, duration) {
       let startTimestamp = null;
       const step = (timestamp) => {
@@ -388,38 +363,14 @@
       };
       window.requestAnimationFrame(step);
     }
-    // Once the window loads, animate each stat number from 0 to its final value
     window.addEventListener('load', () => {
       const numbers = document.querySelectorAll('.stat .number');
       numbers.forEach((numElement) => {
         const finalValue = parseInt(numElement.innerText, 10);
-        animateValue(numElement, 0, finalValue, 2000); // Animate over 2000ms
+        animateValue(numElement, 0, finalValue, 2000);
       });
     });
   </script>
-  
-  <!-- Static Background Section -->
-  <section class="static-bg-section">
-    <div class="static-bg-content">
-      <h2>Welcome to Bektas Products</h2>
-      <p>Discover quality concrete and precast building materials for your projects.</p>
-    </div>
-  </section>
-  
-  <!-- (The rest of your Products page code, including product grid, modals, footer, etc., remains unchanged) -->
-  
-  <script>
-    function toggleMobileNav() {
-      var nav = document.querySelector('.mobile-nav');
-      if (nav.style.display === "block") {
-        nav.style.display = "none";
-      } else {
-        nav.style.display = "block";
-      }
-    }
-  </script>
-</body>
-</html>
 
   <!-- Product Grid -->
   <h1>Our Products</h1>
