@@ -297,17 +297,57 @@
   </style>
 </head>
 <body>
-  <!-- New Styles for Main Content Headers Only (excluding header section) -->
+  <!-- New Styles for Main Content (excluding header section) -->
   <style>
-    /* Target headers within direct child containers of body */
-    body > .container h2 {
-      color: #2E86C1; /* Bold Blue for h2 */
+    /* Enhance the layout of the main content container */
+    .container {
+      margin: 40px auto;
+      max-width: 1200px;
+      padding: 0 20px;
     }
-    body > .container h3 {
-      color: #27AE60; /* Fresh Green for h3 */
+    /* Apply a mix of colors to headers in the main content */
+    .container h2 {
+      color: #2E86C1; /* Blue */
+      font-size: 2.5em;
+      text-align: center;
+      margin-bottom: 20px;
     }
-    body > .container h4 {
-      color: #8E44AD; /* Rich Purple for h4 */
+    .container h3 {
+      color: #8E44AD; /* Purple */
+      font-size: 1.8em;
+      text-align: center;
+      margin-bottom: 15px;
+    }
+    .container h4 {
+      color: #F39C12; /* Rich Yellow */
+      font-size: 1.4em;
+      text-align: center;
+      margin-bottom: 10px;
+    }
+    /* Arrange the image grid professionally */
+    .image-container {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 30px;
+      margin: 40px 0;
+    }
+    .project__itm {
+      background: #fff;
+      padding: 20px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+      border-radius: 5px;
+      text-align: center;
+    }
+    .project__itm img.tes__icon {
+      width: 100%;
+      height: auto;
+      border-radius: 5px;
+      margin-bottom: 15px;
+    }
+    .project__desc h3,
+    .project__desc p {
+      margin: 0;
+      padding: 5px 0;
     }
   </style>
 
