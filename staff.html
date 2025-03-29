@@ -14,9 +14,159 @@
   <!-- Main CSS -->
   <link rel="stylesheet" href="styles.css" />
   <style>
-    /* Static Background Section */
+    /* Admired website CSS incorporated in sections only */
+    section h2.tm-element-content-heading {
+      display: block;
+      position: relative;
+      width: 100%;
+      height: 57.3333px;
+      padding: 0;
+      border: 0 none rgb(12, 45, 98);
+      font-size: 43px;
+      font-weight: 800;
+      font-family: 'Times New Roman', Times, serif;
+      color: rgb(12, 59, 98);
+      background-color: transparent;
+    }
+    section div.tm-content-header {
+      display: block;
+      position: flex;
+      width: 959px;
+      height: 84.6667px;
+      margin: 0;
+      padding: 0 0 0 28px;
+      border: 0 none rgb(133, 146, 166);
+      font-size: 14px;
+      font-weight: 400;
+      font-family: Poppins, Tahoma, Geneva, sans-serif;
+      color: rgb(133, 146, 166);
+      background-color: transparent;
+      text-align: left;
+    }
+    section h4.tm-element-subhead {
+      display: inline-block;
+      position: static;
+      width: 230.49px;
+      height: 21px;
+      margin: 0 0 5px;
+      padding: 0;
+      border: 0 none rgb(133, 146, 166);
+      font-size: 14px;
+      font-weight: 600;
+      font-family: Inter, Arial, Helvetica, sans-serif;
+      color: rgb(133, 146, 166);
+      background-color: transparent;
+      text-align: left;
+    }
+
+    /* ================= Default Styles ================= */
+    /* Hide the dropdown button and mobile navigation on desktop */
+    .dropdown-toggle,
+    .mobile-nav {
+      display: none;
+    }
+
+    /* ===================== Responsive CSS Inserted ===================== */
+    @media (max-width: 768px) {
+      /* Prevent horizontal scrolling */
+      html, body {
+        overflow-x: hidden;
+      }
+      
+      /* Header adjustments only in mobile view */
+      .header-container {
+        flex-direction: column !important;
+        align-items: center !important;
+        justify-content: center !important;
+        padding: 10px 20px !important;
+      }
+      /* Flag images: add a class "flag" to each flag image in HTML */
+      .header-container img.flag {
+        width: 70px !important;
+        height: auto !important;
+        position: static !important;
+        margin: 0 5px;
+      }
+      /* Wrap logo and header text in a new container (.header-content) */
+      .header-content {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin: 10px 0;
+      }
+      .header-content img.logo {
+        width: 150px !important;
+        height: auto !important;
+        object-fit: contain;
+        margin-bottom: 5px;
+      }
+      .header-content h1 {
+        font-size: 1.5em !important;
+        margin: 0 !important;
+        position: static !important;
+      }
+      
+      /* Hide the regular navigation menu */
+      .site-nav ul {
+        display: none;
+      }
+      /* Show the mobile dropdown button */
+      .dropdown-toggle {
+        display: block;
+        background: #333;
+        color: #fff;
+        padding: 10px 20px;
+        border: none;
+        border-radius: 5px;
+        font-size: 1em;
+        margin: 10px auto;
+        cursor: pointer;
+      }
+      /* Mobile navigation links */
+      .mobile-nav {
+        display: none; /* Will be toggled by JavaScript */
+        text-align: center;
+        background: #f7f7f7;
+      }
+      .mobile-nav ul {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+      }
+      .mobile-nav ul li {
+        padding: 10px;
+        border-bottom: 1px solid #ddd;
+      }
+      .mobile-nav ul li a {
+        color: inherit;
+        text-decoration: none;
+      }
+      
+      /* Projects Section adjustments for mobile */
+      .image-container {
+        grid-template-columns: 1fr !important;
+      }
+      .project__card {
+        flex-direction: column !important;
+        height: auto !important;
+      }
+      .project__card .image-wrapper {
+        width: 100% !important;
+      }
+      .tes__icon {
+        width: 100% !important;
+        height: auto !important;
+      }
+      .project__desc {
+        text-align: center !important;
+        padding: 10px !important;
+      }
+    }
+    /* ===================== End Responsive CSS ===================== */
+    
+    /* ================= Static Background Section ================= */
     .static-bg-section {
-      background-image: url('https://scontent-mba2-1.xx.fbcdn.net/v/t39.30808-6/486468602_122137015538592990_8938046703773777928_n.jpg?stp=c256.0.1536.1536a_dst-jpg_s206x206_tt6&_nc_cat=101&ccb=1-7&_nc_sid=714c7a&_nc_eui2=AeHSBez2wEtwN5n6aP7A3h0F3aKGStELGwLdooZK0QsbAlHYFXmS0EWVTSgbzKhTgBb892nL4i81BUF3WzKPSmS6&_nc_ohc=-h9oT-bgxTMQ7kNvgFtyg_7&_nc_oc=AdlwAVraGq4LRXmfC6Xw4VPPLvMRfVKzFqELI2b7NO97WtJ4For2PGM5j1OVE38PYjI&_nc_zt=23&_nc_ht=scontent-mba2-1.xx&_nc_gid=7oSmbCKiZqekq8vnxdpw-g&oh=00_AYFSENskF8Ne65OOgz-BHU1xcVxTsqEqdjtfTAX92hm8lQ&oe=67EB97D8');
+      background-image: url(https://res-console.cloudinary.com/dl5cjekuk/thumbnails/v1/image/upload/v1742984818/Q29ybi1CYXNlZC1Db25jcmV0ZS1CdWlsZGluZy10aGUtRnV0dXJlLW9mLUxvdy1DYXJib24tQ29uc3RydWN0aW9uLU1hdGVyaWFsc19pY2NqaDU=/drilldown);
       background-attachment: fixed;
       background-position: center;
       background-repeat: no-repeat;
@@ -51,59 +201,31 @@
       line-height: 1.6;
     }
     
-    /* Updated image styling */
+    /* ================= Projects Section ================= */
     .tes__icon {
       width: 400px;
-      height: 400px;
+      height: 300px;
       object-fit: cover;
       border-radius: 5px;
-      margin: 10px;
     }
-    
-    /* New 3-column grid layout */
     .image-container {
       display: grid;
-      grid-template-columns: repeat(3, 1fr);
+      grid-template-columns: repeat(2, 1fr);
       gap: 20px;
       padding: 20px;
-      justify-items: center;
+      width: 100%;
     }
-    
-    /* Project Card styling */
     .project__card {
       display: flex;
       align-items: center;
-      background: #fff;
+      background: #e6eae9;
       border: 1px solid #ddd;
       border-radius: 5px;
       box-shadow: 0 2px 4px rgba(0,0,0,0.1);
       overflow: hidden;
       height: 300px;
-    }
-    
-    /* Responsive adjustments for image grid */
-    @media (max-width: 1200px) {
-      .image-container {
-        grid-template-columns: repeat(2, 1fr);
-      }
-    }
-    
-    @media (max-width: 850px) {
-      .image-container {
-        grid-template-columns: 1fr;
-      }
-      .tes__icon {
-        width: 100%;
-        height: auto;
-      }
-    }
-
-    /* Rest of your existing styles */
-    .project__card {
+      width: 100%;
       flex-direction: row;
-    }
-    .image-container .project__itm:nth-child(even) .project__card {
-      flex-direction: row-reverse;
     }
     .project__card .image-wrapper {
       flex: 0 0 400px;
@@ -118,8 +240,8 @@
       color: #333;
     }
     .project__desc p {
-      font-size: 1em;
-      color: #666;
+      font-size: 1.1em;
+      color: #0c0707;
       line-height: 1.5;
     }
     .image-container .project__itm:nth-child(odd) .project__desc {
@@ -128,151 +250,50 @@
     .image-container .project__itm:nth-child(even) .project__desc {
       text-align: right;
     }
-
-    /* About section styles */
-    body {
-      font-family: Arial, sans-serif;
-      margin: 0;
-      padding: 0;
-      background-color: #f4f4f4;
-      color: #333;
-    }
-    .container {
-      max-width: 1200px;
-      margin: 0 auto;
-      padding: 20px;
-    }
-    .about-section {
-      background-color: #fff;
-      padding: 30px;
-      margin-bottom: 20px;
-      border-radius: 5px;
-      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    }
-    .about-section h2 {
-      color: #007bff;
-      margin-bottom: 20px;
-    }
-    .values-section {
+    
+    /* ================= Request a Quote Section ================= */
+    .quote-container {
       display: flex;
-      justify-content: space-around;
-      flex-wrap: wrap;
-      gap: 20px;
+      justify-content: space-between;
+      align-items: center;
+      gap: 40px;
+      padding: 40px 0;
     }
-    .value-card {
-      background-color: #e9ecef;
-      padding: 20px;
-      border-radius: 5px;
+    .quote-form, .quote-info {
       flex: 1;
-      min-width: 250px;
-    }
-    .value-card h3 {
-      color: #007bff;
-      margin-bottom: 10px;
-    }
-    .vision-mission-section {
-      display: flex;
-      justify-content: space-around;
-      flex-wrap: wrap;
-      gap: 20px;
-    }
-    .vision-mission-card {
-      background-color: #fff;
       padding: 20px;
-      border-radius: 5px;
-      flex: 1;
-      min-width: 300px;
     }
-    .vision-mission-card h3 {
-      color: #007bff;
-      margin-bottom: 10px;
-    }
-    .stats-section {
-      display: flex;
-      justify-content: space-around;
-      flex-wrap: wrap;
-      gap: 20px;
-      background-color: #e9ecef;
-      padding: 30px;
-      border-radius: 5px;
-    }
-    .stat-card {
-      text-align: center;
-    }
-    .stat-card .value {
-      font-size: 2em;
-      color: #007bff;
-      font-weight: bold;
-    }
-    .stat-card .label {
-      font-size: 1.2em;
+    .quote-form h2 {
+      margin-top: 0;
     }
     
-    /* Header Section and Navigation */
-    /* By default (PC view) hide dropdown toggle and its content */
-    .dropdown-toggle,
-    .mobile-nav {
-      display: none;
+    /* ================= Footer ================= */
+    .site-footer {
+      background: #333;
+      color: #fff;
+      padding: 20px 0;
+      text-align: center;
     }
-    /* In PC view, show regular navigation */
-    .site-nav {
-      display: block;
+    .site-footer .footer-nav ul {
+      list-style: none;
+      display: flex;
+      justify-content: center;
+      gap: 15px;
+      padding: 0;
+      margin: 10px 0;
     }
-
-    /* Mobile view adjustments */
-    @media (max-width: 768px) {
-      /* Header adjustments */
-      .header-container {
-        flex-direction: column;
-        align-items: center;
-        padding: 10px;
-      }
-      .header-container img {
-        position: static !important;
-        margin: 10px 0;
-      }
-      .header-container h1 {
-        position: static;
-        text-align: center;
-        font-size: 2em;
-        margin: 10px 0;
-      }
-      /* Hide the regular navigation in mobile view */
-      .site-nav {
-        display: none;
-      }
-      /* Show the dropdown toggle and its content */
-      .dropdown-toggle {
-        display: block;
-        background: #333;
-        color: #fff;
-        padding: 10px 20px;
-        border: none;
-        border-radius: 5px;
-        font-size: 1em;
-        margin: 10px auto;
-        cursor: pointer;
-      }
-      .mobile-nav {
-        display: none; /* Initially hidden; will be toggled via JavaScript */
-        text-align: center;
-        background: #f7f7f7;
-      }
-      .mobile-nav ul {
-        list-style: none;
-        padding: 0;
-        margin: 0;
-      }
-      .mobile-nav ul li {
-        padding: 10px;
-        border-bottom: 1px solid #ddd;
-      }
-      .mobile-nav ul li a {
-        color: inherit;
-        text-decoration: none;
-      }
+    .site-footer .footer-nav ul li a {
+      text-decoration: none;
+      color: #fff;
     }
-    /* End Mobile view adjustments */
+    
+    /* ========== Override Header Image Positioning Globally (for desktop) ========== */
+    .site-header .header-container img,
+    .site-header .header-container > div,
+    .site-header h1 {
+      position: static !important;
+      left: 0 !important;
+    }
   </style>
 </head>
 <body>
@@ -285,29 +306,29 @@
       </div>
     </div>
   </div>
-
-  <!-- Updated Header: Logo, Flags, Navigation & Mobile Dropdown -->
+  
+  <!-- Header: Logo and Navigation -->
   <header class="site-header">
     <div class="container header-container" style="display: flex; align-items: center; justify-content: space-between; padding: 0 50px;">
-      <!-- Left: Turkey Flag -->
-      <img src="https://i.pinimg.com/474x/f1/de/73/f1de7316c0d4c8110f19c32a317eef3b.jpg" 
+      <!-- Left: Turkey Flag (add class "flag" for mobile) -->
+      <img class="flag" src="https://i.pinimg.com/474x/f1/de/73/f1de7316c0d4c8110f19c32a317eef3b.jpg" 
            alt="Turkey Flag" 
            style="width: 100px; height: auto; position: absolute; left: 10px;">
       
-      <!-- Center: Logo and Heading -->
-      <div style="display: flex; align-items: center; gap: 70px; left:50px;">
-        <img src="https://scontent-mba2-1.xx.fbcdn.net/v/t39.30808-6/486706616_122137008848592990_9213781367601452384_n.jpg?_nc_cat=110&ccb=1-7&_nc_sid=127cfc&_nc_eui2=AeEq8m1dYa5AvWa7m0LQQtdraUoVvy_vXFBpShW_L-9cUErpYCa-RSgOFdsE-IVnbePbcfWkNkZ2lPRqt0i6DTG7&_nc_ohc=NO3A68hAWVYQ7kNvgE0fLkU&_nc_oc=AdnHVeeXxxP1QmegXA_mEKZf_If1nS-wrtArTmS1cYN0Z8QqWgpdAEXSr2C2CsElCtc&_nc_zt=23&_nc_ht=scontent-mba2-1.xx&_nc_gid=3y8G3O52p7gTTRao9p-3Ag&oh=00_AYGFp_RDl5hBdcojq1IgCxZsZF9bOT8EdyRDrUKmMi8OcQ&oe=67EAD774" 
+      <!-- Center: Logo and Heading wrapped in .header-content (logo gets class "logo") -->
+      <div class="header-content" style="display: flex; flex-direction: column; align-items: center; gap: 10px; left:50px;">
+        <img class="logo" src="https://scontent-mba2-1.xx.fbcdn.net/v/t39.30808-6/486706616_122137008848592990_9213781367601452384_n.jpg?_nc_cat=110&ccb=1-7&_nc_sid=127cfc&_nc_eui2=AeEq8m1dYa5AvWa7m0LQQtdraUoVvy_vXFBpShW_L-9cUErpYCa-RSgOFdsE-IVnbePbcfWkNkZ2lPRqt0i6DTG7&_nc_ohc=NO3A68hAWVYQ7kNvgE0fLkU&_nc_oc=AdnHVeeXxxP1QmegXA_mEKZf_If1nS-wrtArTmS1cYN0Z8QqWgpdAEXSr2C2CsElCtc&_nc_zt=23&_nc_ht=scontent-mba2-1.xx&_nc_gid=3y8G3O52p7gTTRao9p-3Ag&oh=00_AYGFp_RDl5hBdcojq1IgCxZsZF9bOT8EdyRDrUKmMi8OcQ&oe=67EAD774" 
              alt="Bektas Blocks Logo" 
-             style="width: 250px; height: 130px; position: relative; left: 35%; border-radius: 1px;">
-        <h1 style="font-size: 3em; margin: 0; position: relative; left:27%; color: #0965f0;">BEKTAS BLOCKS</h1>
+             style="width: 250px; height: auto; position: relative; left: 35%; border-radius: 1px;">
+        <h1 style="font-size: 3em; margin: 0; position:relative; left:27%; color: #0965f0;">BEKTAS BLOCKS</h1>
       </div>
       
-      <!-- Right: Kenyan Flag -->
-      <img src="https://i.pinimg.com/474x/33/54/8a/33548ab261a60a06058da6b2c7e08751.jpg" 
+      <!-- Right: Kenyan Flag (add class "flag" for mobile) -->
+      <img class="flag" src="https://i.pinimg.com/474x/33/54/8a/33548ab261a60a06058da6b2c7e08751.jpg" 
            alt="Kenyan Flag" 
            style="width: 100px; height: auto; position: absolute; right: 10px;">
     </div>
-    <!-- Regular Navigation Menu (visible in PC view only) -->
+    <!-- Desktop Navigation Menu -->
     <nav class="site-nav">
       <ul>
         <li><a href="index.html" class="active">HOME</a></li>
@@ -318,11 +339,11 @@
         <li><a href="staff.html">ABOUT US</a></li>
       </ul>
     </nav>
-    <!-- Dropdown Toggle & Mobile Navigation (visible in mobile view only) -->
+    <!-- Mobile Dropdown Toggle Button & Mobile Navigation -->
     <button class="dropdown-toggle" onclick="toggleMobileNav()">Menu</button>
     <div class="mobile-nav">
       <ul>
-        <li><a href="index.html" class="active">HOME</a></li>
+        <li><a href="index.html">HOME</a></li>
         <li><a href="productgallery.html">PRODUCTS</a></li>
         <li><a href="projects.html">PROJECTS</a></li>
         <li><a href="contacts.html">CONTACTS</a></li>
@@ -331,7 +352,7 @@
       </ul>
     </div>
   </header>
-
+  
   <!-- Stats Bar -->
   <section class="stats-bar">
     <div class="container stats-container">
@@ -353,39 +374,8 @@
       </div>
     </div>
   </section>
-
-  <!-- Inline JavaScript to animate numbers -->
-  <script>
-    // Function to animate a number from start to end over 'duration' milliseconds
-    function animateValue(obj, start, end, duration) {
-      let startTimestamp = null;
-      const step = (timestamp) => {
-        if (!startTimestamp) startTimestamp = timestamp;
-        const progress = Math.min((timestamp - startTimestamp) / duration, 1);
-        obj.innerText = Math.floor(progress * (end - start) + start);
-        if (progress < 1) {
-          window.requestAnimationFrame(step);
-        }
-      };
-      window.requestAnimationFrame(step);
-    }
-    // Once the window loads, animate each stat number from 0 to its final value
-    window.addEventListener('load', () => {
-      const numbers = document.querySelectorAll('.stat .number');
-      numbers.forEach((numElement) => {
-        const finalValue = parseInt(numElement.innerText, 10);
-        animateValue(numElement, 0, finalValue, 2000);
-      });
-    });
-  </script>
-
-  <!-- Static Background Image Section -->
-  <section class="static-bg-section">
-    <div class="static-bg-content">
-      <h2>EVERYTHING YOU NEED TO KNOW ABOUT US</h2>
-      <p>Discover our relations with previous customers, our services and deliveries.</p>
-    </div>
-  </section>
+  
+  
 
   <div class="container">
     <section class="about-section">
