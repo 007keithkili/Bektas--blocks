@@ -1,45 +1,459 @@
-.image-container {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-  gap: 20px;
-  padding: 20px;
-  max-width: 1200px;
-  margin: 0 auto 40px;
-}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Bektas Blocks | Home</title>
+  <meta name="description" content="Bektas Blocks - Quality Concrete and Precast Building Materials" />
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" rel="stylesheet" />
+  <!-- Font Awesome (for icons) -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" 
+        integrity="sha512-Fo3rlrZj/k7ujTnHg4C+6I6b4z8n7/YX9/E6R9vUVuE0Q2Lch7RjKXNtC9f+YbUXM7yT+g4n+ef+W4ePyZAlFw==" 
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <!-- Main CSS -->
+  <link rel="stylesheet" href="styles.css" />
+  <style>
+    /* Admired website CSS incorporated in sections only */
+    section h2.tm-element-content-heading {
+      display: block;
+      position: relative;
+      width: 100%;
+      height: 57.3333px;
+      padding: 0;
+      border: 0 none rgb(12, 45, 98);
+      font-size: 43px;
+      font-weight: 800;
+      font-family: 'Times New Roman', Times, serif;
+      color: rgb(12, 59, 98);
+      background-color: transparent;
+    }
+    section div.tm-content-header {
+      display: block;
+      position: flex;
+      width: 959px;
+      height: 84.6667px;
+      margin: 0;
+      padding: 0 0 0 28px;
+      border: 0 none rgb(133, 146, 166);
+      font-size: 14px;
+      font-weight: 400;
+      font-family: Poppins, Tahoma, Geneva, sans-serif;
+      color: rgb(133, 146, 166);
+      background-color: transparent;
+      text-align: left;
+    }
+    section h4.tm-element-subhead {
+      display: inline-block;
+      position: static;
+      width: 230.49px;
+      height: 21px;
+      margin: 0 0 5px;
+      padding: 0;
+      border: 0 none rgb(133, 146, 166);
+      font-size: 14px;
+      font-weight: 600;
+      font-family: Inter, Arial, Helvetica, sans-serif;
+      color: rgb(133, 146, 166);
+      background-color: transparent;
+      text-align: left;
+    }
 
-.item {
-  text-align: center;
-}
+    /* ================= Default Styles ================= */
+    /* Hide the dropdown button and mobile navigation on desktop */
+    .dropdown-toggle,
+    .mobile-nav {
+      display: none;
+    }
 
-.item img {
-  width: 100%;
-  max-width: 300px;
-  border-radius: 10px;
-  cursor: pointer;
-  transition: transform 0.3s ease;
-}
-
-.item img:hover {
-  transform: scale(1.05);
-}
-
-/* Uniform Image Styles for consistency */
-.image-container .item img {
-  width: 100%;
-  max-width: 300px;
-  aspect-ratio: 1 / 1;
-  object-fit: cover;
-  border-radius: 10px;
-}
-
-/* Modal Images (if used for product details) */
-.modal-images .modal-image img {
-  width: 100%;
-  aspect-ratio: 1 / 1;
-  object-fit: cover;
-  border-radius: 10px;
-}
-
+    /* ===================== Responsive CSS Inserted ===================== */
+    @media (max-width: 768px) {
+      /* Prevent horizontal scrolling */
+      html, body {
+        overflow-x: hidden;
+      }
+      
+      /* Header adjustments only in mobile view */
+      .header-container {
+        flex-direction: column !important;
+        align-items: center !important;
+        justify-content: center !important;
+        padding: 10px 20px !important;
+      }
+      /* Flag images: add a class "flag" to each flag image in HTML */
+      .header-container img.flag {
+        width: 70px !important;
+        height: auto !important;
+        position: static !important;
+        margin: 0 5px;
+      }
+      /* Wrap logo and header text in a new container (.header-content) */
+      .header-content {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin: 10px 0;
+      }
+      .header-content img.logo {
+        width: 150px !important;
+        height: auto !important;
+        object-fit: contain;
+        margin-bottom: 5px;
+      }
+      .header-content h1 {
+        font-size: 1.5em !important;
+        margin: 0 !important;
+        position: static !important;
+      }
+      
+      /* Hide the regular navigation menu */
+      .site-nav ul {
+        display: none;
+      }
+      /* Show the mobile dropdown button */
+      .dropdown-toggle {
+        display: block;
+        background: #333;
+        color: #fff;
+        padding: 10px 20px;
+        border: none;
+        border-radius: 5px;
+        font-size: 1em;
+        margin: 10px auto;
+        cursor: pointer;
+      }
+      /* Mobile navigation links */
+      .mobile-nav {
+        display: none; /* Will be toggled by JavaScript */
+        text-align: center;
+        background: #f7f7f7;
+      }
+      .mobile-nav ul {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+      }
+      .mobile-nav ul li {
+        padding: 10px;
+        border-bottom: 1px solid #ddd;
+      }
+      .mobile-nav ul li a {
+        color: inherit;
+        text-decoration: none;
+      }
+      
+      /* Projects Section adjustments for mobile */
+      .image-container {
+        grid-template-columns: 1fr !important;
+      }
+      .project__card {
+        flex-direction: column !important;
+        height: auto !important;
+      }
+      .project__card .image-wrapper {
+        width: 100% !important;
+      }
+      .tes__icon {
+        width: 100% !important;
+        height: auto !important;
+      }
+      .project__desc {
+        text-align: center !important;
+        padding: 10px !important;
+      }
+    }
+    /* ===================== End Responsive CSS ===================== */
+    
+    /* ================= Static Background Section ================= */
+    .static-bg-section {
+      background-image: url(https://res-console.cloudinary.com/dl5cjekuk/thumbnails/v1/image/upload/v1742984818/Q29ybi1CYXNlZC1Db25jcmV0ZS1CdWlsZGluZy10aGUtRnV0dXJlLW9mLUxvdy1DYXJib24tQ29uc3RydWN0aW9uLU1hdGVyaWFsc19pY2NqaDU=/drilldown);
+      background-attachment: fixed;
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: cover;
+      color: rgba(242, 248, 248, 0.992);
+      text-align: center;
+      padding: 100px 0;
+      position: relative;
+      z-index: 0;
+    }
+    .static-bg-section::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0, 0, 0, 0.5);
+      z-index: -1;
+    }
+    .static-bg-content {
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 0 20px;
+    }
+    .static-bg-content h2 {
+      font-size: 3em;
+      margin-bottom: 20px;
+    }
+    .static-bg-content p {
+      font-size: 1.2em;
+      line-height: 1.6;
+    }
+    
+    /* ================= Projects Section ================= */
+    .tes__icon {
+      width: 400px;
+      height: 300px;
+      object-fit: cover;
+      border-radius: 5px;
+    }
+    .image-container {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 20px;
+      padding: 20px;
+      width: 100%;
+    }
+    .project__card {
+      display: flex;
+      align-items: center;
+      background: #e6eae9;
+      border: 1px solid #ddd;
+      border-radius: 5px;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+      overflow: hidden;
+      height: 300px;
+      width: 100%;
+      flex-direction: row;
+    }
+    .project__card .image-wrapper {
+      flex: 0 0 400px;
+    }
+    .project__desc {
+      flex: 1;
+      padding: 20px;
+    }
+    .project__desc h3 {
+      margin-top: 0;
+      font-size: 1.5em;
+      color: #333;
+    }
+    .project__desc p {
+      font-size: 1.1em;
+      color: #0c0707;
+      line-height: 1.5;
+    }
+    .image-container .project__itm:nth-child(odd) .project__desc {
+      text-align: left;
+    }
+    .image-container .project__itm:nth-child(even) .project__desc {
+      text-align: right;
+    }
+    
+    /* ================= Request a Quote Section ================= */
+    .quote-container {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 40px;
+      padding: 40px 0;
+    }
+    .quote-form, .quote-info {
+      flex: 1;
+      padding: 20px;
+    }
+    .quote-form h2 {
+      margin-top: 0;
+    }
+    
+    /* ================= Footer ================= */
+    .site-footer {
+      background: #333;
+      color: #fff;
+      padding: 20px 0;
+      text-align: center;
+    }
+    .site-footer .footer-nav ul {
+      list-style: none;
+      display: flex;
+      justify-content: center;
+      gap: 15px;
+      padding: 0;
+      margin: 10px 0;
+    }
+    .site-footer .footer-nav ul li a {
+      text-decoration: none;
+      color: #fff;
+    }
+    
+    /* ========== Override Header Image Positioning Globally (for desktop) ========== */
+    .site-header .header-container img,
+    .site-header .header-container > div,
+    .site-header h1 {
+      position: static !important;
+      left: 0 !important;
+    }
+    
+    /* ================================
+       Product Grid & Modal Styles (Unchanged)
+    ================================ */
+    h1 {
+      text-align: center;
+      margin-top: 40px;
+      font-size: 2.5rem;
+      color: #333;
+    }
+    
+    .image-container {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 20px;
+      padding: 20px;
+      max-width: 1200px;
+      margin: 0 auto 40px;
+    }
+    
+    .item {
+      text-align: center;
+    }
+    
+    .item img {
+      width: 100%;
+      max-width: 300px;
+      border-radius: 10px;
+      cursor: pointer;
+      transition: transform 0.3s ease;
+    }
+    
+    .item img:hover {
+      transform: scale(1.05);
+    }
+    
+    .modal {
+      display: none;
+      position: fixed;
+      z-index: 1000;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      overflow: auto;
+      background: rgba(0,0,0,0.8);
+    }
+    
+    .modal:target {
+      display: block;
+    }
+    
+    .modal-content {
+      background: #fff;
+      margin: 5% auto;
+      padding: 20px;
+      width: 90%;
+      max-width: 800px;
+      border-radius: 8px;
+      position: relative;
+    }
+    
+    .close {
+      position: absolute;
+      top: 10px;
+      right: 20px;
+      text-decoration: none;
+      font-size: 2em;
+      color: #333;
+    }
+    
+    .modal-images {
+      display: flex;
+      gap: 20px;
+      flex-wrap: wrap;
+    }
+    
+    .modal-image {
+      flex: 1 1 45%;
+      text-align: center;
+    }
+    
+    .modal-image img {
+      width: 100%;
+      border-radius: 5px;
+    }
+    
+    .specs {
+      margin-top: 10px;
+      background: #f9f9f9;
+      padding: 10px;
+      font-size: 24px;
+      border-radius: 5px;
+      text-align: left;
+      font-family: 'Times New Roman', Times, serif;
+    }
+    
+    .specs p {
+      margin: 5px 0;
+    }
+    
+    .related {
+      margin-top: 20px;
+    }
+    
+    .related h3 {
+      margin-bottom: 10px;
+    }
+    
+    .related-images {
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+    }
+    
+    .related-item {
+      text-align: center;
+      text-decoration: none;
+      color: #333;
+    }
+    
+    .related-item img {
+      width: 100px;
+      border-radius: 5px;
+      transition: transform 0.3s ease;
+    }
+    
+    .related-item img:hover {
+      transform: scale(1.05);
+    }
+    
+    /* ================================
+       Uniform Image Styles
+    ================================ */
+    .image-container .item img {
+      width: 100%;
+      max-width: 300px;
+      aspect-ratio: 1 / 1;
+      object-fit: cover;
+      border-radius: 10px;
+    }
+    
+    .modal-images .modal-image img {
+      width: 100%;
+      aspect-ratio: 1 / 1;
+      object-fit: cover;
+      border-radius: 10px;
+    }
+    
+    /* =================== PC View Logo Size =================== */
+    @media (min-width: 769px) {
+      .header-content img.logo {
+        width: 150px !important;
+        height: 73px !important;
+        object-fit: contain;
+      }
+    }
+  </style>
+</head>
+<body>
   <!-- Top Bar with Contact Info -->
   <div class="top-bar">
     <div class="container">
@@ -50,26 +464,26 @@
     </div>
   </div>
   
-  <!-- Header: Logo and Navigation -->
+  <!-- Updated Header: Logo and Navigation -->
   <header class="site-header">
     <div class="container header-container" style="display: flex; align-items: center; justify-content: space-between; padding: 0 50px;">
-      <!-- Left: Turkey Flag (add class "flag" for mobile) -->
-      <img class="flag" src="https://i.pinimg.com/474x/f1/de/73/f1de7316c0d4c8110f19c32a317eef3b.jpg" 
+      <!-- Left: Turkey Flag -->
+      <img src="https://i.pinimg.com/474x/f1/de/73/f1de7316c0d4c8110f19c32a317eef3b.jpg" 
            alt="Turkey Flag" 
-           style="width: 100px; height: auto; position: absolute; left: 10px;">
+           style="width: 70px; height: 47px; position: absolute; left: 10px;">
       
-      <!-- Center: Logo and Heading wrapped in .header-content (logo gets class "logo") -->
-      <div class="header-content" style="display: flex; flex-direction: column; align-items: center; gap: 10px; left:50px;">
+      <!-- Center: Logo and Heading (Stacked: Logo on top, text below) -->
+      <div class="header-content" style="display: flex; flex-direction: column; align-items: center;">
         <img class="logo" src="https://scontent-mba2-1.xx.fbcdn.net/v/t39.30808-6/486706616_122137008848592990_9213781367601452384_n.jpg?_nc_cat=110&ccb=1-7&_nc_sid=127cfc&_nc_eui2=AeEq8m1dYa5AvWa7m0LQQtdraUoVvy_vXFBpShW_L-9cUErpYCa-RSgOFdsE-IVnbePbcfWkNkZ2lPRqt0i6DTG7&_nc_ohc=NO3A68hAWVYQ7kNvgE0fLkU&_nc_oc=AdnHVeeXxxP1QmegXA_mEKZf_If1nS-wrtArTmS1cYN0Z8QqWgpdAEXSr2C2CsElCtc&_nc_zt=23&_nc_ht=scontent-mba2-1.xx&_nc_gid=3y8G3O52p7gTTRao9p-3Ag&oh=00_AYGFp_RDl5hBdcojq1IgCxZsZF9bOT8EdyRDrUKmMi8OcQ&oe=67EAD774" 
              alt="Bektas Blocks Logo" 
-             style="width: 250px; height: auto; position: relative; left: 35%; border-radius: 1px;">
-        <h1 style="font-size: 3em; margin: 0; position:relative; left:27%; color: #0965f0;">BEKTAS BLOCKS</h1>
+             style="border-radius: 1px;">
+        <h1 style="font-size: 3em; margin: 5px 0 0; color: #0965f0;">BEKTAS BLOCKS</h1>
       </div>
       
-      <!-- Right: Kenyan Flag (add class "flag" for mobile) -->
-      <img class="flag" src="https://i.pinimg.com/474x/33/54/8a/33548ab261a60a06058da6b2c7e08751.jpg" 
+      <!-- Right: Kenyan Flag -->
+      <img src="https://i.pinimg.com/474x/33/54/8a/33548ab261a60a06058da6b2c7e08751.jpg" 
            alt="Kenyan Flag" 
-           style="width: 100px; height: auto; position: absolute; right: 10px;">
+           style="width: 70px; height: 47px; position: absolute; right: 10px;">
     </div>
     <!-- Desktop Navigation Menu -->
     <nav class="site-nav">
@@ -163,7 +577,6 @@
       }
     }
   </script>
-
 
   <!-- Product Grid -->
   <h1>Our Products</h1>
