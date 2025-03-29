@@ -294,163 +294,48 @@
       position: static !important;
       left: 0 !important;
     }
-    
-    /* ================================
-       Product Grid & Modal Styles (Unchanged)
-    ================================ */
-    h1 {
-      text-align: center;
-      margin-top: 40px;
-      font-size: 2.5rem;
-      color: #333;
-    }
-    
     .image-container {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-      gap: 20px;
-      padding: 20px;
-      max-width: 1200px;
-      margin: 0 auto 40px;
-    }
-    
-    .item {
-      text-align: center;
-    }
-    
-    .item img {
-      width: 100%;
-      max-width: 300px;
-      border-radius: 10px;
-      cursor: pointer;
-      transition: transform 0.3s ease;
-    }
-    
-    .item img:hover {
-      transform: scale(1.05);
-    }
-    
-    .modal {
-      display: none;
-      position: fixed;
-      z-index: 1000;
-      left: 0;
-      top: 0;
-      width: 100%;
-      height: 100%;
-      overflow: auto;
-      background: rgba(0,0,0,0.8);
-    }
-    
-    .modal:target {
-      display: block;
-    }
-    
-    .modal-content {
-      background: #fff;
-      margin: 5% auto;
-      padding: 20px;
-      width: 90%;
-      max-width: 800px;
-      border-radius: 8px;
-      position: relative;
-    }
-    
-    .close {
-      position: absolute;
-      top: 10px;
-      right: 20px;
-      text-decoration: none;
-      font-size: 2em;
-      color: #333;
-    }
-    
-    .modal-images {
-      display: flex;
-      gap: 20px;
-      flex-wrap: wrap;
-    }
-    
-    .modal-image {
-      flex: 1 1 45%;
-      text-align: center;
-    }
-    
-    .modal-image img {
-      width: 100%;
-      border-radius: 5px;
-    }
-    
-    .specs {
-      margin-top: 10px;
-      background: #f9f9f9;
-      padding: 10px;
-      font-size: 24px;
-      border-radius: 5px;
-      text-align: left;
-      font-family: 'Times New Roman', Times, serif;
-    }
-    
-    .specs p {
-      margin: 5px 0;
-    }
-    
-    .related {
-      margin-top: 20px;
-    }
-    
-    .related h3 {
-      margin-bottom: 10px;
-    }
-    
-    .related-images {
-      display: flex;
-      gap: 10px;
-      flex-wrap: wrap;
-    }
-    
-    .related-item {
-      text-align: center;
-      text-decoration: none;
-      color: #333;
-    }
-    
-    .related-item img {
-      width: 100px;
-      border-radius: 5px;
-      transition: transform 0.3s ease;
-    }
-    
-    .related-item img:hover {
-      transform: scale(1.05);
-    }
-    
-    /* ================================
-       Uniform Image Styles
-    ================================ */
-    .image-container .item img {
-      width: 100%;
-      max-width: 300px;
-      aspect-ratio: 1 / 1;
-      object-fit: cover;
-      border-radius: 10px;
-    }
-    
-    .modal-images .modal-image img {
-      width: 100%;
-      aspect-ratio: 1 / 1;
-      object-fit: cover;
-      border-radius: 10px;
-    }
-    
-    /* =================== PC View Logo Size =================== */
-    @media (min-width: 769px) {
-      .header-content img.logo {
-        width: 150px !important;
-        height: 73px !important;
-        object-fit: contain;
-      }
-    }
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 20px;
+  padding: 20px;
+  max-width: 1200px;
+  margin: 0 auto 40px;
+}
+
+.item {
+  text-align: center;
+}
+
+.item img {
+  width: 100%;
+  max-width: 300px;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+
+.item img:hover {
+  transform: scale(1.05);
+}
+
+/* Uniform Image Styles for consistency */
+.image-container .item img {
+  width: 100%;
+  max-width: 300px;
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
+  border-radius: 10px;
+}
+
+/* Modal Images (if used for product details) */
+.modal-images .modal-image img {
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
+  border-radius: 10px;
+}
+
   </style>
 </head>
 <body>
@@ -463,7 +348,6 @@
       </div>
     </div>
   </div>
-  
   <!-- Updated Header: Logo and Navigation -->
   <header class="site-header">
     <div class="container header-container" style="display: flex; align-items: center; justify-content: space-between; padding: 0 50px;">
