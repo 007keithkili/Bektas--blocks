@@ -1,4 +1,4 @@
-<!DOCTYPE html>                                       
+<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
@@ -37,23 +37,32 @@
       font-size: 0.9em;
     }
     
-    /* The updated header styles are now inline in the HTML where needed.
-       Additional styling for mobile dropdown is preserved below: */
+    /* Hide dropdown button and mobile nav on desktop */
     .dropdown-toggle,
     .mobile-nav {
       display: none;
     }
     
+    /* PC View Header: Logo and Text Stacked */
+    .header-content {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+    
+    /* ------------------------------
+       Mobile View Adjustments
+       (Removed forced static positioning)
+    ------------------------------ */
     @media (max-width: 768px) {
       .header-container {
         flex-direction: column !important;
         align-items: center !important;
         justify-content: center !important;
         padding: 10px !important;
-        position: relative !important;
+        /* Removed position property */
       }
       .header-container img {
-        position: static !important;
         margin: 5px 0 !important;
       }
       .header-container > div {
@@ -64,7 +73,6 @@
         left: 0 !important;
       }
       .header-container h1 {
-        position: static !important;
         text-align: center !important;
         font-size: 2em !important;
         margin: 5px 0 !important;
@@ -146,8 +154,7 @@
     }
     
     /* ================================
-       Product Grid & Modal Styles
-       (Unchanged)
+       Product Grid & Modal Styles (Unchanged)
     ================================ */
     h1 {
       text-align: center;
@@ -306,28 +313,28 @@
     </div>
   </div>
 
-  <!-- Updated Header: Logo and Navigation (Perfect Code Style) -->
+  <!-- Updated Header: Logo and Navigation -->
   <header class="site-header">
     <div class="container header-container" style="display: flex; align-items: center; justify-content: space-between; padding: 0 50px;">
       <!-- Left: Turkey Flag -->
       <img src="https://i.pinimg.com/474x/f1/de/73/f1de7316c0d4c8110f19c32a317eef3b.jpg" 
            alt="Turkey Flag" 
-           style="width: 100px; height: auto; position: absolute; left: 10px;">
+           style="width: 70px; height: 47px; position: absolute; left: 10px;">
       
-      <!-- Center: Logo and Heading -->
-      <div style="display: flex; align-items: center; gap: 70px; left:50px;">
-        <img src="https://scontent-mba2-1.xx.fbcdn.net/v/t39.30808-6/486706616_122137008848592990_9213781367601452384_n.jpg?_nc_cat=110&ccb=1-7&_nc_sid=127cfc&_nc_eui2=AeEq8m1dYa5AvWa7m0LQQtdraUoVvy_vXFBpShW_L-9cUErpYCa-RSgOFdsE-IVnbePbcfWkNkZ2lPRqt0i6DTG7&_nc_ohc=NO3A68hAWVYQ7kNvgE0fLkU&_nc_oc=AdnHVeeXxxP1QmegXA_mEKZf_If1nS-wrtArTmS1cYN0Z8QqWgpdAEXSr2C2CsElCtc&_nc_zt=23&_nc_ht=scontent-mba2-1.xx&_nc_gid=3y8G3O52p7gTTRao9p-3Ag&oh=00_AYGFp_RDl5hBdcojq1IgCxZsZF9bOT8EdyRDrUKmMi8OcQ&oe=67EAD774" 
+      <!-- Center: Logo and Heading (Stacked: Logo on top, text below) -->
+      <div class="header-content" style="display: flex; flex-direction: column; align-items: center;">
+        <img class="logo" src="https://scontent-mba2-1.xx.fbcdn.net/v/t39.30808-6/486706616_122137008848592990_9213781367601452384_n.jpg?_nc_cat=110&ccb=1-7&_nc_sid=127cfc&_nc_eui2=AeEq8m1dYa5AvWa7m0LQQtdraUoVvy_vXFBpShW_L-9cUErpYCa-RSgOFdsE-IVnbePbcfWkNkZ2lPRqt0i6DTG7&_nc_ohc=NO3A68hAWVYQ7kNvgE0fLkU&_nc_oc=AdnHVeeXxxP1QmegXA_mEKZf_If1nS-wrtArTmS1cYN0Z8QqWgpdAEXSr2C2CsElCtc&_nc_zt=23&_nc_ht=scontent-mba2-1.xx&_nc_gid=3y8G3O52p7gTTRao9p-3Ag&oh=00_AYGFp_RDl5hBdcojq1IgCxZsZF9bOT8EdyRDrUKmMi8OcQ&oe=67EAD774" 
              alt="Bektas Blocks Logo" 
-             style="width: 250px; height: 130px; position: relative; left: 35%; border-radius: 1px;">
-        <h1 style="font-size: 3em; margin: 0; position: relative; left:27%; color: #0965f0;">BEKTAS BLOCKS</h1>
+             style="width: 150px; height: 73px; border-radius: 1px;">
+        <h1 style="font-size: 3em; margin: 5px 0 0; color: #0965f0;">BEKTAS BLOCKS</h1>
       </div>
       
       <!-- Right: Kenyan Flag -->
       <img src="https://i.pinimg.com/474x/33/54/8a/33548ab261a60a06058da6b2c7e08751.jpg" 
            alt="Kenyan Flag" 
-           style="width: 100px; height: auto; position: absolute; right: 10px;">
+           style="width: 70px; height: 47px; position: absolute; right: 10px;">
     </div>
-    <!-- Regular Navigation Menu for PC -->
+    <!-- Desktop Navigation Menu -->
     <nav class="site-nav">
       <ul>
         <li><a href="index.html" class="active">HOME</a></li>
@@ -342,6 +349,7 @@
     <button class="dropdown-toggle" onclick="toggleMobileNav()">Menu</button>
     <div class="mobile-nav">
       <ul>
+        <li><a href="index.html">HOME</a></li>
         <li><a href="productgallery.html">PRODUCTS</a></li>
         <li><a href="projects.html">PROJECTS</a></li>
         <li><a href="contacts.html">CONTACTS</a></li>
@@ -350,7 +358,7 @@
       </ul>
     </div>
   </header>
-
+  
   <!-- Stats Bar -->
   <section class="stats-bar">
     <div class="container stats-container">
@@ -372,7 +380,7 @@
       </div>
     </div>
   </section>
-
+  
   <!-- Inline JavaScript to animate numbers -->
   <script>
     // Function to animate a number from start to end over 'duration' milliseconds
@@ -393,7 +401,7 @@
       const numbers = document.querySelectorAll('.stat .number');
       numbers.forEach((numElement) => {
         const finalValue = parseInt(numElement.innerText, 10);
-        animateValue(numElement, 0, finalValue, 2000); // Animate over 2000ms
+        animateValue(numElement, 0, finalValue, 2000);
       });
     });
   </script>
@@ -418,8 +426,7 @@
       }
     }
   </script>
-</body>
-</html>
+
 
   <!-- Product Grid -->
   <h1>Our Products</h1>
