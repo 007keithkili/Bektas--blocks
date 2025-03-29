@@ -266,34 +266,6 @@
     .quote-form h2 {
       margin-top: 0;
     }
-    
-    /* ================= Footer ================= */
-    .site-footer {
-      background: #333;
-      color: #fff;
-      padding: 20px 0;
-      text-align: center;
-    }
-    .site-footer .footer-nav ul {
-      list-style: none;
-      display: flex;
-      justify-content: center;
-      gap: 15px;
-      padding: 0;
-      margin: 10px 0;
-    }
-    .site-footer .footer-nav ul li a {
-      text-decoration: none;
-      color: #fff;
-    }
-    
-    /* ========== Override Header Image Positioning Globally (for desktop) ========== */
-    .site-header .header-container img,
-    .site-header .header-container > div,
-    .site-header h1 {
-      position: static !important;
-      left: 0 !important;
-    }
     .image-container {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
@@ -336,6 +308,34 @@
   border-radius: 10px;
 }
 
+    
+    /* ================= Footer ================= */
+    .site-footer {
+      background: #333;
+      color: #fff;
+      padding: 20px 0;
+      text-align: center;
+    }
+    .site-footer .footer-nav ul {
+      list-style: none;
+      display: flex;
+      justify-content: center;
+      gap: 15px;
+      padding: 0;
+      margin: 10px 0;
+    }
+    .site-footer .footer-nav ul li a {
+      text-decoration: none;
+      color: #fff;
+    }
+    
+    /* ========== Override Header Image Positioning Globally (for desktop) ========== */
+    .site-header .header-container img,
+    .site-header .header-container > div,
+    .site-header h1 {
+      position: static !important;
+      left: 0 !important;
+    }
   </style>
 </head>
 <body>
@@ -348,26 +348,27 @@
       </div>
     </div>
   </div>
-  <!-- Updated Header: Logo and Navigation -->
+  
+  <!-- Header: Logo and Navigation -->
   <header class="site-header">
     <div class="container header-container" style="display: flex; align-items: center; justify-content: space-between; padding: 0 50px;">
-      <!-- Left: Turkey Flag -->
-      <img src="https://i.pinimg.com/474x/f1/de/73/f1de7316c0d4c8110f19c32a317eef3b.jpg" 
+      <!-- Left: Turkey Flag (add class "flag" for mobile) -->
+      <img class="flag" src="https://i.pinimg.com/474x/f1/de/73/f1de7316c0d4c8110f19c32a317eef3b.jpg" 
            alt="Turkey Flag" 
-           style="width: 70px; height: 47px; position: absolute; left: 10px;">
+           style="width: 100px; height: auto; position: absolute; left: 10px;">
       
-      <!-- Center: Logo and Heading (Stacked: Logo on top, text below) -->
-      <div class="header-content" style="display: flex; flex-direction: column; align-items: center;">
+      <!-- Center: Logo and Heading wrapped in .header-content (logo gets class "logo") -->
+      <div class="header-content" style="display: flex; flex-direction: column; align-items: center; gap: 10px; left:50px;">
         <img class="logo" src="https://scontent-mba2-1.xx.fbcdn.net/v/t39.30808-6/486706616_122137008848592990_9213781367601452384_n.jpg?_nc_cat=110&ccb=1-7&_nc_sid=127cfc&_nc_eui2=AeEq8m1dYa5AvWa7m0LQQtdraUoVvy_vXFBpShW_L-9cUErpYCa-RSgOFdsE-IVnbePbcfWkNkZ2lPRqt0i6DTG7&_nc_ohc=NO3A68hAWVYQ7kNvgE0fLkU&_nc_oc=AdnHVeeXxxP1QmegXA_mEKZf_If1nS-wrtArTmS1cYN0Z8QqWgpdAEXSr2C2CsElCtc&_nc_zt=23&_nc_ht=scontent-mba2-1.xx&_nc_gid=3y8G3O52p7gTTRao9p-3Ag&oh=00_AYGFp_RDl5hBdcojq1IgCxZsZF9bOT8EdyRDrUKmMi8OcQ&oe=67EAD774" 
              alt="Bektas Blocks Logo" 
-             style="border-radius: 1px;">
-        <h1 style="font-size: 3em; margin: 5px 0 0; color: #0965f0;">BEKTAS BLOCKS</h1>
+             style="width: 250px; height: auto; position: relative; left: 35%; border-radius: 1px;">
+        <h1 style="font-size: 3em; margin: 0; position:relative; left:27%; color: #0965f0;">BEKTAS BLOCKS</h1>
       </div>
       
-      <!-- Right: Kenyan Flag -->
-      <img src="https://i.pinimg.com/474x/33/54/8a/33548ab261a60a06058da6b2c7e08751.jpg" 
+      <!-- Right: Kenyan Flag (add class "flag" for mobile) -->
+      <img class="flag" src="https://i.pinimg.com/474x/33/54/8a/33548ab261a60a06058da6b2c7e08751.jpg" 
            alt="Kenyan Flag" 
-           style="width: 70px; height: 47px; position: absolute; right: 10px;">
+           style="width: 100px; height: auto; position: absolute; right: 10px;">
     </div>
     <!-- Desktop Navigation Menu -->
     <nav class="site-nav">
