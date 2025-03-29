@@ -375,14 +375,6 @@
     </div>
   </section>
   
-  <!-- Reviews Section and Other Content Remain Unchanged -->
-  <!-- Static Background Section for Reviews -->
-  <section class="static-bg-section">
-    <div class="static-bg-content">
-      <h2>Welcome to our Review section</h2>
-      <p>Tell us about your experience with us. The data will help us improve our service for a better Bektas future.</p>
-    </div>
-  </section>
   
     <div class="static-bg-content">
       <h2>Welcome to Bektas Contact Details</h2>
@@ -518,5 +510,16 @@
   <script src="script.js"
     integrity="sha512-BPz41T2ifN2ZQGl5uK13jwC5p+vLq8xkBTLI6L1o6lp8ZMyRzVvTCtMc79V6FDrTQ//6z5T+ArBqkAgBMoe+DQ=="
     crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  <!-- Toggle Mobile Navigation Script -->
+  <script>
+    function toggleMobileNav() {
+      var mobileNav = document.querySelector('.mobile-nav');
+      if (mobileNav.style.display === "block") {
+        mobileNav.style.display = "none";
+      } else {
+        mobileNav.style.display = "block";
+      }
+    }
+  </script>
 </body>
 </html>
