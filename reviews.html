@@ -79,32 +79,42 @@
         align-items: center !important;
         justify-content: center !important;
         padding: 10px 20px !important;
+        position: relative;
       }
-      /* Flag images: add a class "flag" to each flag image in HTML */
+      
+      /* Force override inline styles for flag images */
       .header-container img.flag {
-        width: 70px !important;
+        width: 50px !important;
         height: auto !important;
-        position: static !important;
-        margin: 0 5px;
+        position: relative !important;
+        left: 0 !important;
+        right: 0 !important;
+        margin: 0 10px !important;
       }
+      
       /* Wrap logo and header text in a new container (.header-content) */
       .header-content {
         display: flex;
         flex-direction: column;
         align-items: center;
         margin: 10px 0;
+        position: relative;
       }
+      
+      /* Force override inline styles for logo */
       .header-content img.logo {
-        width: 200px !important;
-        height: 100px !important;
-        object-fit: contain;
-        margin-bottom: 5px;
-        border-radius: 3px;
+        width: 80% !important;
+        max-width: 300px !important;
+        height: auto !important;
+        object-fit: contain !important;
+        margin-bottom: 10px !important;
       }
+      
+      /* Center the header text */
       .header-content h1 {
-        font-size: 1.5em !important;
+        font-size: 1.8em !important;
         margin: 0 !important;
-        position: static !important;
+        text-align: center !important;
       }
       
       /* Hide the regular navigation menu */
@@ -167,7 +177,7 @@
     
     /* ================= Static Background Section ================= */
     .static-bg-section {
-      background-image: url(https://i.pinimg.com/736x/c1/c4/ff/c1c4ffcc72c555124e0854294e3d25a0.jpg);
+      background-image: url(https://i.pinimg.com/474x/80/f5/46/80f546884c97efbbf917e857fa9dab41.jpg);
       background-attachment: fixed;
       background-position: center;
       background-repeat: no-repeat;
@@ -317,11 +327,11 @@
            style="width: 100px; height: auto; position: absolute; left: 10px;">
       
       <!-- Center: Logo and Heading wrapped in .header-content (logo gets class "logo") -->
-      <div class="header-content" style="display: flex; flex-direction: column; align-items: center; gap: 10px; left:50px;">
-        <img class="logo" src="https://scontent-mba2-1.xx.fbcdn.net/v/t39.30808-6/486706616_122137008848592990_9213781367601452384_n.jpg?stp=c148.0.278.278a_dst-jpg_s206x206_tt6&_nc_cat=110&ccb=1-7&_nc_sid=714c7a&_nc_eui2=AeEq8m1dYa5AvWa7m0LQQtdraUoVvy_vXFBpShW_L-9cUErpYCa-RSgOFdsE-IVnbePbcfWkNkZ2lPRqt0i6DTG7&_nc_ohc=nxrlBKtazQEQ7kNvgHQc2ZJ&_nc_oc=AdmwHCy95AJI0Ie2KEg92QONY7GmFbrIQE18KgomAdgmNxb8IbD6dSNR9L9wl_lylXY&_nc_zt=23&_nc_ht=scontent-mba2-1.xx&_nc_gid=XHi6Nxe2MBMYSgeq0buhGw&oh=00_AYFA3x93blH8tkfx0fTwg5V3bs689Yg_TlzqS7_Q4kM8eA&oe=67F217B4" 
+      <div class="header-content" style="display: flex; flex-direction: column; align-items: center;">
+        <img class="logo" src="https://i.pinimg.com/736x/73/ef/74/73ef740a267bce522427ca4bcf7f54c9.jpg" 
              alt="Bektas Blocks Logo" 
-             style="width: 200px; height: 100px; position: border-radius: 1px;">
-        <h1 style="font-size: 3em; margin: 0; position:relative; left:27%; color: #0965f0;">BEKTAS BLOCKS</h1>
+             style="width: 250px; height: auto; border-radius: 1px;">
+        <h1 style="font-size: 3em; margin: 0; color: #0965f0; text-align: center;">BEKTAS BLOCKS</h1>
       </div>
       
       <!-- Right: Kenyan Flag (add class "flag" for mobile) -->
@@ -329,6 +339,11 @@
            alt="Kenyan Flag" 
            style="width: 100px; height: auto; position: absolute; right: 10px;">
     </div>
+  </header>
+  
+  <!-- Rest of your content goes here -->
+  
+
     <!-- Desktop Navigation Menu -->
     <nav class="site-nav">
       <ul>
