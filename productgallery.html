@@ -1,3 +1,5 @@
+
+Copy
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -79,31 +81,45 @@
         align-items: center !important;
         justify-content: center !important;
         padding: 10px 20px !important;
+        position: relative;
       }
-      /* Flag images: add a class "flag" to each flag image in HTML */
+      
+      /* Force override inline styles for flag images */
       .header-container img.flag {
-        width: 70px !important;
+        width: 50px !important;
         height: auto !important;
-        position: static !important;
-        margin: 0 5px;
+        position: relative !important;
+        left: 0 !important;
+        right: 0 !important;
+        margin: 0 10px !important;
       }
+      
       /* Wrap logo and header text in a new container (.header-content) */
       .header-content {
         display: flex;
         flex-direction: column;
         align-items: center;
         margin: 10px 0;
+        position: relative;
       }
+      
+      /* Updated mobile logo styling */
       .header-content img.logo {
-        width: 150px !important;
-        height: auto !important;
-        object-fit: contain;
-        margin-bottom: 5px;
+        width: 90px !important;
+        max-height: 90px !important;
+        border-radius: 15px !important;
+        padding: 5px !important;
+        background: linear-gradient(145deg, #f8f9fa 0%, #ffffff 100%) !important;
+        box-shadow: 0 4px 15px rgba(0,0,0,0.1) !important;
+        margin-bottom: 15px !important;
       }
+      
+      /* Center the header text */
       .header-content h1 {
-        font-size: 1.5em !important;
-        margin: 0 !important;
-        position: static !important;
+        font-size: 1.8em !important;
+        margin: 5px 0 !important;
+        text-align: center !important;
+        letter-spacing: 1px;
       }
       
       /* Hide the regular navigation menu */
@@ -166,7 +182,7 @@
     
     /* ================= Static Background Section ================= */
     .static-bg-section {
-      background-image: url(https://i.pinimg.com/736x/80/77/80/807780ea67e8607128db0ce7bcaaac6c.jpg);
+      background-image: url(https://i.pinimg.com/474x/80/f5/46/80f546884c97efbbf917e857fa9dab41.jpg);
       background-attachment: fixed;
       background-position: center;
       background-repeat: no-repeat;
@@ -287,6 +303,16 @@
       color: #fff;
     }
     
+    /* ========== Header Logo Styling ========== */
+    .header-content img.logo {
+      width: 160px !important;
+      max-height: 120px !important;
+      border-radius: 15px !important;
+      padding: 10px !important;
+      background: linear-gradient(145deg, #f8f9fa 0%, #ffffff 100%);
+      box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+    }
+
     /* ========== Override Header Image Positioning Globally (for desktop) ========== */
     .site-header .header-container img,
     .site-header .header-container > div,
@@ -294,7 +320,6 @@
       position: static !important;
       left: 0 !important;
     }
-    
     /* ================================
        Product Grid & Modal Styles (Unchanged)
     ================================ */
