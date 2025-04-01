@@ -1,4 +1,4 @@
-
+<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
@@ -166,7 +166,7 @@
     
     /* ================= Static Background Section ================= */
     .static-bg-section {
-      background-image: urlhttps://www.capcut.com/editor/B77A2CD9-AFED-42B7-AD9F-053BD1B1F4FA?workspaceId=7422749613335281665&spaceId=7422749374679155713&utm_medium=Product&utm_source=draftshare&utm_campaign=link);
+      background-image: url(https://i.pinimg.com/474x/80/f5/46/80f546884c97efbbf917e857fa9dab41.jpg);
       background-attachment: fixed;
       background-position: center;
       background-repeat: no-repeat;
@@ -374,6 +374,29 @@
       </div>
     </div>
   </section>
+  
+  <!-- Inline JavaScript to animate numbers -->
+  <script>
+    function animateValue(obj, start, end, duration) {
+      let startTimestamp = null;
+      const step = (timestamp) => {
+        if (!startTimestamp) startTimestamp = timestamp;
+        const progress = Math.min((timestamp - startTimestamp) / duration, 1);
+        obj.innerText = Math.floor(progress * (end - start) + start);
+        if (progress < 1) {
+          window.requestAnimationFrame(step);
+        }
+      };
+      window.requestAnimationFrame(step);
+    }
+    window.addEventListener('load', () => {
+      const numbers = document.querySelectorAll('.stat .number');
+      numbers.forEach((numElement) => {
+        const finalValue = parseInt(numElement.innerText, 10);
+        animateValue(numElement, 0, finalValue, 2000);
+      });
+    });
+  </script>
 
   <!-- Main Featured Products Section -->
   <div class="video-bg-wrapper" style="position: relative; overflow: hidden; height: 420px;">
