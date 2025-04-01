@@ -79,31 +79,40 @@
         align-items: center !important;
         justify-content: center !important;
         padding: 10px 20px !important;
+        position: relative;
       }
-      /* Flag images: add a class "flag" to each flag image in HTML */
+      
+      /* Adjust flag images for a cleaner mobile look */
       .header-container img.flag {
-        width: 70px !important;
+        width: 50px !important;
         height: auto !important;
-        position: static !important;
-        margin: 0 5px;
+        position: relative !important;
+        margin: 5px;
       }
+      
       /* Wrap logo and header text in a new container (.header-content) */
       .header-content {
         display: flex;
         flex-direction: column;
         align-items: center;
         margin: 10px 0;
+        position: relative;
       }
+      
+      /* Update logo styling for mobile */
       .header-content img.logo {
-        width: 600px !important;
-        height: 100px !important;
+        width: 80% !important;
+        max-width: 300px !important;
+        height: auto !important;
         object-fit: contain;
-        margin-bottom: 5px;
+        margin-bottom: 10px;
       }
+      
       .header-content h1 {
-        font-size: 1.5em !important;
+        font-size: 1.8em !important;
         margin: 0 !important;
-        position: static !important;
+        text-align: center;
+        position: relative !important;
       }
       
       /* Hide the regular navigation menu */
@@ -328,6 +337,9 @@
            alt="Kenyan Flag" 
            style="width: 100px; height: auto; position: absolute; right: 10px;">
     </div>
+  </header>
+  
+
     <!-- Desktop Navigation Menu -->
     <nav class="site-nav">
       <ul>
