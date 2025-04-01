@@ -84,7 +84,7 @@
       
       /* Force override inline styles for flag images */
       .header-container img.flag {
-        width: 150px !important;
+        width: 50px !important;
         height: auto !important;
         position: relative !important;
         left: 0 !important;
@@ -101,22 +101,23 @@
         position: relative;
       }
       
-      /* Force override inline styles for logo */
+      /* Updated mobile logo styling */
       .header-content img.logo {
-        width: 70% !important;
-        max-width: px !important;
-        height: 50px !important;
-        object-fit: contain !important;
-        margin-bottom: 10px !important;
-        left: 0 !important;
+        width: 90px !important;
+        max-height: 90px !important;
+        border-radius: 15px !important;
+        padding: 5px !important;
+        background: linear-gradient(145deg, #f8f9fa 0%, #ffffff 100%) !important;
+        box-shadow: 0 4px 15px rgba(0,0,0,0.1) !important;
+        margin-bottom: 15px !important;
       }
       
       /* Center the header text */
       .header-content h1 {
         font-size: 1.8em !important;
-        margin: 0 !important;
+        margin: 5px 0 !important;
         text-align: center !important;
-        left: 0 !important;
+        letter-spacing: 1px;
       }
       
       /* Hide the regular navigation menu */
@@ -300,6 +301,16 @@
       color: #fff;
     }
     
+    /* ========== Header Logo Styling ========== */
+    .header-content img.logo {
+      width: 160px !important;
+      max-height: 120px !important;
+      border-radius: 15px !important;
+      padding: 10px !important;
+      background: linear-gradient(145deg, #f8f9fa 0%, #ffffff 100%);
+      box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+    }
+
     /* ========== Override Header Image Positioning Globally (for desktop) ========== */
     .site-header .header-container img,
     .site-header .header-container > div,
@@ -323,25 +334,28 @@
   <!-- Header: Logo and Navigation -->
   <header class="site-header">
     <div class="container header-container" style="display: flex; align-items: center; justify-content: space-between; padding: 0 50px;">
-      <!-- Left: Turkey Flag (add class "flag" for mobile) -->
+      <!-- Left: Turkey Flag -->
       <img class="flag" src="https://i.pinimg.com/474x/f1/de/73/f1de7316c0d4c8110f19c32a317eef3b.jpg" 
            alt="Turkey Flag" 
            style="width: 100px; height: auto; position: absolute; left: 10px;">
       
-      <!-- Center: Logo and Heading wrapped in .header-content (logo gets class "logo") -->
-      <div class="header-content" style="display: flex; flex-direction: column; align-items: center; gap: 10px; left:50px;">
-        <img class="logo" src="https://scontent-mba2-1.xx.fbcdn.net/v/t39.30808-6/486706616_122137008848592990_9213781367601452384_n.jpg?stp=c148.0.278.278a_dst-jpg_s206x206_tt6&_nc_cat=110&ccb=1-7&_nc_sid=714c7a&_nc_eui2=AeEq8m1dYa5AvWa7m0LQQtdraUoVvy_vXFBpShW_L-9cUErpYCa-RSgOFdsE-IVnbePbcfWkNkZ2lPRqt0i6DTG7&_nc_ohc=nxrlBKtazQEQ7kNvgHQc2ZJ&_nc_oc=AdmwHCy95AJI0Ie2KEg92QONY7GmFbrIQE18KgomAdgmNxb8IbD6dSNR9L9wl_lylXY&_nc_zt=23&_nc_ht=scontent-mba2-1.xx&_nc_gid=XHi6Nxe2MBMYSgeq0buhGw&oh=00_AYFA3x93blH8tkfx0fTwg5V3bs689Yg_TlzqS7_Q4kM8eA&oe=67F217B4" 
+      <!-- Center: Logo and Heading -->
+      <div class="header-content" style="display: flex; flex-direction: column; align-items: center;">
+        <img class="logo" src="https://i.pinimg.com/736x/73/ef/74/73ef740a267bce522427ca4bcf7f54c9.jpg" 
              alt="Bektas Blocks Logo" 
-             style="width: 250px; height: auto; position: relative; left: 35%; border-radius: 1px;">
-        <h1 style="font-size: 3em; margin: 0; position:relative; left:27%; color: #0965f0;">BEKTAS BLOCKS</h1>
+             style="width: 160px; max-height: 120px; border-radius: 15px; padding: 10px; background: linear-gradient(145deg, #f8f9fa 0%, #ffffff 100%);">
+        <h1 style="font-size: 2.3em; margin: 10px 0; color: #0965f0; text-align: center; letter-spacing: 1.2px;">BEKTAS BLOCKS</h1>
       </div>
       
-      <!-- Right: Kenyan Flag (add class "flag" for mobile) -->
+      <!-- Right: Kenyan Flag -->
       <img class="flag" src="https://i.pinimg.com/474x/33/54/8a/33548ab261a60a06058da6b2c7e08751.jpg" 
            alt="Kenyan Flag" 
            style="width: 100px; height: auto; position: absolute; right: 10px;">
     </div>
   </header>
+  
+  <!-- Rest of your content goes here -->
+  
   
   <!-- Rest of your content goes here --
 
